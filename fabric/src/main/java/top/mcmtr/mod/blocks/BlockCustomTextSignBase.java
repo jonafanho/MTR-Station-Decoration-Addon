@@ -2,7 +2,6 @@ package top.mcmtr.mod.blocks;
 
 import org.mtr.mapping.holder.*;
 import org.mtr.mapping.mapper.BlockEntityExtension;
-import org.mtr.mapping.mapper.BlockExtension;
 import org.mtr.mapping.mapper.BlockWithEntity;
 import org.mtr.mod.block.IBlock;
 import top.mcmtr.mod.Init;

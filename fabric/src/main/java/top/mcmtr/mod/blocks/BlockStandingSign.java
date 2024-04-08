@@ -13,11 +13,11 @@ public class BlockStandingSign extends BlockCustomTextSignBase {
 
     @Override
     public BlockEntityExtension createBlockEntity(BlockPos blockPos, BlockState blockState) {
-        return new BlockStandingSignEntity(blockPos, blockState, this.maxArrivals);
+        return new BlockStandingSignEntity(this.maxArrivals, blockPos, blockState);
     }
 
     public static class BlockStandingSignEntity extends BlockCustomTextSignBaseEntity {
-        public BlockStandingSignEntity(BlockPos blockPos, BlockState blockState, int maxArrivals) {
+        public BlockStandingSignEntity(int maxArrivals, BlockPos blockPos, BlockState blockState) {
             super(BlockEntityTypes.STANDING_SIGN.get(), blockPos, blockState, maxArrivals);
         }
 

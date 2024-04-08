@@ -16,7 +16,6 @@ public class CustomTextScreen extends ScreenExtension implements IGui {
     private final BlockPos blockPos;
     private final String[] messages;
     private final TextFieldWidgetExtension[] textFieldMessages;
-    private final MutableText messageText = TextHelper.translatable("gui.msd.custom_message");
     private static final int MAX_MESSAGE_LENGTH = 2048;
 
     public CustomTextScreen(BlockPos blockPos, int maxArrivals) {
@@ -61,7 +60,7 @@ public class CustomTextScreen extends ScreenExtension implements IGui {
     @Override
     public void render(GraphicsHolder graphicsHolder, int mouseX, int mouseY, float delta) {
         renderBackground(graphicsHolder);
-        graphicsHolder.drawText(messageText, SQUARE_SIZE + TEXT_PADDING, SQUARE_SIZE, ARGB_WHITE, false, MAX_LIGHT_GLOWING);
+        graphicsHolder.drawCenteredText(TextHelper.translatable("gui.msd.custom_message"), width / 2, TEXT_PADDING, ARGB_WHITE);
         super.render(graphicsHolder, mouseX, mouseY, delta);
     }
 

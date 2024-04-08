@@ -21,20 +21,21 @@ public class RenderCustomText<T extends BlockCustomTextSignBase.BlockCustomTextS
     private final float startZ;
     private final float maxHeight;
     private final float maxWidth;
-    private final boolean rotate90;
     private final float textPadding;
-
+    private final float textPaddingSmall;
+    private final boolean rotate90;
     public static final int SWITCH_LANGUAGE_TICKS = 60;
 
-    public RenderCustomText(Argument argument, float startX, float startY, float startZ, float maxHeight, int maxWidth, boolean rotate90, float textPadding) {
+    public RenderCustomText(Argument argument, float startX, float startY, float startZ, float maxHeight, float maxWidth, float textPadding, float textPaddingSmall, boolean rotate90) {
         super(argument);
         this.startX = startX;
         this.startY = startY;
         this.startZ = startZ;
         this.maxHeight = maxHeight;
         this.maxWidth = maxWidth;
-        this.rotate90 = rotate90;
         this.textPadding = textPadding;
+        this.textPaddingSmall = textPaddingSmall;
+        this.rotate90 = rotate90;
     }
 
     @Override
@@ -50,7 +51,7 @@ public class RenderCustomText<T extends BlockCustomTextSignBase.BlockCustomTextS
         }
         final Direction facing = IBlock.getStatePropertySafe(world, blockPos, DirectionHelper.FACING);
         RenderTrains.scheduleRender(RenderTrains.QueuedRenderLayer.TEXT, (graphicsHolderNew, offset) -> {
-            render(entity, blockPos.offset(facing), facing, graphicsHolderNew, offset, false);
+            render(entity, blockPos, facing, graphicsHolderNew, offset, false);
             render(entity, blockPos.offset(facing), facing, graphicsHolderNew, offset, true);
         });
 

@@ -53,7 +53,6 @@ public class InitClient {
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.YAMANOTE_5_PIDS, argument -> new RenderPIDS<>(argument, -4F, 15F, 7F, 6F, 40, true, 1F));
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.YAMANOTE_6_PIDS, argument -> new RenderPIDS<>(argument, -8F, 15F, 7F, 6F, 48, true, 1F));
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.YAMANOTE_7_PIDS, argument -> new RenderPIDS<>(argument, -12F, 15F, 7F, 6F, 56, true, 1F));
-        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.STANDING_SIGN, argument -> new RenderCustomText<>(argument, 8F, 14.5F, 7.01F, 15F, 11, true, 2F));
 
         REGISTRY_CLIENT.setupPackets(new Identifier(Init.MOD_ID, "packet"));
 
