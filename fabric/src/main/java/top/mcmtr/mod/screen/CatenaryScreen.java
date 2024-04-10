@@ -63,9 +63,9 @@ public class CatenaryScreen extends ScreenExtension implements IGui {
         renderBackground(graphicsHolder);
         graphicsHolder.drawCenteredText(TextHelper.translatable("gui.msd.catenary_offset"), width / 2, TEXT_PADDING, ARGB_WHITE);
         int i = 1;
-        graphicsHolder.drawText(TextHelper.translatable("options.msd.catenary_offset_x"), SQUARE_SIZE, (SQUARE_SIZE + TEXT_FIELD_PADDING) * (i++) + SQUARE_SIZE + TEXT_PADDING, ARGB_WHITE, false, MAX_LIGHT_GLOWING);
-        graphicsHolder.drawText(TextHelper.translatable("options.msd.catenary_offset_y"), SQUARE_SIZE, (SQUARE_SIZE + TEXT_FIELD_PADDING) * (i++) + SQUARE_SIZE + TEXT_PADDING, ARGB_WHITE, false, MAX_LIGHT_GLOWING);
-        graphicsHolder.drawText(TextHelper.translatable("options.msd.catenary_offset_z"), SQUARE_SIZE, (SQUARE_SIZE + TEXT_FIELD_PADDING) * (i++) + SQUARE_SIZE + TEXT_PADDING, ARGB_WHITE, false, MAX_LIGHT_GLOWING);
+        graphicsHolder.drawText(TextHelper.translatable("options.msd.catenary_offset_x"), SQUARE_SIZE, (SQUARE_SIZE + TEXT_FIELD_PADDING) * (i++) + SQUARE_SIZE + TEXT_PADDING, ARGB_WHITE, false, GraphicsHolder.getDefaultLight());
+        graphicsHolder.drawText(TextHelper.translatable("options.msd.catenary_offset_y"), SQUARE_SIZE, (SQUARE_SIZE + TEXT_FIELD_PADDING) * (i++) + SQUARE_SIZE + TEXT_PADDING, ARGB_WHITE, false, GraphicsHolder.getDefaultLight());
+        graphicsHolder.drawText(TextHelper.translatable("options.msd.catenary_offset_z"), SQUARE_SIZE, (SQUARE_SIZE + TEXT_FIELD_PADDING) * (i++) + SQUARE_SIZE + TEXT_PADDING, ARGB_WHITE, false, GraphicsHolder.getDefaultLight());
         if (isConnected) {
             graphicsHolder.drawCenteredText(TextHelper.translatable("gui.msd.shift_modify_offset"), width / 2, (SQUARE_SIZE + TEXT_FIELD_PADDING) * i + SQUARE_SIZE + TEXT_PADDING, ARGB_WHITE);
         }

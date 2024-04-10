@@ -28,7 +28,6 @@ public class BlockEntityTypes {
         YAMANOTE_5_PIDS = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "yamanote_5_pids"), (pos, state) -> new BlockYamanotePIDS.BlockYamanotePIDSEntity(5, pos, state), Blocks.YAMANOTE_5_PIDS::get);
         YAMANOTE_6_PIDS = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "yamanote_6_pids"), (pos, state) -> new BlockYamanotePIDS.BlockYamanotePIDSEntity(6, pos, state), Blocks.YAMANOTE_6_PIDS::get);
         YAMANOTE_7_PIDS = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "yamanote_7_pids"), (pos, state) -> new BlockYamanotePIDS.BlockYamanotePIDSEntity(7, pos, state), Blocks.YAMANOTE_7_PIDS::get);
-        STANDING_SIGN = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "yuuni_standing_sign"), (pos, state) -> new BlockStandingSign.BlockStandingSignEntity(3, pos, state), Blocks.STANDING_SIGN::get);
     }
 
     public static final BlockEntityTypeRegistryObject<BlockCatenaryNode.BlockCatenaryNodeEntity> CATENARY_NODE;
@@ -52,7 +51,6 @@ public class BlockEntityTypes {
     public static final BlockEntityTypeRegistryObject<BlockYamanotePIDS.BlockYamanotePIDSEntity> YAMANOTE_5_PIDS;
     public static final BlockEntityTypeRegistryObject<BlockYamanotePIDS.BlockYamanotePIDSEntity> YAMANOTE_6_PIDS;
     public static final BlockEntityTypeRegistryObject<BlockYamanotePIDS.BlockYamanotePIDSEntity> YAMANOTE_7_PIDS;
-    public static final BlockEntityTypeRegistryObject<BlockStandingSign.BlockStandingSignEntity> STANDING_SIGN;
 
     public static void init() {
         Init.MSD_LOGGER.info("Registering MTR Station Decoration block entity types");

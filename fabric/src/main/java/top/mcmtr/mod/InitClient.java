@@ -11,7 +11,6 @@ import top.mcmtr.core.operation.MSDDataRequest;
 import top.mcmtr.mod.client.MSDMinecraftClientData;
 import top.mcmtr.mod.items.ItemBlockClickingBase;
 import top.mcmtr.mod.packet.MSDPacketRequestData;
-import top.mcmtr.mod.render.RenderCustomText;
 import top.mcmtr.mod.render.RenderYamanoteRailwaySign;
 
 public class InitClient {

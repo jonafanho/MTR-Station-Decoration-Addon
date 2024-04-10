@@ -55,11 +55,6 @@ public class BlockYamanotePIDS extends BlockPIDSHorizontalBase {
             super(MAX_ARRIVALS, getEntity(length), pos, state);
         }
 
-        @Override
-        public String defaultFormat(int line) {
-            return "@0-60L@$#FF9900$%destination*%@60-100R@%RAH*%:%RA0m*%:%RA0s*%".replace("*", String.valueOf(line + 1));
-        }
-
         public static BlockEntityType<? extends BlockEntityExtension> getEntity(int length) {
             switch (length) {
                 case 5:
@@ -71,6 +66,11 @@ public class BlockYamanotePIDS extends BlockPIDSHorizontalBase {
                 default:
                     return BlockEntityTypes.YAMANOTE_4_PIDS.get();
             }
+        }
+
+        @Override
+        public boolean showArrivalNumber() {
+            return true;
         }
     }
 }

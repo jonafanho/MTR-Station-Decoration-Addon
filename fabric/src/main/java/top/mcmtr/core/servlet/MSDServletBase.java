@@ -2,10 +2,10 @@ package top.mcmtr.core.servlet;
 
 import org.mtr.core.integration.Response;
 import org.mtr.core.serializer.JsonReader;
+import org.mtr.core.servlet.HttpResponseStatus;
 import org.mtr.libraries.com.google.gson.JsonElement;
 import org.mtr.libraries.com.google.gson.JsonObject;
 import org.mtr.libraries.com.google.gson.JsonParser;
-import org.mtr.libraries.io.netty.handler.codec.http.HttpResponseStatus;
 import org.mtr.libraries.it.unimi.dsi.fastutil.objects.Object2ObjectAVLTreeMap;
 import org.mtr.libraries.it.unimi.dsi.fastutil.objects.ObjectImmutableList;
 import org.mtr.libraries.javax.servlet.AsyncContext;
@@ -22,6 +22,7 @@ import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
+import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
 public abstract class MSDServletBase extends HttpServlet {
@@ -63,8 +64,7 @@ public abstract class MSDServletBase extends HttpServlet {
         }
     }
 
-    @Nullable
-    protected abstract JsonObject getContent(String endpoint, String data, Object2ObjectAVLTreeMap<String, String> parameters, JsonReader jsonReader, long currentMillis, MSDSimulator simulator);
+    protected abstract void getContent(String endpoint, String data, Object2ObjectAVLTreeMap<String, String> parameters, JsonReader jsonReader, long currentMillis, MSDSimulator simulator, Consumer<JsonObject> sendResponse);
 
     private void run(HttpServletRequest httpServletRequest, @Nullable HttpServletResponse httpServletResponse, @Nullable AsyncContext asyncContext, JsonReader jsonReader, long currentMillis, MSDSimulator simulator) {
         final String endpoint;
@@ -86,25 +86,24 @@ public abstract class MSDServletBase extends HttpServlet {
             }
         });
 
-        simulator.run(() -> {
-            final JsonObject jsonObject = getContent(endpoint, data, parameters, jsonReader, currentMillis, simulator);
+        simulator.run(() -> getContent(endpoint, data, parameters, jsonReader, currentMillis, simulator, jsonObject -> {
             if (httpServletResponse != null && asyncContext != null) {
                 buildResponseObject(httpServletResponse, asyncContext, currentMillis, jsonObject, jsonObject == null ? HttpResponseStatus.NOT_FOUND : HttpResponseStatus.OK, endpoint, data);
             }
-        });
+        }));
     }
 
     public static void sendResponse(HttpServletResponse httpServletResponse, AsyncContext asyncContext, String content, String contentType, HttpResponseStatus httpResponseStatus) {
-        final ByteBuffer byteBuffer = ByteBuffer.wrap(content.getBytes(StandardCharsets.UTF_8));
-        httpServletResponse.addHeader("Content-Type", contentType);
         try {
             final ServletOutputStream servletOutputStream = httpServletResponse.getOutputStream();
+            final ByteBuffer byteBuffer = ByteBuffer.wrap(content.getBytes(StandardCharsets.UTF_8));
+            httpServletResponse.addHeader("Content-Type", contentType);
             servletOutputStream.setWriteListener(new WriteListener() {
                 @Override
                 public void onWritePossible() throws IOException {
                     while (servletOutputStream.isReady()) {
                         if (!byteBuffer.hasRemaining()) {
-                            httpServletResponse.setStatus(httpResponseStatus.code());
+                            httpServletResponse.setStatus(httpResponseStatus.code);
                             asyncContext.complete();
                             return;
                         }
@@ -117,7 +116,8 @@ public abstract class MSDServletBase extends HttpServlet {
                     asyncContext.complete();
                 }
             });
-        } catch (IOException e) {
+        } catch (IllegalStateException ignored) {
+        } catch (Exception e) {
             MSDMain.MSD_CORE_LOG.error("MSD Servlet send response error", e);
         }
     }
@@ -135,23 +135,13 @@ public abstract class MSDServletBase extends HttpServlet {
         }
     }
 
-    protected static String removeLastSlash(String text) {
-        if (text.isEmpty()) {
-            return text;
-        } else if (text.charAt(text.length() - 1) == '/') {
-            return text.substring(0, text.length() - 1);
-        } else {
-            return text;
-        }
-    }
-
     private static void buildResponseObject(HttpServletResponse httpServletResponse, AsyncContext asyncContext, long currentMillis, @Nullable JsonObject data, HttpResponseStatus httpResponseStatus, String... parameters) {
-        final StringBuilder reasonPhrase = new StringBuilder(httpResponseStatus.reasonPhrase());
+        final StringBuilder reasonPhrase = new StringBuilder(httpResponseStatus.description);
         final String trimmedParameters = Arrays.stream(parameters).filter(parameter -> !parameter.isEmpty()).collect(Collectors.joining(", "));
         if (!trimmedParameters.isEmpty()) {
             reasonPhrase.append(" - ").append(trimmedParameters);
         }
-        sendResponse(httpServletResponse, asyncContext, new Response(httpResponseStatus.code(), currentMillis, reasonPhrase.toString(), data).getJson().toString(), getMimeType("json"), httpResponseStatus);
+        sendResponse(httpServletResponse, asyncContext, new Response(httpResponseStatus.code, currentMillis, reasonPhrase.toString(), data).getJson().toString(), getMimeType("json"), httpResponseStatus);
     }
 
     private static String tryGetParameter(HttpServletRequest httpServletRequest, String parameter) {

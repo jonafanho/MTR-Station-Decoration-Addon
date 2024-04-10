@@ -40,16 +40,17 @@ public class BlockYuuniPIDS extends BlockPIDSHorizontalBase {
             super(maxArrivals, getEntity(maxArrivals), pos, state);
         }
 
-        @Override
-        public String defaultFormat(int line) {
-            return "@0-60L@$#FF9900$%destination*%@60-100R@%RAH*%:%RA0m*%:%RA0s*%".replace("*", String.valueOf(line + 1));
-        }
 
         public static BlockEntityType<? extends BlockEntityExtension> getEntity(int maxArrays) {
             if (maxArrays == 2) {
                 return BlockEntityTypes.YUUNI_PIDS.get();
             }
             return BlockEntityTypes.YUUNI_2_PIDS.get();
+        }
+
+        @Override
+        public boolean showArrivalNumber() {
+            return true;
         }
     }
 }

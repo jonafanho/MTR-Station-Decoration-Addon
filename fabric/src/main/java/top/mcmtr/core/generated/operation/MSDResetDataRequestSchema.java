@@ -8,13 +8,7 @@ import org.mtr.libraries.it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import top.mcmtr.core.data.OffsetPosition;
 
 public abstract class MSDResetDataRequestSchema implements SerializedDataBase {
-    /**
-     * 要进行操作的接触网节点，一般情况下容量为 1
-     */
     protected final ObjectArrayList<Position> catenaryNodePositions = new ObjectArrayList<>();
-    /**
-     * 要进行重制的接触网节点的新偏移值，一般情况下容量为 1
-     */
     protected final ObjectArrayList<OffsetPosition> offsetPositions = new ObjectArrayList<>();
     private static final String KEY_CATENARY_NODE_POSITIONS = "catenary_node_positions";
     private static final String KEY_OFFSET_POSITIONS = "offset_positions";
