@@ -44,6 +44,10 @@ public class BlockYamanotePIDS extends BlockPIDSHorizontalBase {
         }
     }
 
+    public int getLength() {
+        return length;
+    }
+
     @Override
     public String getTranslationKey2() {
         return "block.msd.yamanote_pids";

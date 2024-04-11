@@ -1,12 +1,36 @@
 {
   "itemGroup.msd.station": "站内装饰",
-  "itemGroup.msd.external": "站外装饰",
+  "itemGroup.msd.external": "外部装饰",
+
   "item.msd.catenary_connector": "接触网连接器",
   "item.msd.electric_connector": "电缆连接器",
   "item.msd.rigid_catenary_connector": "刚性接触网连接器",
-  "item.msd.rigid_soft_catenary_connector": "刚性-柔性接触网过渡连接器",
-  "item.msd.catenary_remover": "连接移除器",
-  "item.msd.rigid_catenary_remover": "刚性接触网连接移除器",
+  "item.msd.rigid_soft_catenary_connector": "接触网连接器(刚柔过渡)",
+  "item.msd.catenary_remover": "接触网移除器",
+  "item.msd.rigid_catenary_remover": "刚性接触网移除器",
+  "item.msd.rigid_catenary_shape_modifier": "刚性接触网形状调整器",
+  "item.msd.model_change_stick": "模型切换棒",
+
   "block.msd.catenary_node": "接触网节点",
-  "block.msd.rigid_catenary_node": "刚性接触网节点"
+  "block.msd.rigid_catenary_node": "刚性接触网节点",
+  "block.msd.electric_node": "电缆节点",
+  "block.msd.yamanote_railway_sign": "山手线风格铁路标志",
+  "block.msd.yuuni_pids": "YUUNI乘客资讯显示器",
+  "block.msd.yamanote_pids": "山手线风格乘客资讯显示器",
+  "block.msd.surveillance_cameras": "监控摄像头",
+  "block.msd.yuuni_pids_pole": "YUUNI乘客资讯显示器延长杆",
+  "block.msd.yamanote_railway_sign_pole": "山手线风格乘客资讯显示器延长杆",
+
+  "gui.msd.catenary_offset": "接触网坐标调整",
+  "gui.msd.shift_modify_offset": "按住Shift调整接触网坐标",
+  "gui.msd.rigid_catenary_shape": "形状",
+  "gui.msd.rigid_catenary_radius": "半径",
+  "gui.msd.rigid_catenary_shape_quadratic": "自动曲线",
+  "gui.msd.rigid_catenary_shape_two_radii": "手动调整",
+
+  "options.msd.catenary_offset_x": "X",
+  "options.msd.catenary_offset_y": "Y",
+  "options.msd.catenary_offset_z": "Z",
+
+  "tooltip.msd.model_count": "模型数量: %s"
 }

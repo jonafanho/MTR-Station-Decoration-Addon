@@ -2,6 +2,7 @@ package top.mcmtr.mod;
 
 import org.mtr.mapping.holder.Block;
 import org.mtr.mapping.holder.Identifier;
+import org.mtr.mapping.mapper.BlockHelper;
 import org.mtr.mapping.registry.BlockRegistryObject;
 import top.mcmtr.mod.blocks.*;
 
@@ -21,9 +22,11 @@ public class Blocks {
         YAMANOTE_RAILWAY_SIGN_6_ODD = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "yamanote_railway_sign_6_odd"), () -> new Block(new BlockYamanoteRailwaySign(6, true)), CreativeModeTabs.STATION);
         YAMANOTE_RAILWAY_SIGN_7_EVEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "yamanote_railway_sign_7_even"), () -> new Block(new BlockYamanoteRailwaySign(7, false)), CreativeModeTabs.STATION);
         YAMANOTE_RAILWAY_SIGN_7_ODD = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "yamanote_railway_sign_7_odd"), () -> new Block(new BlockYamanoteRailwaySign(7, true)), CreativeModeTabs.STATION);
+        YAMANOTE_RAILWAY_SIGN_POLE = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "yamanote_railway_sign_pole"), () -> new Block(new BlockYamanoteRailwaySignPole(BlockHelper.createBlockSettings(false))), CreativeModeTabs.STATION);
 
         YUUNI_PIDS = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "yuuni_pids"), () -> new Block(new BlockYuuniPIDS(2)), CreativeModeTabs.STATION);
         YUUNI_2_PIDS = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "yuuni_2_pids"), () -> new Block(new BlockYuuniPIDS(1)), CreativeModeTabs.STATION);
+        YUUNI_PIDS_POLE = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "yuuni_pids_pole"), () -> new Block(new BlockYuuniPIDSPole(BlockHelper.createBlockSettings(false))), CreativeModeTabs.STATION);
         YAMANOTE_4_PIDS = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "yamanote_4_pids"), () -> new Block(new BlockYamanotePIDS(4)), CreativeModeTabs.STATION);
         YAMANOTE_5_PIDS = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "yamanote_5_pids"), () -> new Block(new BlockYamanotePIDS(5)), CreativeModeTabs.STATION);
         YAMANOTE_6_PIDS = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "yamanote_6_pids"), () -> new Block(new BlockYamanotePIDS(6)), CreativeModeTabs.STATION);
@@ -50,8 +53,10 @@ public class Blocks {
     public static final BlockRegistryObject YAMANOTE_RAILWAY_SIGN_7_EVEN;
     public static final BlockRegistryObject YAMANOTE_RAILWAY_SIGN_7_ODD;
     public static final BlockRegistryObject YAMANOTE_RAILWAY_SIGN_MIDDLE;
+    public static final BlockRegistryObject YAMANOTE_RAILWAY_SIGN_POLE;
     public static final BlockRegistryObject YUUNI_PIDS;
     public static final BlockRegistryObject YUUNI_2_PIDS;
+    public static final BlockRegistryObject YUUNI_PIDS_POLE;
     public static final BlockRegistryObject YAMANOTE_4_PIDS;
     public static final BlockRegistryObject YAMANOTE_5_PIDS;
     public static final BlockRegistryObject YAMANOTE_6_PIDS;

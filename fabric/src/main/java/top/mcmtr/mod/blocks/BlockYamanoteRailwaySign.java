@@ -109,8 +109,8 @@ public class BlockYamanoteRailwaySign extends BlockExtension implements IBlock, 
 
     @Override
     public void addTooltips(ItemStack stack, @Nullable BlockView world, List<MutableText> tooltip, TooltipContext options) {
-        tooltip.add(TextHelper.translatable("tooltip.msd.yamanote_railway_sign_length", length).formatted(TextFormatting.GRAY));
-        tooltip.add(TextHelper.translatable(isOdd ? "tooltip.msd.yamanote_railway_sign_odd" : "tooltip.msd.yamanote_railway_sign_even").formatted(TextFormatting.GRAY));
+        tooltip.add(TextHelper.translatable("tooltip.mtr.railway_sign_length", length).formatted(TextFormatting.GRAY));
+        tooltip.add(TextHelper.translatable(isOdd ? "tooltip.mtr.railway_sign_odd" : "tooltip.mtr.railway_sign_even").formatted(TextFormatting.GRAY));
     }
 
     @Override

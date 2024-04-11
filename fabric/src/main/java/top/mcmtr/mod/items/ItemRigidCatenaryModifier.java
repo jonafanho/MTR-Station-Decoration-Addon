@@ -16,7 +16,7 @@ public class ItemRigidCatenaryModifier extends ItemExtension {
     @Override
     public ActionResult useOnBlock2(ItemUsageContext context) {
         if (context.getWorld().isClient()) {
-            final RigidCatenary rigidCatenary = MSDMinecraftClientData.getInstance().getFacingRigidCatenary();
+            final RigidCatenary rigidCatenary = MSDMinecraftClientData.getInstance().getFacingRigidCatenary(context.getBlockPos());
             if (rigidCatenary == null) {
                 return ActionResult.FAIL;
             } else {

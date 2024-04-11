@@ -59,7 +59,7 @@ public final class MSDMinecraftClientData extends MSDClientData {
     }
 
     @Nullable
-    public RigidCatenary getFacingRigidCatenary() {
+    public RigidCatenary getFacingRigidCatenary(BlockPos blockPos) {
         final MinecraftClient minecraftClient = MinecraftClient.getInstance();
         final ClientWorld clientWorld = minecraftClient.getWorldMapped();
         if (clientWorld == null) {
@@ -69,12 +69,6 @@ public final class MSDMinecraftClientData extends MSDClientData {
         if (clientPlayerEntity == null) {
             return null;
         }
-        final HitResult hitResult = minecraftClient.getCrosshairTargetMapped();
-        if (hitResult == null) {
-            return null;
-        }
-        final Vector3d hitPos = hitResult.getPos();
-        final BlockPos blockPos = Init.newBlockPos(hitPos.getXMapped(), hitPos.getYMapped(), hitPos.getZMapped());
         if (clientWorld.getBlockState(blockPos).getBlock().data instanceof BlockRigidCatenaryNode) {
             final float playerAngle = EntityHelper.getYaw(new Entity(clientPlayerEntity.data)) + 90;
             final RigidCatenary[] closestRigidCatenary = {null};

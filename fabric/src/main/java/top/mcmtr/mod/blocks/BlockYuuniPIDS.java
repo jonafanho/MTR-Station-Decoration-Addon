@@ -20,7 +20,7 @@ public class BlockYuuniPIDS extends BlockPIDSHorizontalBase {
     public VoxelShape getOutlineShape2(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         final VoxelShape shape1;
         final VoxelShape shape2;
-        if (maxArrivals == 2) {
+        if (maxArrivals == 1) {
             shape1 = IBlock.getVoxelShapeByDirection(5.75, 4.95, 0, 10.25, 9.6, 13.7, IBlock.getStatePropertySafe(state, FACING));
             shape2 = IBlock.getVoxelShapeByDirection(7.75, 9.6, 8.5, 8.25, 13, 9, IBlock.getStatePropertySafe(state, FACING));
             return VoxelShapes.union(shape1, shape2);
@@ -51,6 +51,11 @@ public class BlockYuuniPIDS extends BlockPIDSHorizontalBase {
         @Override
         public boolean showArrivalNumber() {
             return true;
+        }
+
+        @Override
+        public int textColorArrived() {
+            return 65280;
         }
     }
 }

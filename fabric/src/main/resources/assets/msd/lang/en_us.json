@@ -1,12 +1,36 @@
 {
   "itemGroup.msd.station": "Station Decoration",
   "itemGroup.msd.external": "Station External Decoration",
+
   "item.msd.catenary_connector": "Catenary Connector",
   "item.msd.electric_connector": "Electric Connector",
   "item.msd.rigid_catenary_connector": "Rigid Catenary Connector",
   "item.msd.rigid_soft_catenary_connector": "Catenary Connector(Rigid-Soft)",
   "item.msd.catenary_remover": "Connection Remover",
   "item.msd.rigid_catenary_remover": "Rigid Catenary Remover",
+  "item.msd.rigid_catenary_shape_modifier": "Rigid Catenary Shape Modifier",
+  "item.msd.model_change_stick": "Model Change Stick",
+
   "block.msd.catenary_node": "Catenary Node",
-  "block.msd.rigid_catenary_node": "Rigid Catenary Node"
+  "block.msd.rigid_catenary_node": "Rigid Catenary Node",
+  "block.msd.electric_node": "Electric Node",
+  "block.msd.yamanote_railway_sign": "Yamanote Style Railway Sign",
+  "block.msd.yuuni_pids": "YUUNI PIDS",
+  "block.msd.yamanote_pids": "Yamanote Style PIDS",
+  "block.msd.surveillance_cameras": "Surveillance Cameras",
+  "block.msd.yuuni_pids_pole": "YUUNI PIDS Pole",
+  "block.msd.yamanote_railway_sign_pole": "Yamanote Style Railway Sign Pole",
+
+  "gui.msd.catenary_offset": "Catenary coordinate offset",
+  "gui.msd.shift_modify_offset": "Hold down Shift to adjust the catenary",
+  "gui.msd.rigid_catenary_shape": "Rigid Catenary Shape",
+  "gui.msd.rigid_catenary_radius": "Rigid Catenary Radius",
+  "gui.msd.rigid_catenary_shape_quadratic": "Quadratic",
+  "gui.msd.rigid_catenary_shape_two_radii": "Two Radii",
+
+  "options.msd.catenary_offset_x": "X",
+  "options.msd.catenary_offset_y": "Y",
+  "options.msd.catenary_offset_z": "Z",
+
+  "tooltip.msd.model_count": "Number of models: %s"
 }

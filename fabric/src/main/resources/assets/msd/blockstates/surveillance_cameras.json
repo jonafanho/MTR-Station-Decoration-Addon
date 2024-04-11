@@ -15,12 +15,6 @@
       "model": "msd:block/surveillance_cameras",
       "y": 270
     },
-    "facing=up,type=0": {
-      "model": "msd:block/surveillance_cameras"
-    },
-    "facing=down,type=0": {
-      "model": "msd:block/surveillance_cameras"
-    },
     "facing=north,type=1": {
       "model": "msd:block/surveillance_cameras_wall"
     },
@@ -35,12 +29,6 @@
     "facing=west,type=1": {
       "model": "msd:block/surveillance_cameras_wall",
       "y": 270
-    },
-    "facing=up,type=1": {
-      "model": "msd:block/surveillance_cameras_wall"
-    },
-    "facing=down,type=1": {
-      "model": "msd:block/surveillance_cameras_wall"
     }
   }
 }

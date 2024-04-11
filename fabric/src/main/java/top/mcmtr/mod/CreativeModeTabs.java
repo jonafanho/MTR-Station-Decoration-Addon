@@ -3,13 +3,12 @@ package top.mcmtr.mod;
 import org.mtr.mapping.holder.Identifier;
 import org.mtr.mapping.holder.ItemConvertible;
 import org.mtr.mapping.holder.ItemStack;
-import org.mtr.mapping.holder.Items;
 import org.mtr.mapping.registry.CreativeModeTabHolder;
 
 public class CreativeModeTabs {
     static {
-        STATION = Init.REGISTRY.createCreativeModeTabHolder(new Identifier(Init.MOD_ID, "station"), () -> new ItemStack(new ItemConvertible(Items.getBeefMapped().data)));
-        EXTERNAL = Init.REGISTRY.createCreativeModeTabHolder(new Identifier(Init.MOD_ID, "external"), () -> new ItemStack(new ItemConvertible(Items.getPigSpawnEggMapped().data)));
+        STATION = Init.REGISTRY.createCreativeModeTabHolder(new Identifier(Init.MOD_ID, "station"), () -> new ItemStack(new ItemConvertible(Blocks.YUUNI_PIDS.get().data.asItem())));
+        EXTERNAL = Init.REGISTRY.createCreativeModeTabHolder(new Identifier(Init.MOD_ID, "external"), () -> new ItemStack(new ItemConvertible(Items.CATENARY_CONNECTOR.get().data)));
     }
 
     public static final CreativeModeTabHolder STATION;
