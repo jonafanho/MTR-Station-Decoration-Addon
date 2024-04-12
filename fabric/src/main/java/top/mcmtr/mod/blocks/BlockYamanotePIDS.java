@@ -6,7 +6,7 @@ import org.mtr.mod.block.BlockPIDSHorizontalBase;
 import org.mtr.mod.block.IBlock;
 import top.mcmtr.mod.BlockEntityTypes;
 
-public class BlockYamanotePIDS extends BlockPIDSHorizontalBase {
+public final class BlockYamanotePIDS extends BlockPIDSHorizontalBase {
     private static final int MAX_ARRIVALS = 3;
     private final int length;
 

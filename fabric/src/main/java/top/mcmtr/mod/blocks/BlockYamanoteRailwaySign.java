@@ -17,13 +17,13 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 
-public class BlockYamanoteRailwaySign extends BlockExtension implements IBlock, DirectionHelper, BlockWithEntity {
+public final class BlockYamanoteRailwaySign extends BlockExtension implements IBlock, DirectionHelper, BlockWithEntity {
     public final int length;
     public final boolean isOdd;
     public static final float SMALL_SIGN_PERCENTAGE = 0.75F;
 
     public BlockYamanoteRailwaySign(int length, boolean isOdd) {
-        super(BlockHelper.createBlockSettings(true, blockState -> 15).nonOpaque());
+        super(BlockHelper.createBlockSettings(false, blockState -> 15).nonOpaque());
         this.length = length;
         this.isOdd = isOdd;
     }

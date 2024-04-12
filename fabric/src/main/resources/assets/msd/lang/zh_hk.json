@@ -20,6 +20,9 @@
   "block.msd.surveillance_cameras": "監視器",
   "block.msd.yuuni_pids_pole": "YUUNI乘客資訊顯示器延長桿",
   "block.msd.yamanote_railway_sign_pole": "山手線風格乘客資訊顯示器延長桿",
+  "block.msd.yuuni_standing_sign": "Yuuni方向立牌",
+  "block.msd.yuuni_standing_sign_1": "Yuuni方向立牌(Style 2)",
+  "block.msd.yuuni_standing_sign_pole": "YUUNI方向立牌柱",
 
   "gui.msd.catenary_offset": "接觸網座標調整",
   "gui.msd.shift_modify_offset": "按住Shift調整接觸網座標",
@@ -27,6 +30,7 @@
   "gui.msd.rigid_catenary_radius": "半徑",
   "gui.msd.rigid_catenary_shape_quadratic": "自動曲線",
   "gui.msd.rigid_catenary_shape_two_radii": "手動調整",
+  "gui.msd.custom_text": "自訂文字",
 
   "options.msd.catenary_offset_x": "X",
   "options.msd.catenary_offset_y": "Y",

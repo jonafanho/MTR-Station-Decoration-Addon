@@ -6,7 +6,7 @@ import org.mtr.mod.block.BlockPIDSHorizontalBase;
 import org.mtr.mod.block.IBlock;
 import top.mcmtr.mod.BlockEntityTypes;
 
-public class BlockYuuniPIDS extends BlockPIDSHorizontalBase {
+public final class BlockYuuniPIDS extends BlockPIDSHorizontalBase {
     public BlockYuuniPIDS(int maxArrivals) {
         super(maxArrivals);
     }

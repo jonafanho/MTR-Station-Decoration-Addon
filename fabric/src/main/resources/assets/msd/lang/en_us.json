@@ -20,6 +20,9 @@
   "block.msd.surveillance_cameras": "Surveillance Cameras",
   "block.msd.yuuni_pids_pole": "YUUNI PIDS Pole",
   "block.msd.yamanote_railway_sign_pole": "Yamanote Style Railway Sign Pole",
+  "block.msd.yuuni_standing_sign": "YUUNI Standing Sign",
+  "block.msd.yuuni_standing_sign_1": "YUUNI Standing Sign 2",
+  "block.msd.yuuni_standing_sign_pole": "YUUNI Standing Sign Pole",
 
   "gui.msd.catenary_offset": "Catenary coordinate offset",
   "gui.msd.shift_modify_offset": "Hold down Shift to adjust the catenary",
@@ -27,6 +30,7 @@
   "gui.msd.rigid_catenary_radius": "Rigid Catenary Radius",
   "gui.msd.rigid_catenary_shape_quadratic": "Quadratic",
   "gui.msd.rigid_catenary_shape_two_radii": "Two Radii",
+  "gui.msd.custom_text": "Custom Text",
 
   "options.msd.catenary_offset_x": "X",
   "options.msd.catenary_offset_y": "Y",

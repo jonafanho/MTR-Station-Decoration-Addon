@@ -9,34 +9,25 @@ import top.mcmtr.core.data.OffsetPosition;
 public final class MSDPacketOpenCatenaryScreen extends PacketHandler {
     private final BlockPos blockPos;
     private final boolean isConnected;
-    private final OffsetPosition offsetPosition;
 
     public MSDPacketOpenCatenaryScreen(PacketBufferReceiver packetBufferReceiver) {
         this.blockPos = BlockPos.fromLong(packetBufferReceiver.readLong());
-        final double x = packetBufferReceiver.readDouble();
-        final double y = packetBufferReceiver.readDouble();
-        final double z = packetBufferReceiver.readDouble();
-        this.offsetPosition = new OffsetPosition(x, y, z);
         this.isConnected = packetBufferReceiver.readBoolean();
     }
 
-    public MSDPacketOpenCatenaryScreen(BlockPos blockPos, boolean isConnected, OffsetPosition offsetPosition) {
+    public MSDPacketOpenCatenaryScreen(BlockPos blockPos, boolean isConnected) {
         this.blockPos = blockPos;
         this.isConnected = isConnected;
-        this.offsetPosition = offsetPosition;
     }
 
     @Override
     public void write(PacketBufferSender packetBufferSender) {
         packetBufferSender.writeLong(blockPos.asLong());
-        packetBufferSender.writeDouble(offsetPosition.getX());
-        packetBufferSender.writeDouble(offsetPosition.getY());
-        packetBufferSender.writeDouble(offsetPosition.getZ());
         packetBufferSender.writeBoolean(isConnected);
     }
 
     @Override
     public void runClient() {
-        MSDClientPacketHelper.openCatenaryScreen(isConnected, blockPos, offsetPosition);
+        MSDClientPacketHelper.openCatenaryScreen(isConnected, blockPos);
     }
 }

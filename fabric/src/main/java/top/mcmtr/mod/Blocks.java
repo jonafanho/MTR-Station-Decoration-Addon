@@ -32,6 +32,10 @@ public class Blocks {
         YAMANOTE_6_PIDS = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "yamanote_6_pids"), () -> new Block(new BlockYamanotePIDS(6)), CreativeModeTabs.STATION);
         YAMANOTE_7_PIDS = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "yamanote_7_pids"), () -> new Block(new BlockYamanotePIDS(7)), CreativeModeTabs.STATION);
 
+        STANDING_SIGN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "yuuni_standing_sign"), () -> new Block(new BlockStandingSign()), CreativeModeTabs.EXTERNAL);
+        STANDING_SIGN_1 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "yuuni_standing_sign_1"), () -> new Block(new BlockStandingSign1()), CreativeModeTabs.EXTERNAL);
+        STANDING_SIGN_POLE = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "yuuni_standing_sign_pole"), () -> new Block(new BlockStandingSignPole()), CreativeModeTabs.EXTERNAL);
+
         SURVEILLANCE_CAMERAS = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "surveillance_cameras"), () -> new Block(new BlockSurveillanceCameras()), CreativeModeTabs.STATION);
         ELECTRIC_NODE = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "electric_node"), () -> new Block(new BlockCatenaryNode()));
         YAMANOTE_RAILWAY_SIGN_MIDDLE = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "yamanote_railway_sign_middle"), () -> new Block(new BlockYamanoteRailwaySign(0, false)));
@@ -62,6 +66,9 @@ public class Blocks {
     public static final BlockRegistryObject YAMANOTE_6_PIDS;
     public static final BlockRegistryObject YAMANOTE_7_PIDS;
     public static final BlockRegistryObject SURVEILLANCE_CAMERAS;
+    public static final BlockRegistryObject STANDING_SIGN;
+    public static final BlockRegistryObject STANDING_SIGN_1;
+    public static final BlockRegistryObject STANDING_SIGN_POLE;
 
     public static void init() {
         Init.MSD_LOGGER.info("Registering MTR Station Decoration blocks");

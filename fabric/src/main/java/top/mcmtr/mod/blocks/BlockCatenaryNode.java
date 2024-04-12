@@ -33,7 +33,7 @@ public final class BlockCatenaryNode extends BlockNodeBase {
         return IBlock.checkHoldingBrush(world, player, () -> {
             final BlockEntity blockEntity = world.getBlockEntity(pos);
             if (blockEntity != null && blockEntity.data instanceof BlockCatenaryNode.BlockCatenaryNodeEntity) {
-                Init.REGISTRY.sendPacketToClient(ServerPlayerEntity.cast(player), new MSDPacketOpenCatenaryScreen(pos, state.get(new Property<>(IS_CONNECTED.data)), ((BlockCatenaryNodeEntity) blockEntity.data).getOffsetPosition()));
+                Init.REGISTRY.sendPacketToClient(ServerPlayerEntity.cast(player), new MSDPacketOpenCatenaryScreen(pos, state.get(new Property<>(IS_CONNECTED.data))));
             }
         });
     }

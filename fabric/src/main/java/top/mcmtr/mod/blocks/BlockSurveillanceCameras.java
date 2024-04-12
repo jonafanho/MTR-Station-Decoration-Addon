@@ -5,7 +5,7 @@ import org.mtr.mapping.holder.*;
 import org.mtr.mapping.mapper.BlockHelper;
 import org.mtr.mod.block.IBlock;
 
-public class BlockSurveillanceCameras extends BlockChangeModelBase {
+public final class BlockSurveillanceCameras extends BlockChangeModelBase {
     public BlockSurveillanceCameras() {
         super(BlockHelper.createBlockSettings(true, blockState -> 5), 2);
     }

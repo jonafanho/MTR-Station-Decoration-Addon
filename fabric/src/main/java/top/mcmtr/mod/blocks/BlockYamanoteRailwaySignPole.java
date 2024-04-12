@@ -9,7 +9,7 @@ import org.mtr.mod.block.IBlock;
 import javax.annotation.Nonnull;
 import java.util.List;
 
-public class BlockYamanoteRailwaySignPole extends BlockPoleCheckBase {
+public final class BlockYamanoteRailwaySignPole extends BlockPoleCheckBase {
     public static final IntegerProperty TYPE = IntegerProperty.of("type", 0, 3);
 
     public BlockYamanoteRailwaySignPole(BlockSettings blockSettings) {

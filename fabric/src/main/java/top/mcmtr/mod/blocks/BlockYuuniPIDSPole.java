@@ -10,7 +10,7 @@ import org.mtr.mod.block.IBlock;
 
 import java.util.List;
 
-public class BlockYuuniPIDSPole extends BlockPoleCheckBase {
+public final class BlockYuuniPIDSPole extends BlockPoleCheckBase {
     public BlockYuuniPIDSPole(BlockSettings blockSettings) {
         super(blockSettings);
     }

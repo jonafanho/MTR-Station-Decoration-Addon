@@ -1,8 +1,7 @@
 package top.mcmtr.mod.screen;
 
 import org.mtr.core.data.Position;
-import org.mtr.mapping.holder.BlockPos;
-import org.mtr.mapping.holder.ClickableWidget;
+import org.mtr.mapping.holder.*;
 import org.mtr.mapping.mapper.GraphicsHolder;
 import org.mtr.mapping.mapper.ScreenExtension;
 import org.mtr.mapping.mapper.TextHelper;
@@ -14,6 +13,7 @@ import top.mcmtr.core.data.OffsetPosition;
 import top.mcmtr.core.operation.MSDResetDataRequest;
 import top.mcmtr.mod.Init;
 import top.mcmtr.mod.InitClient;
+import top.mcmtr.mod.blocks.BlockCatenaryNode;
 import top.mcmtr.mod.client.MSDMinecraftClientData;
 import top.mcmtr.mod.packet.MSDPacketResetData;
 import top.mcmtr.mod.packet.MSDPacketUpdateCatenaryNode;
@@ -29,12 +29,22 @@ public class CatenaryScreen extends ScreenExtension implements IGui {
     private static final int BUTTON_WIDTH = 60;
     private static final int BUTTON_HEIGHT = TEXT_HEIGHT + TEXT_PADDING;
 
-    public CatenaryScreen(boolean isConnected, BlockPos blockPos, OffsetPosition offsetPosition) {
+    public CatenaryScreen(boolean isConnected, BlockPos blockPos) {
         super();
         this.needUpdate = false;
         this.isConnected = isConnected;
         this.blockPos = blockPos;
-        this.offsetPosition = offsetPosition;
+        this.offsetPosition = new OffsetPosition(0, 0, 0);
+        final ClientWorld world = MinecraftClient.getInstance().getWorldMapped();
+        if (world != null) {
+            BlockEntity blockEntity = world.getBlockEntity(blockPos);
+            if (blockEntity != null) {
+                final OffsetPosition temp = ((BlockCatenaryNode.BlockCatenaryNodeEntity) blockEntity.data).getOffsetPosition();
+                this.offsetPosition.setX(temp.getX());
+                this.offsetPosition.setY(temp.getY());
+                this.offsetPosition.setZ(temp.getZ());
+            }
+        }
         this.sliderPositionX = new WidgetShorterSlider(0, 0, 16, num -> String.format("%d", num - 8), value -> updateMinecraftClientData());
         this.sliderPositionY = new WidgetShorterSlider(0, 0, 16, num -> String.format("%d", num - 8), value -> updateMinecraftClientData());
         this.sliderPositionZ = new WidgetShorterSlider(0, 0, 16, num -> String.format("%d", num - 8), value -> updateMinecraftClientData());

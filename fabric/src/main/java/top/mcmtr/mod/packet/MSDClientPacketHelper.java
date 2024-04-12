@@ -2,10 +2,11 @@ package top.mcmtr.mod.packet;
 
 import org.mtr.mapping.holder.*;
 import org.mtr.mapping.mapper.ScreenExtension;
-import top.mcmtr.core.data.OffsetPosition;
 import top.mcmtr.mod.blocks.BlockCatenaryNode;
+import top.mcmtr.mod.blocks.BlockCustomTextBase;
 import top.mcmtr.mod.blocks.BlockYamanoteRailwaySign;
 import top.mcmtr.mod.screen.CatenaryScreen;
+import top.mcmtr.mod.screen.CustomTextScreen;
 import top.mcmtr.mod.screen.RigidCatenaryShapeModifierScreen;
 import top.mcmtr.mod.screen.YamanoteRailwaySignScreen;
 
@@ -21,10 +22,18 @@ public final class MSDClientPacketHelper {
         });
     }
 
-    public static void openCatenaryScreen(boolean isConnected, BlockPos blockPos, OffsetPosition offsetPosition) {
+    public static void openCatenaryScreen(boolean isConnected, BlockPos blockPos) {
         getBlockEntity(blockPos, blockEntity -> {
             if (blockEntity.data instanceof BlockCatenaryNode.BlockCatenaryNodeEntity) {
-                openScreen(new CatenaryScreen(isConnected, blockPos, offsetPosition), screenExtension -> screenExtension instanceof CatenaryScreen);
+                openScreen(new CatenaryScreen(isConnected, blockPos), screenExtension -> screenExtension instanceof CatenaryScreen);
+            }
+        });
+    }
+
+    public static void openCustomTextScreen(BlockPos blockPos, int maxArrivals) {
+        getBlockEntity(blockPos, blockEntity -> {
+            if (blockEntity.data instanceof BlockCustomTextBase.BlockCustomTextEntity) {
+                openScreen(new CustomTextScreen(blockPos, maxArrivals), screenExtension -> screenExtension instanceof CustomTextScreen);
             }
         });
     }
