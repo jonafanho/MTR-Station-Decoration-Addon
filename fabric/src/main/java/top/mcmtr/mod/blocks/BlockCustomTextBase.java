@@ -7,6 +7,7 @@ import org.mtr.mapping.mapper.BlockWithEntity;
 import org.mtr.mapping.mapper.DirectionHelper;
 import org.mtr.mod.block.IBlock;
 import top.mcmtr.mod.Init;
+import top.mcmtr.mod.config.Config;
 import top.mcmtr.mod.packet.MSDPacketOpenCustomScreen;
 
 public abstract class BlockCustomTextBase extends BlockChangeModelBase implements DirectionHelper, BlockWithEntity {
@@ -69,6 +70,11 @@ public abstract class BlockCustomTextBase extends BlockChangeModelBase implement
                 }
             }
             return "";
+        }
+
+        @Override
+        public double getRenderDistance3() {
+            return Config.getCustomTextSignMaxViewDistance();
         }
     }
 }

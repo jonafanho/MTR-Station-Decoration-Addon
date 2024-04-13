@@ -24,6 +24,7 @@ import org.mtr.mod.screen.EditStationScreen;
 import top.mcmtr.mod.Init;
 import top.mcmtr.mod.InitClient;
 import top.mcmtr.mod.blocks.BlockYamanoteRailwaySign;
+import top.mcmtr.mod.config.Config;
 
 import javax.annotation.Nullable;
 import java.util.Comparator;
@@ -312,6 +313,11 @@ public class RenderYamanoteRailwaySign<T extends BlockYamanoteRailwaySign.BlockY
         }
 
         return maxWidthLeft;
+    }
+
+    @Override
+    public int getRenderDistance2() {
+        return Config.getYamanoteRailwaySignMaxViewDistance();
     }
 
     @FunctionalInterface

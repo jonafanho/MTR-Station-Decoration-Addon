@@ -9,6 +9,7 @@ import org.mtr.mod.client.MinecraftClientData;
 import org.mtr.mod.render.RenderPIDS;
 import top.mcmtr.core.operation.MSDDataRequest;
 import top.mcmtr.mod.client.MSDMinecraftClientData;
+import top.mcmtr.mod.config.Config;
 import top.mcmtr.mod.items.ItemBlockClickingBase;
 import top.mcmtr.mod.packet.MSDPacketRequestData;
 import top.mcmtr.mod.render.RenderCustomText;
@@ -103,7 +104,7 @@ public class InitClient {
             }
         });
 
-
+        Config.refreshProperties();
         REGISTRY_CLIENT.init();
     }
 

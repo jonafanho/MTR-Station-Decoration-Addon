@@ -5,6 +5,7 @@ import org.mtr.mapping.mapper.BlockEntityExtension;
 import org.mtr.mod.block.BlockPIDSHorizontalBase;
 import org.mtr.mod.block.IBlock;
 import top.mcmtr.mod.BlockEntityTypes;
+import top.mcmtr.mod.config.Config;
 
 public final class BlockYuuniPIDS extends BlockPIDSHorizontalBase {
     public BlockYuuniPIDS(int maxArrivals) {
@@ -56,6 +57,11 @@ public final class BlockYuuniPIDS extends BlockPIDSHorizontalBase {
         @Override
         public int textColorArrived() {
             return 65280;
+        }
+
+        @Override
+        public double getRenderDistance3() {
+            return Config.getYuuniPIDSMaxViewDistance();
         }
     }
 }

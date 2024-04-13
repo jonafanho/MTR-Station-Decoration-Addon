@@ -11,6 +11,7 @@ import org.mtr.mod.block.IBlock;
 import org.mtr.mod.data.IGui;
 import org.mtr.mod.render.RenderTrains;
 import top.mcmtr.mod.blocks.BlockCustomTextBase;
+import top.mcmtr.mod.config.Config;
 
 public class RenderCustomText<T extends BlockCustomTextBase.BlockCustomTextEntity> extends BlockEntityRenderer<T> implements IGui, Utilities {
     private final int maxArrivals;
@@ -100,5 +101,10 @@ public class RenderCustomText<T extends BlockCustomTextBase.BlockCustomTextEntit
         }
         graphicsHolder.drawText(text, rightAlign ? Math.max(0, (int) maxWidth - textWidth) : 0, 0, color | ARGB_BLACK, false, GraphicsHolder.getDefaultLight());
         graphicsHolder.pop();
+    }
+
+    @Override
+    public int getRenderDistance2() {
+        return Config.getCustomTextSignMaxViewDistance();
     }
 }

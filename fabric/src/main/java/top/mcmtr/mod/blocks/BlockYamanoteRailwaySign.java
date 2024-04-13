@@ -8,6 +8,7 @@ import org.mtr.mod.block.IBlock;
 import top.mcmtr.mod.BlockEntityTypes;
 import top.mcmtr.mod.Blocks;
 import top.mcmtr.mod.Init;
+import top.mcmtr.mod.config.Config;
 import top.mcmtr.mod.packet.MSDPacketOpenBlockEntityScreen;
 
 import javax.annotation.Nonnull;
@@ -219,6 +220,11 @@ public final class BlockYamanoteRailwaySign extends BlockExtension implements IB
                 default:
                     return BlockEntityTypes.YAMANOTE_RAILWAY_SIGN_ENTITY_2_EVEN.get();
             }
+        }
+
+        @Override
+        public double getRenderDistance3() {
+            return Config.getYamanoteRailwaySignMaxViewDistance();
         }
     }
 }

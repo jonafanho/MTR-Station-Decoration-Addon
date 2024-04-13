@@ -2,10 +2,11 @@ package top.mcmtr.init;
 
 import com.terraformersmc.modmenu.api.ConfigScreenFactory;
 import com.terraformersmc.modmenu.api.ModMenuApi;
+import top.mcmtr.mod.screen.ConfigScreen;
 
 public class ModMenuConfig implements ModMenuApi {
     @Override
     public ConfigScreenFactory<?> getModConfigScreenFactory() {
-        return ModMenuApi.super.getModConfigScreenFactory();
+        return parent -> new ConfigScreen();
     }
 }

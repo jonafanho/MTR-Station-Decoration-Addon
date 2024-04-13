@@ -43,10 +43,15 @@
   "gui.msd.rigid_catenary_shape_quadratic": "自動曲線",
   "gui.msd.rigid_catenary_shape_two_radii": "手動調整",
   "gui.msd.custom_text": "自訂文字",
+  "gui.msd.options": "MSD設定",
 
   "options.msd.catenary_offset_x": "X",
   "options.msd.catenary_offset_y": "Y",
   "options.msd.catenary_offset_z": "Z",
+  "options.msd.rigid_catenary_segment_length": "剛性接觸網分段長度",
+  "options.msd.pids_view_distance": "乘客諮詢顯示器最大可視距離",
+  "options.msd.railway_sign_view_distance": "鐵路標誌最大可視距離",
+  "options.msd.custom_text_view_distance": "自訂文字標誌最大可視距離",
 
   "tooltip.msd.model_count": "模型數量: %s",
   "tooltip.msd.can_change_model": "右鍵點選具有多個模型的方塊可以切換模型"

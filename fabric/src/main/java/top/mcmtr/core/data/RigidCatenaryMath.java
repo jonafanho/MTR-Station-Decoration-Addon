@@ -4,6 +4,7 @@ import org.mtr.core.data.Position;
 import org.mtr.core.tool.Angle;
 import org.mtr.core.tool.Vector;
 import org.mtr.libraries.it.unimi.dsi.fastutil.objects.ObjectArrayList;
+import top.mcmtr.mod.config.Config;
 
 public final class RigidCatenaryMath {
     private final RigidCatenary.Shape shape;
@@ -166,7 +167,7 @@ public final class RigidCatenaryMath {
 
     public void init() {
         if (!checkRun) {
-            final int SEGMENT_LENGTH = 1;
+            final int SEGMENT_LENGTH = Config.getRigidCatenarySegmentLength();
             final double count1 = Math.abs(tEnd1 - tStart1);
             final double count2 = Math.abs(tEnd2 - tStart2);
             final double segment_count1 = Math.round(count1 / SEGMENT_LENGTH);

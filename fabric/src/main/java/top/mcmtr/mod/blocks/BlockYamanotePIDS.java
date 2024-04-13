@@ -5,6 +5,7 @@ import org.mtr.mapping.mapper.BlockEntityExtension;
 import org.mtr.mod.block.BlockPIDSHorizontalBase;
 import org.mtr.mod.block.IBlock;
 import top.mcmtr.mod.BlockEntityTypes;
+import top.mcmtr.mod.config.Config;
 
 public final class BlockYamanotePIDS extends BlockPIDSHorizontalBase {
     private static final int MAX_ARRIVALS = 3;
@@ -75,6 +76,11 @@ public final class BlockYamanotePIDS extends BlockPIDSHorizontalBase {
         @Override
         public boolean showArrivalNumber() {
             return true;
+        }
+
+        @Override
+        public double getRenderDistance3() {
+            return Config.getYuuniPIDSMaxViewDistance();
         }
     }
 }

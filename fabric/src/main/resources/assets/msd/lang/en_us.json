@@ -43,10 +43,15 @@
   "gui.msd.rigid_catenary_shape_quadratic": "Quadratic",
   "gui.msd.rigid_catenary_shape_two_radii": "Two Radii",
   "gui.msd.custom_text": "Custom Text",
+  "gui.msd.options": "MSD Config",
 
   "options.msd.catenary_offset_x": "X",
   "options.msd.catenary_offset_y": "Y",
   "options.msd.catenary_offset_z": "Z",
+  "options.msd.rigid_catenary_segment_length":  "Rigid Catenary Segment Length",
+  "options.msd.pids_view_distance": "PIDS Max View Distance",
+  "options.msd.railway_sign_view_distance":  "Railway Sign Max View Distance",
+  "options.msd.custom_text_view_distance": "Custom Text View Distance",
 
   "tooltip.msd.model_count": "Number of models: %s",
   "tooltip.msd.can_change_model": "Right-click on a block with multiple models to switch its model"
