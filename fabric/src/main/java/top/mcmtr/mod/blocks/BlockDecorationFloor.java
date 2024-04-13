@@ -5,14 +5,14 @@ import org.mtr.mapping.holder.*;
 import org.mtr.mapping.mapper.BlockHelper;
 import org.mtr.mod.block.IBlock;
 
-public final class BlockSurveillanceCameras extends BlockChangeModelBase {
-    public BlockSurveillanceCameras() {
-        super(BlockHelper.createBlockSettings(true, blockState -> 5).nonOpaque(), 2);
+public final class BlockDecorationFloor extends BlockChangeModelBase {
+    public BlockDecorationFloor() {
+        super(BlockHelper.createBlockSettings(true), 1);
     }
 
     @NotNull
     @Override
     public VoxelShape getOutlineShape2(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        return IBlock.getVoxelShapeByDirection(6.5, 6.5, 0, 9.5, 16, 13, IBlock.getStatePropertySafe(state, FACING));
+        return IBlock.getVoxelShapeByDirection(0, 0, 0, 16, 16, 16, IBlock.getStatePropertySafe(state, FACING));
     }
 }

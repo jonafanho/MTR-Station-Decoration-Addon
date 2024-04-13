@@ -10,11 +10,11 @@ import javax.annotation.Nullable;
 import java.util.List;
 
 public abstract class BlockChangeModelBase extends BlockExtension implements DirectionHelper {
-    public static final IntegerProperty TYPE = IntegerProperty.of("type", 0, 6);
+    public static final IntegerProperty TYPE = IntegerProperty.of("type", 0, 5);
     private final int count;
 
     public BlockChangeModelBase(BlockSettings blockSettings, int maxModelNum) {
-        super(blockSettings.nonOpaque());
+        super(blockSettings);
         this.count = maxModelNum;
     }
 

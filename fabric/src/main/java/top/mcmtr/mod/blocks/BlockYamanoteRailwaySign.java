@@ -23,7 +23,7 @@ public final class BlockYamanoteRailwaySign extends BlockExtension implements IB
     public static final float SMALL_SIGN_PERCENTAGE = 0.75F;
 
     public BlockYamanoteRailwaySign(int length, boolean isOdd) {
-        super(BlockHelper.createBlockSettings(false, blockState -> 15).nonOpaque());
+        super(BlockHelper.createBlockSettings(true, blockState -> 15).nonOpaque());
         this.length = length;
         this.isOdd = isOdd;
     }

@@ -20,9 +20,22 @@
   "block.msd.surveillance_cameras": "监控摄像头",
   "block.msd.yuuni_pids_pole": "YUUNI乘客资讯显示器延长杆",
   "block.msd.yamanote_railway_sign_pole": "山手线风格乘客资讯显示器延长杆",
-  "block.msd.yuuni_standing_sign": "Yuuni方向立牌",
-  "block.msd.yuuni_standing_sign_1": "Yuuni方向立牌(风格2)",
+  "block.msd.yuuni_standing_sign": "YUUNI方向立牌",
+  "block.msd.yuuni_standing_sign_1": "YUUNI方向立牌(风格2)",
   "block.msd.yuuni_standing_sign_pole": "YUUNI方向立牌柱",
+  "block.msd.yuuni_ticket": "YUUNI售票机",
+  "block.msd.hall_seat_middle": "大厅座椅",
+  "block.msd.decoration_book":  "装饰书本",
+  "block.msd.decoration_ceiling": "天花板",
+  "block.msd.decoration_ceiling_light":  "天花板(带灯)",
+  "block.msd.decoration_floor": "地板",
+  "block.msd.decoration_pc":  "电脑",
+  "block.msd.decoration_stair": "楼梯",
+  "block.msd.display_board_horizontal":  "展示板(横向)",
+  "block.msd.display_board_vertically": "展示板(纵向)",
+  "block.msd.railing_stair":  "楼梯栏杆",
+  "block.msd.railing_stair_mirror": "楼梯栏杆(镜像)",
+
 
   "gui.msd.catenary_offset": "接触网坐标调整",
   "gui.msd.shift_modify_offset": "按住Shift调整接触网坐标",
@@ -36,5 +49,6 @@
   "options.msd.catenary_offset_y": "Y",
   "options.msd.catenary_offset_z": "Z",
 
-  "tooltip.msd.model_count": "模型数量: %s"
+  "tooltip.msd.model_count": "模型数量: %s",
+  "tooltip.msd.can_change_model": "右键单击具有多个模型的方块可以切换模型"
 }

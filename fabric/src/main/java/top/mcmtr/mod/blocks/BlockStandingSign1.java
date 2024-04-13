@@ -9,7 +9,7 @@ import top.mcmtr.mod.BlockEntityTypes;
 
 public final class BlockStandingSign1 extends BlockCustomTextBase {
     public BlockStandingSign1() {
-        super(BlockHelper.createBlockSettings(true, blockState -> 8), 1, 2);
+        super(BlockHelper.createBlockSettings(true, blockState -> 8).nonOpaque(), 1, 2);
     }
 
     @NotNull

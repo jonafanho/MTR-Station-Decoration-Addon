@@ -1,8 +1,12 @@
 package top.mcmtr.mod.items;
 
+import org.jetbrains.annotations.Nullable;
 import org.mtr.mapping.holder.*;
 import org.mtr.mapping.mapper.ItemExtension;
+import org.mtr.mapping.mapper.TextHelper;
 import top.mcmtr.mod.blocks.BlockChangeModelBase;
+
+import java.util.List;
 
 public class ItemModelChangeStick extends ItemExtension {
     public ItemModelChangeStick(ItemSettings itemSettings) {
@@ -23,5 +27,10 @@ public class ItemModelChangeStick extends ItemExtension {
             }
         }
         return ActionResult.FAIL;
+    }
+
+    @Override
+    public void addTooltips(ItemStack stack, @Nullable World world, List<MutableText> tooltip, TooltipContext options) {
+        tooltip.add(TextHelper.translatable("tooltip.msd.can_change_model").formatted(TextFormatting.GOLD));
     }
 }

@@ -23,6 +23,18 @@
   "block.msd.yuuni_standing_sign": "Yuuni方向立牌",
   "block.msd.yuuni_standing_sign_1": "Yuuni方向立牌(Style 2)",
   "block.msd.yuuni_standing_sign_pole": "YUUNI方向立牌柱",
+  "block.msd.yuuni_ticket": "YUUNI售票機",
+  "block.msd.hall_seat_middle": "大廳座椅",
+  "block.msd.decoration_book": "裝飾書本",
+  "block.msd.decoration_ceiling": "天花板",
+  "block.msd.decoration_ceiling_light": "天花板(帶燈)",
+  "block.msd.decoration_floor": "地板",
+  "block.msd.decoration_pc": "電腦",
+  "block.msd.decoration_stair": "樓梯",
+  "block.msd.display_board_horizontal": "展示板(橫向)",
+  "block.msd.display_board_vertically": "展示板(縱向)",
+  "block.msd.railing_stair": "樓梯欄桿",
+  "block.msd.railing_stair_mirror": "樓梯欄桿(鏡像)",
 
   "gui.msd.catenary_offset": "接觸網座標調整",
   "gui.msd.shift_modify_offset": "按住Shift調整接觸網座標",
@@ -36,5 +48,6 @@
   "options.msd.catenary_offset_y": "Y",
   "options.msd.catenary_offset_z": "Z",
 
-  "tooltip.msd.model_count": "模型數量: %s"
+  "tooltip.msd.model_count": "模型數量: %s",
+  "tooltip.msd.can_change_model": "右鍵點選具有多個模型的方塊可以切換模型"
 }

@@ -23,6 +23,18 @@
   "block.msd.yuuni_standing_sign": "YUUNI Standing Sign",
   "block.msd.yuuni_standing_sign_1": "YUUNI Standing Sign 2",
   "block.msd.yuuni_standing_sign_pole": "YUUNI Standing Sign Pole",
+  "block.msd.yuuni_ticket": "YUUNI Ticket",
+  "block.msd.hall_seat_middle": "Hall Seat",
+  "block.msd.decoration_book":  "Decoration Book",
+  "block.msd.decoration_ceiling": "Ceiling",
+  "block.msd.decoration_ceiling_light":  "Ceiling(Light)",
+  "block.msd.decoration_floor": "Floor",
+  "block.msd.decoration_pc":  "PC",
+  "block.msd.decoration_stair": "Stair",
+  "block.msd.display_board_horizontal":  "Display Board(Horizontally)",
+  "block.msd.display_board_vertically": "Display Board(Vertically)",
+  "block.msd.railing_stair":  "Railing Stair",
+  "block.msd.railing_stair_mirror": "Railing Stair(Mirror)",
 
   "gui.msd.catenary_offset": "Catenary coordinate offset",
   "gui.msd.shift_modify_offset": "Hold down Shift to adjust the catenary",
@@ -36,5 +48,6 @@
   "options.msd.catenary_offset_y": "Y",
   "options.msd.catenary_offset_z": "Z",
 
-  "tooltip.msd.model_count": "Number of models: %s"
+  "tooltip.msd.model_count": "Number of models: %s",
+  "tooltip.msd.can_change_model": "Right-click on a block with multiple models to switch its model"
 }

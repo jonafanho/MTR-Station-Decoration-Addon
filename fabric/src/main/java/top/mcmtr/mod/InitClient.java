@@ -31,6 +31,16 @@ public class InitClient {
         REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getCutout(), Blocks.STANDING_SIGN);
         REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getCutout(), Blocks.STANDING_SIGN_1);
         REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getCutout(), Blocks.STANDING_SIGN_POLE);
+        REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getCutout(), Blocks.YUUNI_TICKET);
+        REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getCutout(), Blocks.HALL_SEAT);
+        REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getCutout(), Blocks.YUUNI_TICKET);
+        REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getCutout(), Blocks.HALL_SEAT);
+        REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getCutout(), Blocks.DECORATION_BOOK);
+        REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getCutout(), Blocks.DECORATION_CEILING);
+        REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getCutout(), Blocks.DECORATION_FLOOR);
+        REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getCutout(), Blocks.DECORATION_PC);
+        REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getCutout(), Blocks.DECORATION_STAIR);
+        REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getCutout(), Blocks.DISPLAY_BOARD_HORIZONTALLY);
 
         REGISTRY_CLIENT.registerItemModelPredicate(Items.CATENARY_CONNECTOR, new Identifier(Init.MOD_ID, "selected"), checkItemPredicateTag());
         REGISTRY_CLIENT.registerItemModelPredicate(Items.ELECTRIC_CONNECTOR, new Identifier(Init.MOD_ID, "selected"), checkItemPredicateTag());
