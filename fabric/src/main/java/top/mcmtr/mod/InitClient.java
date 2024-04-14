@@ -19,7 +19,6 @@ public class InitClient {
     private static long lastMillis = 0;
     private static long gameMillis = 0;
     private static long lastUpdatePacketMillis = 0;
-    private static long lastDataCleanMillis = 0;
     public static final RegistryClient REGISTRY_CLIENT = new RegistryClient(Init.REGISTRY);
 
     public static void init() {
@@ -38,10 +37,14 @@ public class InitClient {
         REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getCutout(), Blocks.HALL_SEAT);
         REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getCutout(), Blocks.DECORATION_BOOK);
         REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getCutout(), Blocks.DECORATION_CEILING);
+        REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getCutout(), Blocks.DECORATION_CEILING_LIGHT);
         REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getCutout(), Blocks.DECORATION_FLOOR);
         REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getCutout(), Blocks.DECORATION_PC);
         REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getCutout(), Blocks.DECORATION_STAIR);
         REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getCutout(), Blocks.DISPLAY_BOARD_HORIZONTALLY);
+        REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getCutout(), Blocks.DISPLAY_BOARD_VERTICALLY);
+        REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getCutout(), Blocks.RAILING_STAIR);
+        REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getCutout(), Blocks.RAILING_STAIR_MIRROR);
 
         REGISTRY_CLIENT.registerItemModelPredicate(Items.CATENARY_CONNECTOR, new Identifier(Init.MOD_ID, "selected"), checkItemPredicateTag());
         REGISTRY_CLIENT.registerItemModelPredicate(Items.ELECTRIC_CONNECTOR, new Identifier(Init.MOD_ID, "selected"), checkItemPredicateTag());
@@ -89,12 +92,6 @@ public class InitClient {
                 dataRequest.writeExistingIds(MSDMinecraftClientData.getInstance());
                 InitClient.REGISTRY_CLIENT.sendPacketToServer(new MSDPacketRequestData(dataRequest));
                 lastUpdatePacketMillis = -1;
-                lastDataCleanMillis = getGameMillis();
-            }
-
-            if (lastDataCleanMillis >= 0 && getGameMillis() - lastDataCleanMillis > 2000) {
-                MSDMinecraftClientData.getInstance().clean();
-                lastDataCleanMillis = -1;
             }
         });
 
@@ -106,10 +103,6 @@ public class InitClient {
 
         Config.refreshProperties();
         REGISTRY_CLIENT.init();
-    }
-
-    public static float getGameTick() {
-        return gameMillis / 50F;
     }
 
     public static long getGameMillis() {

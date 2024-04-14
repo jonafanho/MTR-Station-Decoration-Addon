@@ -130,10 +130,10 @@ public class Init implements Utilities {
         for (int i = Math.max(1025, startingPort); i <= 65535; i++) {
             try (final ServerSocket serverSocket = new ServerSocket(i)) {
                 final int port = serverSocket.getLocalPort();
-                MSD_LOGGER.info("MSD Found available server port: " + port);
+                MSD_LOGGER.info("MSD Found available server port: {}", port);
                 return port;
             } catch (Exception ignored) {
-                MSD_LOGGER.info("port: " + i + "is used, ignore.");
+                MSD_LOGGER.info("port: {} is used, ignore.", i);
             }
         }
         return 0;

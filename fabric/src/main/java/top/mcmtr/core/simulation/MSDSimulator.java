@@ -34,7 +34,7 @@ public class MSDSimulator extends MSDData implements Utilities {
         this.fileLoaderRigidCatenaries = new FileLoader<>(rigidCatenaries, RigidCatenary::new, savePath, KEY_RIGID_CATENARIES);
 
         final long endMillis = System.currentTimeMillis();
-        MSDMain.MSD_CORE_LOG.info(String.format("MSD Data loading complete for %s in %s second(s)", dimension, (float) (endMillis - startMillis) / MILLIS_PER_SECOND));
+        MSDMain.MSD_CORE_LOG.info("MSD Data loading complete for {} in {} second(s)", dimension, (float) (endMillis - startMillis) / MILLIS_PER_SECOND);
         sync();
     }
 
@@ -73,16 +73,16 @@ public class MSDSimulator extends MSDData implements Utilities {
         final long startMillis = System.currentTimeMillis();
         save(fileLoaderCatenaries, useReducedHash);
         save(fileLoaderRigidCatenaries, useReducedHash);
-        MSDMain.MSD_CORE_LOG.info(String.format("MSD Save complete for %s in %s second(s)", dimension, (System.currentTimeMillis() - startMillis) / 1000F));
+        MSDMain.MSD_CORE_LOG.info("MSD Save complete for {} in {} second(s)", dimension, (System.currentTimeMillis() - startMillis) / 1000F);
     }
 
     private <T extends SerializedDataBaseWithId> void save(FileLoader<T> fileLoader, boolean useReducedHash) {
         final IntIntImmutablePair saveCounts = fileLoader.save(useReducedHash);
         if (saveCounts.leftInt() > 0) {
-            MSDMain.MSD_CORE_LOG.info(String.format("- MSD Changed %s: %s", fileLoader.key, saveCounts.leftInt()));
+            MSDMain.MSD_CORE_LOG.info("- MSD Changed {}: {}", fileLoader.key, saveCounts.leftInt());
         }
         if (saveCounts.rightInt() > 0) {
-            MSDMain.MSD_CORE_LOG.info(String.format("- MSD Deleted %s: %s", fileLoader.key, saveCounts.rightInt()));
+            MSDMain.MSD_CORE_LOG.info("- MSD Deleted {}: {}", fileLoader.key, saveCounts.rightInt());
         }
     }
 }

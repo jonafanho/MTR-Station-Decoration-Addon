@@ -41,7 +41,7 @@ public class MSDMain {
 
         scheduledExecutorService = Executors.newScheduledThreadPool(simulators.size());
         simulators.forEach(simulator -> scheduledExecutorService.scheduleAtFixedRate(simulator::tick, 0, MILLISECONDS_PER_TICK, TimeUnit.MILLISECONDS));
-        MSD_CORE_LOG.info("MSD server started with dimensions " + Arrays.toString(dimensions));
+        MSD_CORE_LOG.info("MSD server started with dimensions {}", Arrays.toString(dimensions));
     }
 
     public void save() {
