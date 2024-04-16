@@ -35,6 +35,8 @@
   "block.msd.display_board_vertically": "Display Board(Vertically)",
   "block.msd.railing_stair":  "Railing Stair",
   "block.msd.railing_stair_mirror": "Railing Stair(Mirror)",
+  "block.msd.railing_stair_glass": "Railing Stair(Glass)",
+  "block.msd.railing_stair_glass_mirror": "Railing Stair(Glass & Mirror)",
 
   "gui.msd.catenary_offset": "Catenary coordinate offset",
   "gui.msd.shift_modify_offset": "Hold down Shift to adjust the catenary",

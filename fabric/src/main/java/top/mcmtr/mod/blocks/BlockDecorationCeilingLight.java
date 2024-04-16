@@ -7,7 +7,7 @@ import org.mtr.mod.block.IBlock;
 
 public final class BlockDecorationCeilingLight extends BlockChangeModelBase {
     public BlockDecorationCeilingLight() {
-        super(BlockHelper.createBlockSettings(true, blockState -> 15), 1);
+        super(BlockHelper.createBlockSettings(true, blockState -> 15).nonOpaque(), 1);
     }
 
     @NotNull

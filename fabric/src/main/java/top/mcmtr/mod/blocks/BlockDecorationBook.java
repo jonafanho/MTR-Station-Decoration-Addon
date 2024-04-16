@@ -7,7 +7,7 @@ import org.mtr.mod.block.IBlock;
 
 public final class BlockDecorationBook extends BlockChangeModelBase {
     public BlockDecorationBook() {
-        super(BlockHelper.createBlockSettings(true, blockState -> 2).nonOpaque(), 2);
+        super(BlockHelper.createBlockSettings(true, blockState -> 2), 2);
     }
 
     @NotNull

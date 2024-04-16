@@ -15,6 +15,22 @@
     "facing=west,type=0": {
       "model": "msd:block/stair_connection",
       "y": 270
+    },
+    "facing=north,type=1": {
+      "model": "msd:block/stair_bottom",
+      "y": 0
+    },
+    "facing=east,type=1": {
+      "model": "msd:block/stair_bottom",
+      "y": 90
+    },
+    "facing=south,type=1": {
+      "model": "msd:block/stair_bottom",
+      "y": 180
+    },
+    "facing=west,type=1": {
+      "model": "msd:block/stair_bottom",
+      "y": 270
     }
   }
 }

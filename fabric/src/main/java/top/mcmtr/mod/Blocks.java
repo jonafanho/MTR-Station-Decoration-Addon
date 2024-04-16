@@ -49,6 +49,8 @@ public class Blocks {
         DISPLAY_BOARD_VERTICALLY = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "display_board_vertically"), () -> new Block(new BlockDisplayBoardVertically()), CreativeModeTabs.STATION);
         RAILING_STAIR = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "railing_stair"), () -> new Block(new BlockRailingStair()), CreativeModeTabs.STATION);
         RAILING_STAIR_MIRROR = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "railing_stair_mirror"), () -> new Block(new BlockRailingStair()), CreativeModeTabs.STATION);
+        RAILING_STAIR_GLASS = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "railing_stair_glass"), ()-> new Block(new BlockRailingStair()), CreativeModeTabs.STATION);
+        RAILING_STAIR_GLASS_MIRROR = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "railing_stair_glass_mirror"), ()-> new Block(new BlockRailingStair()), CreativeModeTabs.STATION);
 
         ELECTRIC_NODE = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "electric_node"), () -> new Block(new BlockCatenaryNode()));
         YAMANOTE_RAILWAY_SIGN_MIDDLE = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "yamanote_railway_sign_middle"), () -> new Block(new BlockYamanoteRailwaySign(0, false)));
@@ -94,6 +96,8 @@ public class Blocks {
     public static final BlockRegistryObject DISPLAY_BOARD_VERTICALLY;
     public static final BlockRegistryObject RAILING_STAIR;
     public static final BlockRegistryObject RAILING_STAIR_MIRROR;
+    public static final BlockRegistryObject RAILING_STAIR_GLASS;
+    public static final BlockRegistryObject RAILING_STAIR_GLASS_MIRROR;
 
     public static void init() {
         Init.MSD_LOGGER.info("Registering MTR Station Decoration blocks");

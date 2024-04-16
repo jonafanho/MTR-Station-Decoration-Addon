@@ -7,7 +7,7 @@ import org.mtr.mod.block.IBlock;
 
 public final class BlockSurveillanceCameras extends BlockChangeModelBase {
     public BlockSurveillanceCameras() {
-        super(BlockHelper.createBlockSettings(true, blockState -> 5).nonOpaque(), 2);
+        super(BlockHelper.createBlockSettings(true, blockState -> 5), 2);
     }
 
     @NotNull

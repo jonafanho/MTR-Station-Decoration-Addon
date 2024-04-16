@@ -14,7 +14,7 @@ public abstract class BlockCustomTextBase extends BlockChangeModelBase implement
     private final int maxArrivals;
 
     public BlockCustomTextBase(BlockSettings blockSettings, int maxArrivals, int maxModelNum) {
-        super(blockSettings.nonOpaque(), maxModelNum);
+        super(blockSettings, maxModelNum);
         this.maxArrivals = maxArrivals;
     }
 

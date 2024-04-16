@@ -7,7 +7,7 @@ import org.mtr.mod.block.IBlock;
 
 public final class BlockHallSeat extends BlockChangeModelBase{
     public BlockHallSeat() {
-        super(BlockHelper.createBlockSettings(false).nonOpaque(), 3);
+        super(BlockHelper.createBlockSettings(false), 3);
     }
 
     @NotNull

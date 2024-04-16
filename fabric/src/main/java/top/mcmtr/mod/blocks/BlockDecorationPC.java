@@ -8,7 +8,7 @@ import org.mtr.mod.block.IBlock;
 public final class BlockDecorationPC extends BlockChangeModelBase {
 
     public BlockDecorationPC() {
-        super(BlockHelper.createBlockSettings(true).nonOpaque(), 1);
+        super(BlockHelper.createBlockSettings(true), 1);
     }
 
     @NotNull

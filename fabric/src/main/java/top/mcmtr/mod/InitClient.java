@@ -38,13 +38,14 @@ public class InitClient {
         REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getCutout(), Blocks.DECORATION_BOOK);
         REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getCutout(), Blocks.DECORATION_CEILING);
         REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getCutout(), Blocks.DECORATION_CEILING_LIGHT);
-        REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getCutout(), Blocks.DECORATION_FLOOR);
         REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getCutout(), Blocks.DECORATION_PC);
         REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getCutout(), Blocks.DECORATION_STAIR);
         REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getCutout(), Blocks.DISPLAY_BOARD_HORIZONTALLY);
         REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getCutout(), Blocks.DISPLAY_BOARD_VERTICALLY);
         REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getCutout(), Blocks.RAILING_STAIR);
         REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getCutout(), Blocks.RAILING_STAIR_MIRROR);
+        REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getTranslucent(), Blocks.RAILING_STAIR_GLASS);
+        REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getTranslucent(), Blocks.RAILING_STAIR_GLASS_MIRROR);
 
         REGISTRY_CLIENT.registerItemModelPredicate(Items.CATENARY_CONNECTOR, new Identifier(Init.MOD_ID, "selected"), checkItemPredicateTag());
         REGISTRY_CLIENT.registerItemModelPredicate(Items.ELECTRIC_CONNECTOR, new Identifier(Init.MOD_ID, "selected"), checkItemPredicateTag());

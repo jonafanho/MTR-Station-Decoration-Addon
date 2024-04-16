@@ -8,7 +8,7 @@ import org.mtr.mod.block.IBlock;
 public final class BlockDisplayBoardVertically extends BlockChangeModelBase {
 
     public BlockDisplayBoardVertically() {
-        super(BlockHelper.createBlockSettings(true, blockState -> 5).nonOpaque(), 6);
+        super(BlockHelper.createBlockSettings(true, blockState -> 5), 6);
     }
 
     @NotNull

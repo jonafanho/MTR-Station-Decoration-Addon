@@ -8,7 +8,7 @@ import org.mtr.mod.block.IBlock;
 public final class BlockStandingSignPole extends BlockChangeModelBase {
 
     public BlockStandingSignPole() {
-        super(BlockHelper.createBlockSettings(true).nonOpaque(), 2);
+        super(BlockHelper.createBlockSettings(true), 2);
     }
 
     @NotNull

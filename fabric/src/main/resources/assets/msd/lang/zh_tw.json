@@ -35,6 +35,8 @@
   "block.msd.display_board_vertically": "展示板(縱向)",
   "block.msd.railing_stair": "樓梯欄桿",
   "block.msd.railing_stair_mirror": "樓梯欄桿(鏡像)",
+  "block.msd.railing_stair_glass": "樓梯欄桿(玻璃)",
+  "block.msd.railing_stair_glass_mirror": "樓梯欄桿(玻璃 & 鏡像)",
 
   "gui.msd.catenary_offset": "接觸網座標調整",
   "gui.msd.shift_modify_offset": "按住Shift調整接觸網座標",
