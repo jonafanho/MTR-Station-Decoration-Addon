@@ -10,6 +10,9 @@ final BuildTools buildTools = new BuildTools(minecraftVersion, "fabric", project
 loom {
     accessWidenerPath = file("src/main/resources/msd.accesswidener")
     runConfigs.configureEach { ideConfigGenerated = true }
+    mixin{
+        setDefaultRefmapName("msd.refmap.json")
+    }
 }
 
 dependencies {

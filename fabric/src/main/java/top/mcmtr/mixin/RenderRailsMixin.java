@@ -68,17 +68,15 @@ public abstract class RenderRailsMixin {
                     break;
                 case ELECTRIC:
                     RenderTrains.scheduleRender(RenderTrains.QueuedRenderLayer.LINES, (graphicsHolder, offset) ->
-                            catenary.catenaryMath.render((x1, y1, z1, x2, y2, z2, count, i, base, sinX, sinZ, increment) -> {
-                                graphicsHolder.drawLineInWorld(
-                                        (float) (x1 - offset.getXMapped()),
-                                        (float) (y1 - offset.getYMapped() + 0.5F),
-                                        (float) (z1 - offset.getZMapped()),
-                                        (float) (x2 - offset.getXMapped()),
-                                        (float) (y2 - offset.getYMapped() + 0.5F),
-                                        (float) (z2 - offset.getZMapped()),
-                                        0xFF000000
-                                );
-                            }));
+                            catenary.catenaryMath.render((x1, y1, z1, x2, y2, z2, count, i, base, sinX, sinZ, increment) -> graphicsHolder.drawLineInWorld(
+                                    (float) (x1 - offset.getXMapped()),
+                                    (float) (y1 - offset.getYMapped() + 0.5F),
+                                    (float) (z1 - offset.getZMapped()),
+                                    (float) (x2 - offset.getXMapped()),
+                                    (float) (y2 - offset.getYMapped() + 0.5F),
+                                    (float) (z2 - offset.getZMapped()),
+                                    0xFF000000
+                            )));
                     break;
                 case RIGID_SOFT_CATENARY:
                     renderRigidSoftCatenaryStandard(clientWorldMSD, catenary);
