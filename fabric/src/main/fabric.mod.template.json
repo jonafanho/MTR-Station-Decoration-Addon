@@ -32,6 +32,7 @@
 	],
 	"depends": {
 		"fabric": "*",
-		"minecraft": "@minecraft@"
+		"minecraft": "@minecraft@",
+		"mtr": "*"
 	}
 }
