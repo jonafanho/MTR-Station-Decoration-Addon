@@ -87,8 +87,9 @@ public class InitClient {
         EventRegistryClient.registerStartClientTick(() -> {
             incrementGameMillis();
             final ClientPlayerEntity clientPlayerEntity = MinecraftClient.getInstance().getPlayerMapped();
+            final Entity cameraEntity = MinecraftClient.getInstance().getCameraEntity();
 
-            if (clientPlayerEntity != null && lastUpdatePacketMillis >= 0 && getGameMillis() - lastUpdatePacketMillis > 500) {
+            if (clientPlayerEntity != null && cameraEntity != null && lastUpdatePacketMillis >= 0 && getGameMillis() - lastUpdatePacketMillis > 500) {
                 final MSDDataRequest dataRequest = new MSDDataRequest(clientPlayerEntity.getUuidAsString(), Init.blockPosToPosition(clientPlayerEntity.getBlockPos()), MinecraftClientHelper.getRenderDistance() * 16L);
                 dataRequest.writeExistingIds(MSDMinecraftClientData.getInstance());
                 InitClient.REGISTRY_CLIENT.sendPacketToServer(new MSDPacketRequestData(dataRequest));
