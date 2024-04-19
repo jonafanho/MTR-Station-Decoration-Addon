@@ -17,9 +17,6 @@ subprojects {
 
 	dependencies {
 		compileOnly "com.google.code.findbugs:jsr305:+"
-		compileOnly "xyz.jpenilla:squaremap-api:+"
-		compileOnly "net.kyori:adventure-api:+"
-		compileOnly "com.test:Dynmap:3.2.1"
 	}
 
 	shadowJar {
