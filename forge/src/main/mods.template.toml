@@ -23,10 +23,3 @@ mandatory = true
 versionRange = "[@minecraft@]"
 ordering = "NONE"
 side = "BOTH"
-
-[[dependencies.msd]]
-modId = "mtr"
-mandatory = true
-versionRange = ""
-ordering = "AFTER"
-side = "BOTH"
