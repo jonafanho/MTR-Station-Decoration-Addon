@@ -1,11 +1,11 @@
 package top.mcmtr.mod.items;
 
-import org.jetbrains.annotations.Nullable;
 import org.mtr.mapping.holder.*;
 import org.mtr.mapping.mapper.ItemExtension;
 import org.mtr.mapping.mapper.TextHelper;
 import top.mcmtr.mod.blocks.BlockChangeModelBase;
 
+import javax.annotation.Nullable;
 import java.util.List;
 
 public class ItemModelChangeStick extends ItemExtension {

@@ -1,6 +1,5 @@
 package top.mcmtr.mod.blocks;
 
-import org.jetbrains.annotations.NotNull;
 import org.mtr.mapping.holder.*;
 import org.mtr.mapping.mapper.BlockHelper;
 import org.mtr.mapping.tool.HolderBase;
@@ -18,7 +17,6 @@ public final class BlockYuuniTicket extends BlockDirectionalDoubleBlockBase {
         super(BlockHelper.createBlockSettings(true, blockState -> 5));
     }
 
-    @NotNull
     @Override
     public ActionResult onUse2(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         if (!world.isClient()) {
@@ -27,7 +25,6 @@ public final class BlockYuuniTicket extends BlockDirectionalDoubleBlockBase {
         return ActionResult.SUCCESS;
     }
 
-    @NotNull
     @Override
     public VoxelShape getOutlineShape2(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         final Direction facing = IBlock.getStatePropertySafe(state, FACING);

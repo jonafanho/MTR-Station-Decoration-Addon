@@ -1,6 +1,5 @@
 package top.mcmtr.mod.blocks;
 
-import org.jetbrains.annotations.NotNull;
 import org.mtr.mapping.holder.*;
 import org.mtr.mapping.mapper.BlockHelper;
 import org.mtr.mapping.mapper.TextHelper;
@@ -16,7 +15,6 @@ public final class BlockYuuniPIDSPole extends BlockPoleCheckBase {
         super(BlockHelper.createBlockSettings(true));
     }
 
-    @NotNull
     @Override
     public VoxelShape getOutlineShape2(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         final Direction facing = IBlock.getStatePropertySafe(state, FACING);

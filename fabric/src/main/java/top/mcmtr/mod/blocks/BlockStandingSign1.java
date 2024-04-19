@@ -1,6 +1,5 @@
 package top.mcmtr.mod.blocks;
 
-import org.jetbrains.annotations.NotNull;
 import org.mtr.mapping.holder.*;
 import org.mtr.mapping.mapper.BlockEntityExtension;
 import org.mtr.mapping.mapper.BlockHelper;
@@ -12,7 +11,6 @@ public final class BlockStandingSign1 extends BlockCustomTextBase {
         super(BlockHelper.createBlockSettings(true, blockState -> 8), 1, 2);
     }
 
-    @NotNull
     @Override
     public VoxelShape getOutlineShape2(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         return IBlock.getVoxelShapeByDirection(7.6, 4.5, -1, 8.4, 10.5, 17, IBlock.getStatePropertySafe(state, FACING));

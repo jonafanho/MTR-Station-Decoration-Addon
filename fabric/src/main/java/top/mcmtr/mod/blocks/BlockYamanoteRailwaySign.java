@@ -71,7 +71,7 @@ public final class BlockYamanoteRailwaySign extends BlockExtension implements IB
     }
 
     @Override
-    public void onPlaced2(World world, BlockPos pos, BlockState state, @org.jetbrains.annotations.Nullable LivingEntity placer, ItemStack itemStack) {
+    public void onPlaced2(World world, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack itemStack) {
         if (!world.isClient()) {
             final Direction facing = IBlock.getStatePropertySafe(state, FACING);
             for (int i = 1; i <= getMiddleLength(); i++) {
