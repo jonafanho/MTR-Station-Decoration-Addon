@@ -84,7 +84,7 @@ public class Init implements Utilities {
     }
 
     public static void sendHttpRequest(String endpoint, @Nullable World world, String content, @Nullable Consumer<String> consumer) {
-        REQUEST_HELPER.sendPostRequest(String.format(
+        REQUEST_HELPER.sendRequest(String.format(
                 "http://localhost:%s/msd/api/%s?%s",
                 serverPort,
                 endpoint,
