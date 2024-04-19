@@ -25,13 +25,15 @@ public class BuildTools {
     public final int javaLanguageVersion;
     private final Path path;
     private final String version;
+    private final String mtrVersion;
     private static final Logger LOGGER = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
-    public BuildTools(String minecraftVersion, String loader, Project project) throws IOException {
+    public BuildTools(String minecraftVersion, String loader, String mtrVersion, Project project) throws IOException {
         this.minecraftVersion = minecraftVersion;
         this.loader = loader;
-        path = project.getProjectDir().toPath();
-        version = project.getVersion().toString();
+        this.path = project.getProjectDir().toPath();
+        this.version = project.getVersion().toString();
+        this.mtrVersion = mtrVersion;
         int majorVersion = Integer.parseInt(minecraftVersion.split("\\.")[1]);
         javaLanguageVersion = majorVersion <= 16 ? 8 : majorVersion == 17 ? 16 : 17;
 
@@ -78,7 +80,7 @@ public class BuildTools {
     public void copyBuildFile() throws IOException {
         final Path directory = path.getParent().resolve("build/release");
         Files.createDirectories(directory);
-        Files.copy(path.resolve(String.format("build/libs/%s-%s%s.jar", loader, version, loader.equals("fabric") ? "" : "-all")), directory.resolve(String.format("MSD-%s-%s-%s.jar", loader, minecraftVersion, version)), StandardCopyOption.REPLACE_EXISTING);
+        Files.copy(path.resolve(String.format("build/libs/%s-%s%s.jar", loader, version, loader.equals("fabric") ? "" : "-all")), directory.resolve(String.format("MSD-%s-%s-%s-%s.jar", loader, minecraftVersion, mtrVersion, version)), StandardCopyOption.REPLACE_EXISTING);
     }
 
     private static JsonElement getJson(String url) {

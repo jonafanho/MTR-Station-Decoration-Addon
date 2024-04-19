@@ -5,7 +5,7 @@ plugins {
     id "fabric-loom" version "+"
 }
 
-final BuildTools buildTools = new BuildTools(minecraftVersion, "fabric", project)
+final BuildTools buildTools = new BuildTools(minecraftVersion, "fabric", mtrVersion, project)
 
 loom {
     accessWidenerPath = file("src/main/resources/msd.accesswidener")
@@ -43,7 +43,7 @@ tasks.register("setupFiles") {
         outputs.upToDateWhen { false }
         from "src/main/fabric.mod.template.json"
         into "src/main/resources"
-        filter(ReplaceTokens, tokens: ["minecraft": minecraftVersion, "version": minecraftVersion + "-" + version, "mtrVersion": mtrVersion])
+        filter(ReplaceTokens, tokens: ["minecraft": minecraftVersion, "version": version, "mtrVersion": mtrVersion])
         rename "(.+).template.json", "\$1.json"
     }
 }

@@ -6,7 +6,7 @@ plugins {
 	id "org.spongepowered.mixin" version "+"
 }
 
-final BuildTools buildTools = new BuildTools(minecraftVersion, "forge", project)
+final BuildTools buildTools = new BuildTools(minecraftVersion, "forge", mtrVersion, project)
 
 minecraft {
 	mappings channel: "official", version: minecraftVersion
@@ -48,7 +48,7 @@ tasks.register("setupFiles") {
 		outputs.upToDateWhen { false }
 		from "src/main/mods.template.toml"
 		into "src/main/resources/META-INF"
-		filter(ReplaceTokens, tokens: ["minecraft": minecraftVersion, "version": minecraftVersion + "-" + version, "mtrVersion": mtrVersion])
+		filter(ReplaceTokens, tokens: ["minecraft": minecraftVersion, "version": version, "mtrVersion": mtrVersion])
 		rename "(.+).template.toml", "\$1.toml"
 	}
 
