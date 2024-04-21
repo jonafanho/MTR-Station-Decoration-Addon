@@ -43,7 +43,7 @@ tasks.register("setupFiles") {
         outputs.upToDateWhen { false }
         from "src/main/fabric.mod.template.json"
         into "src/main/resources"
-        filter(ReplaceTokens, tokens: ["minecraft": minecraftVersion, "version": version, "mtrVersion": mtrVersion])
+        filter(ReplaceTokens, tokens: ["minecraft": minecraftVersion, "version": version, "mtrVersion": mtrVersion + "+" + minecraftVersion])
         rename "(.+).template.json", "\$1.json"
     }
 }
