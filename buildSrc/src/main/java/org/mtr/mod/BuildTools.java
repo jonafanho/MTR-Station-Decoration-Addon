@@ -110,6 +110,7 @@ public class BuildTools {
             case "1.16.5-fabric":
             case "1.17.1-fabric":
             case "1.18.2-fabric":
+            case "1.19.2-fabric":
             case "1.19.4-fabric":
             case "1.20.4-fabric":
                 content = "accessWidener v2 named";
@@ -117,6 +118,7 @@ public class BuildTools {
             case "1.16.5-forge":
             case "1.17.1-forge":
             case "1.18.2-forge":
+            case "1.19.2-forge":
             case "1.19.4-forge":
             case "1.20.4-forge":
                 content = "";
