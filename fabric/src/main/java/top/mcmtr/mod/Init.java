@@ -51,7 +51,7 @@ public class Init implements Utilities {
         REGISTRY.registerPacket(MSDPacketOpenCustomScreen.class, MSDPacketOpenCustomScreen::new);
         REGISTRY.registerPacket(MSDPacketUpdateCustomText.class, MSDPacketUpdateCustomText::new);
 
-        EventRegistry.registerServerStarted(minecraftServer -> {
+        REGISTRY.eventRegistry.registerServerStarted(minecraftServer -> {
             WORLD_ID_LIST.clear();
             MinecraftServerHelper.iterateWorlds(minecraftServer, serverWorld -> {
                 WORLD_ID_LIST.add(getWorldId(new World(serverWorld.data)));
@@ -65,13 +65,13 @@ public class Init implements Utilities {
             webserver.start();
         });
 
-        EventRegistry.registerPlayerDisconnect((minecraftServer, serverPlayerEntity) -> {
+        REGISTRY.eventRegistry.registerPlayerDisconnect((minecraftServer, serverPlayerEntity) -> {
             if (main != null) {
                 main.save();
             }
         });
 
-        EventRegistry.registerServerStopping(minecraftServer -> {
+        REGISTRY.eventRegistry.registerServerStopping(minecraftServer -> {
             if (main != null) {
                 main.stop();
             }

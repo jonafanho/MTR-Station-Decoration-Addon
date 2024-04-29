@@ -78,13 +78,13 @@ public class InitClient {
 
         REGISTRY_CLIENT.setupPackets(new Identifier(Init.MOD_ID, "packet"));
 
-        EventRegistryClient.registerClientJoin(() -> {
+        REGISTRY_CLIENT.eventRegistryClient.registerClientJoin(() -> {
             MSDMinecraftClientData.reset();
             lastMillis = System.currentTimeMillis();
             gameMillis = 0;
         });
 
-        EventRegistryClient.registerStartClientTick(() -> {
+        REGISTRY_CLIENT.eventRegistryClient.registerStartClientTick(() -> {
             incrementGameMillis();
             final ClientPlayerEntity clientPlayerEntity = MinecraftClient.getInstance().getPlayerMapped();
             final Entity cameraEntity = MinecraftClient.getInstance().getCameraEntity();
@@ -97,7 +97,7 @@ public class InitClient {
             }
         });
 
-        EventRegistryClient.registerChunkLoad((clientWorld, worldChunk) -> {
+        REGISTRY_CLIENT.eventRegistryClient.registerChunkLoad((clientWorld, worldChunk) -> {
             if (lastUpdatePacketMillis < 0) {
                 lastUpdatePacketMillis = getGameMillis();
             }
