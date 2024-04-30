@@ -35,10 +35,10 @@ public class ConfigScreen extends ScreenExtension implements IGui {
         IDrawing.setPositionAndWidth(sliderPIDSViewDistance, width - (SQUARE_SIZE * 10) - BUTTON_WIDTH, (SQUARE_SIZE + TEXT_FIELD_PADDING) * (i++) + SQUARE_SIZE, BUTTON_WIDTH - TEXT_PADDING - GraphicsHolder.getTextWidth("256") + (SQUARE_SIZE * 9));
         IDrawing.setPositionAndWidth(sliderRailwaySignViewDistance, width - (SQUARE_SIZE * 10) - BUTTON_WIDTH, (SQUARE_SIZE + TEXT_FIELD_PADDING) * (i++) + SQUARE_SIZE, BUTTON_WIDTH - TEXT_PADDING - GraphicsHolder.getTextWidth("256") + (SQUARE_SIZE * 9));
         IDrawing.setPositionAndWidth(sliderCustomTextViewDistance, width - (SQUARE_SIZE * 10) - BUTTON_WIDTH, (SQUARE_SIZE + TEXT_FIELD_PADDING) * i + SQUARE_SIZE, BUTTON_WIDTH - TEXT_PADDING - GraphicsHolder.getTextWidth("256") + (SQUARE_SIZE * 9));
-        this.sliderRigidCatenarySegmentLength.setHeight2(BUTTON_HEIGHT);
-        this.sliderPIDSViewDistance.setHeight2(BUTTON_HEIGHT);
-        this.sliderRailwaySignViewDistance.setHeight2(BUTTON_HEIGHT);
-        this.sliderCustomTextViewDistance.setHeight2(BUTTON_HEIGHT);
+        this.sliderRigidCatenarySegmentLength.setHeight(BUTTON_HEIGHT);
+        this.sliderPIDSViewDistance.setHeight(BUTTON_HEIGHT);
+        this.sliderRailwaySignViewDistance.setHeight(BUTTON_HEIGHT);
+        this.sliderCustomTextViewDistance.setHeight(BUTTON_HEIGHT);
         this.sliderRigidCatenarySegmentLength.setValue(Config.getRigidCatenarySegmentLength());
         this.sliderPIDSViewDistance.setValue(Config.getYuuniPIDSMaxViewDistance());
         this.sliderRailwaySignViewDistance.setValue(Config.getYamanoteRailwaySignMaxViewDistance());

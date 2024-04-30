@@ -34,7 +34,7 @@ public final class BlockRigidCatenaryNode extends BlockNodeBase {
     }
 
     @Override
-    public void onBreak3(World world, BlockPos pos, BlockState state, PlayerEntity player) {
+    public void onBreak2(World world, BlockPos pos, BlockState state, PlayerEntity player) {
         if (!world.isClient()) {
             MSDPacketDeleteData.sendDirectlyToServerCatenaryNodePosition(ServerWorld.cast(world), Init.blockPosToPosition(pos));
         }

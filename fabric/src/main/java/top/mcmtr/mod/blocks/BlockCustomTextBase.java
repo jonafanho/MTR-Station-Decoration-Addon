@@ -71,7 +71,7 @@ public abstract class BlockCustomTextBase extends BlockChangeModelBase implement
         }
 
         @Override
-        public double getRenderDistance3() {
+        public double getRenderDistance2() {
             return Config.getCustomTextSignMaxViewDistance();
         }
     }

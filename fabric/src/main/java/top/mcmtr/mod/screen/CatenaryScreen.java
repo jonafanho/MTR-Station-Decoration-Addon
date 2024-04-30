@@ -57,9 +57,9 @@ public class CatenaryScreen extends ScreenExtension implements IGui {
         IDrawing.setPositionAndWidth(sliderPositionX, width - (SQUARE_SIZE * 10) - BUTTON_WIDTH, (SQUARE_SIZE + TEXT_FIELD_PADDING) * (i++) + SQUARE_SIZE, BUTTON_WIDTH - TEXT_PADDING - GraphicsHolder.getTextWidth("-8") + (SQUARE_SIZE * 9));
         IDrawing.setPositionAndWidth(sliderPositionY, width - (SQUARE_SIZE * 10) - BUTTON_WIDTH, (SQUARE_SIZE + TEXT_FIELD_PADDING) * (i++) + SQUARE_SIZE, BUTTON_WIDTH - TEXT_PADDING - GraphicsHolder.getTextWidth("-8") + (SQUARE_SIZE * 9));
         IDrawing.setPositionAndWidth(sliderPositionZ, width - (SQUARE_SIZE * 10) - BUTTON_WIDTH, (SQUARE_SIZE + TEXT_FIELD_PADDING) * i + SQUARE_SIZE, BUTTON_WIDTH - TEXT_PADDING - GraphicsHolder.getTextWidth("-8") + (SQUARE_SIZE * 9));
-        sliderPositionX.setHeight2(BUTTON_HEIGHT);
-        sliderPositionY.setHeight2(BUTTON_HEIGHT);
-        sliderPositionZ.setHeight2(BUTTON_HEIGHT);
+        sliderPositionX.setHeight(BUTTON_HEIGHT);
+        sliderPositionY.setHeight(BUTTON_HEIGHT);
+        sliderPositionZ.setHeight(BUTTON_HEIGHT);
         sliderPositionX.setValue((int) (offsetPosition.getX() * 16 + 8));
         sliderPositionY.setValue((int) (offsetPosition.getY() * 16 + 8));
         sliderPositionZ.setValue((int) (offsetPosition.getZ() * 16 + 8));

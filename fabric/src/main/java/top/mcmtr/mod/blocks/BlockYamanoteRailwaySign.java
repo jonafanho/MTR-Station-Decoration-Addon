@@ -61,13 +61,13 @@ public final class BlockYamanoteRailwaySign extends BlockExtension implements IB
     }
 
     @Override
-    public void onBreak3(World world, BlockPos pos, BlockState state, PlayerEntity player) {
+    public void onBreak2(World world, BlockPos pos, BlockState state, PlayerEntity player) {
         final Direction facing = IBlock.getStatePropertySafe(state, FACING);
         final BlockPos checkPos = findEndWithDirection(world, pos, facing, true);
         if (checkPos != null) {
             IBlock.onBreakCreative(world, player, checkPos);
         }
-        super.onBreak3(world, pos, state, player);
+        super.onBreak2(world, pos, state, player);
     }
 
     @Override
@@ -223,7 +223,7 @@ public final class BlockYamanoteRailwaySign extends BlockExtension implements IB
         }
 
         @Override
-        public double getRenderDistance3() {
+        public double getRenderDistance2() {
             return Config.getYamanoteRailwaySignMaxViewDistance();
         }
     }

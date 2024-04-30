@@ -192,9 +192,9 @@ public class YamanoteRailwaySignScreen extends ScreenExtension implements IGui {
     }
 
     @Override
-    public boolean mouseScrolled3(double mouseX, double mouseY, double amount) {
+    public boolean mouseScrolled2(double mouseX, double mouseY, double amount) {
         setPage(page + (int) Math.signum(-amount));
-        return super.mouseScrolled3(mouseX, mouseY, amount);
+        return super.mouseScrolled2(mouseX, mouseY, amount);
     }
 
     @Override

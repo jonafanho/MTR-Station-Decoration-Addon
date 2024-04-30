@@ -79,7 +79,7 @@ public final class BlockYamanotePIDS extends BlockPIDSHorizontalBase {
         }
 
         @Override
-        public double getRenderDistance3() {
+        public double getRenderDistance2() {
             return Config.getYuuniPIDSMaxViewDistance();
         }
     }
