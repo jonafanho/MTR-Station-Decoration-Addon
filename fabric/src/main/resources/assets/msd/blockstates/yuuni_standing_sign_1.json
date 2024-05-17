@@ -29,6 +29,66 @@
     "facing=west,type=1": {
       "model": "msd:block/yuuni_sign_1_east_west_en",
       "y": 270
+    },
+    "facing=north,type=2": {
+      "model": "msd:block/yuuni_sign_1_en"
+    },
+    "facing=east,type=2": {
+      "model": "msd:block/yuuni_sign_1_east_west_en",
+      "y": 270
+    },
+    "facing=south,type=2": {
+      "model": "msd:block/yuuni_sign_1_en",
+      "y": 0
+    },
+    "facing=west,type=2": {
+      "model": "msd:block/yuuni_sign_1_east_west_en",
+      "y": 270
+    },
+    "facing=north,type=3": {
+      "model": "msd:block/yuuni_sign_1_en"
+    },
+    "facing=east,type=3": {
+      "model": "msd:block/yuuni_sign_1_east_west_en",
+      "y": 270
+    },
+    "facing=south,type=3": {
+      "model": "msd:block/yuuni_sign_1_en",
+      "y": 0
+    },
+    "facing=west,type=3": {
+      "model": "msd:block/yuuni_sign_1_east_west_en",
+      "y": 270
+    },
+    "facing=north,type=4": {
+      "model": "msd:block/yuuni_sign_1_en"
+    },
+    "facing=east,type=4": {
+      "model": "msd:block/yuuni_sign_1_east_west_en",
+      "y": 270
+    },
+    "facing=south,type=4": {
+      "model": "msd:block/yuuni_sign_1_en",
+      "y": 0
+    },
+    "facing=west,type=4": {
+      "model": "msd:block/yuuni_sign_1_east_west_en",
+      "y": 270
+    },
+    "facing=north,type=5": {
+      "model": "msd:block/yuuni_sign_1_en"
+    },
+    "facing=east,type=5": {
+      "model": "msd:block/yuuni_sign_1_east_west_en",
+      "y": 270
+    },
+    "facing=south,type=5": {
+      "model": "msd:block/yuuni_sign_1_en",
+      "y": 0
+    },
+    "facing=west,type=5": {
+      "model": "msd:block/yuuni_sign_1_east_west_en",
+      "y": 270
     }
   }
 }

@@ -8,7 +8,6 @@
   "item.msd.rigid_soft_catenary_connector": "接触网连接器(刚柔过渡)",
   "item.msd.catenary_remover": "接触网移除器",
   "item.msd.rigid_catenary_remover": "刚性接触网移除器",
-  "item.msd.rigid_catenary_shape_modifier": "刚性接触网形状调整器",
   "item.msd.model_change_stick": "模型切换棒",
 
   "block.msd.catenary_node": "接触网节点",

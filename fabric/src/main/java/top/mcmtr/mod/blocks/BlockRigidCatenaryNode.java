@@ -4,9 +4,13 @@ import org.mtr.core.tool.Angle;
 import org.mtr.mapping.holder.*;
 import org.mtr.mapping.mapper.BlockEntityExtension;
 import org.mtr.mapping.tool.HolderBase;
+import org.mtr.mod.Items;
 import org.mtr.mod.block.IBlock;
+import top.mcmtr.core.data.RigidCatenary;
 import top.mcmtr.mod.BlockEntityTypes;
 import top.mcmtr.mod.Init;
+import top.mcmtr.mod.client.MSDMinecraftClientData;
+import top.mcmtr.mod.packet.MSDClientPacketHelper;
 import top.mcmtr.mod.packet.MSDPacketDeleteData;
 
 import java.util.List;
@@ -17,6 +21,21 @@ public final class BlockRigidCatenaryNode extends BlockNodeBase {
     public static final BooleanProperty IS_45 = BooleanProperty.of("is_45");
 
     public BlockRigidCatenaryNode() {
+    }
+
+    @Override
+    public ActionResult onUse2(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
+        if (world.isClient() && player.isHolding(Items.BRUSH.get())) {
+            final RigidCatenary rigidCatenary = MSDMinecraftClientData.getInstance().getFacingRigidCatenary(pos);
+            if (rigidCatenary == null) {
+                return ActionResult.FAIL;
+            } else {
+                MSDClientPacketHelper.openRigidCatenaryShapeModifierScreen(rigidCatenary.getHexId());
+                return ActionResult.SUCCESS;
+            }
+        } else {
+            return ActionResult.FAIL;
+        }
     }
 
     @Override

@@ -13,8 +13,7 @@
       "y": 270
     },
     "facing=west,type=0": {
-      "model": "msd:block/railing_stair_flat",
-      "y": 0
+      "model": "msd:block/railing_stair_flat"
     },
     "facing=north,type=1": {
       "model": "msd:block/railing_stair_start_mirror",
@@ -29,8 +28,7 @@
       "y": 270
     },
     "facing=west,type=1": {
-      "model": "msd:block/railing_stair_start_mirror",
-      "y": 0
+      "model": "msd:block/railing_stair_start_mirror"
     },
     "facing=north,type=2": {
       "model": "msd:block/railing_stair_mirror",
@@ -45,8 +43,7 @@
       "y": 270
     },
     "facing=west,type=2": {
-      "model": "msd:block/railing_stair_mirror",
-      "y": 0
+      "model": "msd:block/railing_stair_mirror"
     },
     "facing=north,type=3": {
       "model": "msd:block/railing_stair_end_mirror",
@@ -61,8 +58,37 @@
       "y": 270
     },
     "facing=west,type=3": {
+      "model": "msd:block/railing_stair_end_mirror"
+    },
+    "facing=north,type=4": {
       "model": "msd:block/railing_stair_end_mirror",
-      "y": 0
+      "y": 90
+    },
+    "facing=east,type=4": {
+      "model": "msd:block/railing_stair_end_mirror",
+      "y": 180
+    },
+    "facing=south,type=4": {
+      "model": "msd:block/railing_stair_end_mirror",
+      "y": 270
+    },
+    "facing=west,type=4": {
+      "model": "msd:block/railing_stair_end_mirror"
+    },
+    "facing=north,type=5": {
+      "model": "msd:block/railing_stair_end_mirror",
+      "y": 90
+    },
+    "facing=east,type=5": {
+      "model": "msd:block/railing_stair_end_mirror",
+      "y": 180
+    },
+    "facing=south,type=5": {
+      "model": "msd:block/railing_stair_end_mirror",
+      "y": 270
+    },
+    "facing=west,type=5": {
+      "model": "msd:block/railing_stair_end_mirror"
     }
   }
 }

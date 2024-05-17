@@ -8,7 +8,6 @@
   "item.msd.rigid_soft_catenary_connector": "接觸網連接器(剛柔過渡)",
   "item.msd.catenary_remover": "接觸網移除器",
   "item.msd.rigid_catenary_remover": "剛性接觸網移除器",
-  "item.msd.rigid_catenary_shape_modifier": "剛性接觸網形狀調整器",
   "item.msd.model_change_stick": "模型切換棒",
 
   "block.msd.catenary_node": "接觸網節點",
@@ -56,5 +55,5 @@
   "options.msd.custom_text_view_distance": "自訂文字標誌最大可視距離",
 
   "tooltip.msd.model_count": "模型數量: %s",
-  "tooltip.msd.can_change_model": "右鍵點選具有多個模型的方塊可以切換模型"
+  "tooltip.msd.can_change_model": "右鍵點選具有多個模型的方塊可以切換模型",
 }
