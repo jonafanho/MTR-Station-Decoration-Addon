@@ -5,17 +5,77 @@ import org.mtr.core.simulation.FileLoader;
 import org.mtr.core.tool.Angle;
 import org.mtr.libraries.it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import org.mtr.libraries.it.unimi.dsi.fastutil.objects.ObjectArraySet;
+import top.mcmtr.core.MSDMain;
 import top.mcmtr.core.data.Catenary;
 import top.mcmtr.core.data.CatenaryType;
 import top.mcmtr.core.data.OffsetPosition;
 import top.mcmtr.core.data.RigidCatenary;
 
+import java.io.IOException;
+import java.nio.file.FileVisitResult;
+import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.SimpleFileVisitor;
+import java.nio.file.attribute.BasicFileAttributes;
+import java.util.Objects;
 import java.util.UUID;
 
 public final class LegacyCatenaryLoader {
     private static final String KEY_CATENARIES = "catenaries";
     private static final String KEY_RIGID_CATENARIES = "rigid_catenaries";
+    private static final String KEY_TRANS_CATENARIES = "trans_catenaries";
+
+    public static void loadTransCatenary(Path savePath, ObjectArraySet<Catenary> catenaries) {
+        final ObjectArraySet<LegacyTransCatenaryNode> legacyTransCatenaryNodes = new ObjectArraySet<>();
+        new FileLoader<>(legacyTransCatenaryNodes, LegacyTransCatenaryNode::new, savePath, KEY_TRANS_CATENARIES);
+
+        final Object2ObjectOpenHashMap<UUID, TransCatenaryNodeConnection.CatenaryType> transCatenaryCache = new Object2ObjectOpenHashMap<>();
+        legacyTransCatenaryNodes.forEach(legacyTransCatenaryNode -> {
+            final Position startPosition = legacyTransCatenaryNode.getStartPosition();
+            final long startPositionLong = legacyTransCatenaryNode.getStartPositionLong();
+            legacyTransCatenaryNode.iterateConnections(transCatenaryNodeConnection -> {
+                final TransCatenaryNodeConnection.CatenaryType catenaryType = transCatenaryNodeConnection.getCatenaryType();
+                final Position endPosition = transCatenaryNodeConnection.getEndPoint();
+                final long endPositionLong = transCatenaryNodeConnection.getEndPointLong();
+                final UUID uuid = getUuid(startPositionLong, endPositionLong);
+                final TransCatenaryNodeConnection.CatenaryType oldCatenaryType = transCatenaryCache.get(uuid);
+                if (oldCatenaryType != null) {
+                    final Catenary catenary;
+                    final OffsetPosition startOffsetPosition = new OffsetPosition(transCatenaryNodeConnection.getTransXStart() - startPosition.getX(), transCatenaryNodeConnection.getTransYStart() - startPosition.getY(), transCatenaryNodeConnection.getTransZStart() - startPosition.getZ());
+                    final OffsetPosition endOffsetPosition = new OffsetPosition(transCatenaryNodeConnection.getTransXEnd() - endPosition.getX(), transCatenaryNodeConnection.getTransYEnd() - endPosition.getY(), transCatenaryNodeConnection.getTransZEnd() - endPosition.getZ());
+                    if (Objects.requireNonNull(catenaryType) == TransCatenaryNodeConnection.CatenaryType.TRANS_CATENARY) {
+                        catenary = new Catenary(startPosition, endPosition, startOffsetPosition, endOffsetPosition, CatenaryType.CATENARY);
+                    } else {
+                        catenary = new Catenary(startPosition, endPosition, startOffsetPosition, endOffsetPosition, CatenaryType.ELECTRIC);
+                    }
+                    catenaries.add(catenary);
+                } else {
+                    transCatenaryCache.put(uuid, catenaryType);
+                }
+            });
+        });
+        Path transCatenarySavePath = savePath.resolve(KEY_TRANS_CATENARIES);
+        if (Files.exists(transCatenarySavePath)) {
+            try {
+                Files.walkFileTree(transCatenarySavePath, new SimpleFileVisitor<Path>() {
+                    @Override
+                    public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
+                        Files.delete(file);
+                        return FileVisitResult.CONTINUE;
+                    }
+
+                    @Override
+                    public FileVisitResult postVisitDirectory(Path dir, IOException exc) throws IOException {
+                        Files.delete(dir);
+                        return FileVisitResult.CONTINUE;
+                    }
+                });
+                Files.deleteIfExists(transCatenarySavePath);
+            } catch (IOException e) {
+                MSDMain.MSD_CORE_LOG.error("TransCatenary files delete fail,ignored");
+            }
+        }
+    }
 
     public static void loadCatenary(Path savePath, ObjectArraySet<Catenary> catenaries) {
         final ObjectArraySet<LegacyCatenaryNode> legacyCatenaryNodes = new ObjectArraySet<>();

@@ -49,16 +49,24 @@ public class Blocks {
         DISPLAY_BOARD_VERTICALLY = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "display_board_vertically"), () -> new Block(new BlockDisplayBoardVertically()), CreativeModeTabs.STATION);
         RAILING_STAIR = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "railing_stair"), () -> new Block(new BlockRailingStair()), CreativeModeTabs.STATION);
         RAILING_STAIR_MIRROR = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "railing_stair_mirror"), () -> new Block(new BlockRailingStair()), CreativeModeTabs.STATION);
-        RAILING_STAIR_GLASS = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "railing_stair_glass"), ()-> new Block(new BlockRailingStair()), CreativeModeTabs.STATION);
-        RAILING_STAIR_GLASS_MIRROR = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "railing_stair_glass_mirror"), ()-> new Block(new BlockRailingStair()), CreativeModeTabs.STATION);
+        RAILING_STAIR_GLASS = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "railing_stair_glass"), () -> new Block(new BlockRailingStair()), CreativeModeTabs.STATION);
+        RAILING_STAIR_GLASS_MIRROR = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "railing_stair_glass_mirror"), () -> new Block(new BlockRailingStair()), CreativeModeTabs.STATION);
 
         ELECTRIC_NODE = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "electric_node"), () -> new Block(new BlockCatenaryNode()));
+        TRANS_CATENARY_NODE = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "trans_catenary_node"), () -> new Block(new BlockCatenaryNode()));
+        CATENARY_NODE_STYLE_2 = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "catenary_node_style_2"), () -> new Block(new BlockCatenaryNode()));
+        SHORT_CATENARY_NODE = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "short_catenary_node"), () -> new Block(new BlockCatenaryNode()));
+        SHORT_CATENARY_NODE_STYLE_2 = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "short_catenary_node_style_2"), () -> new Block(new BlockCatenaryNode()));
         YAMANOTE_RAILWAY_SIGN_MIDDLE = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "yamanote_railway_sign_middle"), () -> new Block(new BlockYamanoteRailwaySign(0, false)));
     }
 
     public static final BlockRegistryObject CATENARY_NODE;
     public static final BlockRegistryObject RIGID_CATENARY_NODE;
+    public static final BlockRegistryObject CATENARY_NODE_STYLE_2;
+    public static final BlockRegistryObject SHORT_CATENARY_NODE;
+    public static final BlockRegistryObject SHORT_CATENARY_NODE_STYLE_2;
     public static final BlockRegistryObject ELECTRIC_NODE;
+    public static final BlockRegistryObject TRANS_CATENARY_NODE;
     public static final BlockRegistryObject YAMANOTE_RAILWAY_SIGN_2_EVEN;
     public static final BlockRegistryObject YAMANOTE_RAILWAY_SIGN_2_ODD;
     public static final BlockRegistryObject YAMANOTE_RAILWAY_SIGN_3_EVEN;

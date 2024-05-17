@@ -25,6 +25,10 @@ public class InitClient {
         REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getCutout(), Blocks.CATENARY_NODE);
         REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getCutout(), Blocks.RIGID_CATENARY_NODE);
         REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getCutout(), Blocks.ELECTRIC_NODE);
+        REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getCutout(), Blocks.CATENARY_NODE_STYLE_2);
+        REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getCutout(), Blocks.SHORT_CATENARY_NODE);
+        REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getCutout(), Blocks.SHORT_CATENARY_NODE_STYLE_2);
+        REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getCutout(), Blocks.TRANS_CATENARY_NODE);
         REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getTranslucent(), Blocks.SURVEILLANCE_CAMERAS);
         REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getCutout(), Blocks.YUUNI_PIDS);
         REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getCutout(), Blocks.YUUNI_2_PIDS);
