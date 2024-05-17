@@ -3,16 +3,13 @@ package top.mcmtr.mod;
 import org.mtr.mapping.holder.Identifier;
 import org.mtr.mapping.registry.BlockEntityTypeRegistryObject;
 import top.mcmtr.mod.blocks.*;
+import top.mcmtr.mod.blocks.old.*;
 
 public class BlockEntityTypes {
     static {
-        CATENARY_NODE = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "catenary_node"), BlockCatenaryNode.BlockCatenaryNodeEntity::new, Blocks.CATENARY_NODE::get);
+        NEW_CATENARY_NODE = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "new_catenary_node"), BlockCatenaryNode.BlockCatenaryNodeEntity::new, Blocks.NEW_CATENARY_NODE::get);
         RIGID_CATENARY_NODE = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "rigid_catenary_node"), BlockRigidCatenaryNode.BlockRigidCatenaryNodeEntity::new, Blocks.RIGID_CATENARY_NODE::get);
-        ELECTRIC_NODE = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "electric_node"), BlockCatenaryNode.BlockCatenaryNodeEntity::new, Blocks.ELECTRIC_NODE::get);
-        CATENARY_NODE_STYLE_2 = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "catenary_node_style_2"), BlockCatenaryNode.BlockCatenaryNodeEntity::new, Blocks.CATENARY_NODE_STYLE_2::get);
-        SHORT_CATENARY_NODE = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "short_catenary_node"), BlockCatenaryNode.BlockCatenaryNodeEntity::new, Blocks.SHORT_CATENARY_NODE::get);
-        SHORT_CATENARY_NODE_STYLE_2 = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "short_catenary_node_style_2"), BlockCatenaryNode.BlockCatenaryNodeEntity::new, Blocks.SHORT_CATENARY_NODE_STYLE_2::get);
-        TRANS_CATENARY_NODE = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "trans_catenary_node"), BlockCatenaryNode.BlockCatenaryNodeEntity::new, Blocks.TRANS_CATENARY_NODE::get);
+
         YAMANOTE_RAILWAY_SIGN_ENTITY_2_EVEN = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "yamanote_railway_sign_2_even"), (pos, state) -> new BlockYamanoteRailwaySign.BlockYamanoteRailwaySignEntity(2, false, pos, state), Blocks.YAMANOTE_RAILWAY_SIGN_2_EVEN::get);
         YAMANOTE_RAILWAY_SIGN_ENTITY_2_ODD = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "yamanote_railway_sign_2_odd"), (pos, state) -> new BlockYamanoteRailwaySign.BlockYamanoteRailwaySignEntity(2, true, pos, state), Blocks.YAMANOTE_RAILWAY_SIGN_2_ODD::get);
         YAMANOTE_RAILWAY_SIGN_ENTITY_3_EVEN = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "yamanote_railway_sign_3_even"), (pos, state) -> new BlockYamanoteRailwaySign.BlockYamanoteRailwaySignEntity(3, false, pos, state), Blocks.YAMANOTE_RAILWAY_SIGN_3_EVEN::get);
@@ -34,15 +31,17 @@ public class BlockEntityTypes {
         YAMANOTE_7_PIDS = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "yamanote_7_pids"), (pos, state) -> new BlockYamanotePIDS.BlockYamanotePIDSEntity(7, pos, state), Blocks.YAMANOTE_7_PIDS::get);
         STANDING_SIGN = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "yuuni_standing_sign"), (pos, state) -> new BlockStandingSign.BlockStandingSignEntity(pos, state, 3), Blocks.STANDING_SIGN::get);
         STANDING_SIGN_1 = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "yuuni_standing_sign_1"), (pos, state) -> new BlockStandingSign1.BlockStandingSign1Entity(pos, state, 1), Blocks.STANDING_SIGN_1::get);
+
+        CATENARY_NODE = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "catenary_node"), BlockOldCatenaryNode.BlockOldCatenaryNodeEntity::new, Blocks.CATENARY_NODE::get);
+        CATENARY_NODE_STYLE_2 = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "catenary_node_style_2"), BlockOldCatenaryNodeStyle2.BlockOldCatenaryNodeStyle2Entity::new, Blocks.CATENARY_NODE_STYLE_2::get);
+        SHORT_CATENARY_NODE = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "short_catenary_node"), BlockOldShortCatenaryNode.BlockOldShortCatenaryNodeEntity::new, Blocks.SHORT_CATENARY_NODE::get);
+        SHORT_CATENARY_NODE_STYLE_2 = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "short_catenary_node_style_2"), BlockOldShortCatenaryNodeStyle2.BlockOldShortCatenaryNodeStyle2Entity::new, Blocks.SHORT_CATENARY_NODE_STYLE_2::get);
+        ELECTRIC_NODE = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "electric_node"), BlockOldElectricNode.BlockOldElectricNodeEntity::new, Blocks.ELECTRIC_NODE::get);
+        TRANS_CATENARY_NODE = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "trans_catenary_node"), BlockOldTransCatenaryNode.BlockOldTransCatenaryNodeEntity::new, Blocks.TRANS_CATENARY_NODE::get);
     }
 
-    public static final BlockEntityTypeRegistryObject<BlockCatenaryNode.BlockCatenaryNodeEntity> CATENARY_NODE;
+    public static final BlockEntityTypeRegistryObject<BlockCatenaryNode.BlockCatenaryNodeEntity> NEW_CATENARY_NODE;
     public static final BlockEntityTypeRegistryObject<BlockRigidCatenaryNode.BlockRigidCatenaryNodeEntity> RIGID_CATENARY_NODE;
-    public static final BlockEntityTypeRegistryObject<BlockCatenaryNode.BlockCatenaryNodeEntity> ELECTRIC_NODE;
-    public static final BlockEntityTypeRegistryObject<BlockCatenaryNode.BlockCatenaryNodeEntity> CATENARY_NODE_STYLE_2;
-    public static final BlockEntityTypeRegistryObject<BlockCatenaryNode.BlockCatenaryNodeEntity> SHORT_CATENARY_NODE;
-    public static final BlockEntityTypeRegistryObject<BlockCatenaryNode.BlockCatenaryNodeEntity> SHORT_CATENARY_NODE_STYLE_2;
-    public static final BlockEntityTypeRegistryObject<BlockCatenaryNode.BlockCatenaryNodeEntity> TRANS_CATENARY_NODE;
     public static final BlockEntityTypeRegistryObject<BlockYamanoteRailwaySign.BlockYamanoteRailwaySignEntity> YAMANOTE_RAILWAY_SIGN_ENTITY_2_EVEN;
     public static final BlockEntityTypeRegistryObject<BlockYamanoteRailwaySign.BlockYamanoteRailwaySignEntity> YAMANOTE_RAILWAY_SIGN_ENTITY_2_ODD;
     public static final BlockEntityTypeRegistryObject<BlockYamanoteRailwaySign.BlockYamanoteRailwaySignEntity> YAMANOTE_RAILWAY_SIGN_ENTITY_3_EVEN;
@@ -63,6 +62,12 @@ public class BlockEntityTypes {
     public static final BlockEntityTypeRegistryObject<BlockYamanotePIDS.BlockYamanotePIDSEntity> YAMANOTE_7_PIDS;
     public static final BlockEntityTypeRegistryObject<BlockStandingSign.BlockStandingSignEntity> STANDING_SIGN;
     public static final BlockEntityTypeRegistryObject<BlockStandingSign1.BlockStandingSign1Entity> STANDING_SIGN_1;
+    public static final BlockEntityTypeRegistryObject<BlockOldCatenaryNode.BlockOldCatenaryNodeEntity> CATENARY_NODE;
+    public static final BlockEntityTypeRegistryObject<BlockOldCatenaryNodeStyle2.BlockOldCatenaryNodeStyle2Entity> CATENARY_NODE_STYLE_2;
+    public static final BlockEntityTypeRegistryObject<BlockOldShortCatenaryNode.BlockOldShortCatenaryNodeEntity> SHORT_CATENARY_NODE;
+    public static final BlockEntityTypeRegistryObject<BlockOldShortCatenaryNodeStyle2.BlockOldShortCatenaryNodeStyle2Entity> SHORT_CATENARY_NODE_STYLE_2;
+    public static final BlockEntityTypeRegistryObject<BlockOldElectricNode.BlockOldElectricNodeEntity> ELECTRIC_NODE;
+    public static final BlockEntityTypeRegistryObject<BlockOldTransCatenaryNode.BlockOldTransCatenaryNodeEntity> TRANS_CATENARY_NODE;
 
     public static void init() {
         Init.MSD_LOGGER.info("Registering MTR Station Decoration block entity types");

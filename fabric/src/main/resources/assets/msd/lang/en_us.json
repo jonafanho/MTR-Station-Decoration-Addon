@@ -10,7 +10,7 @@
   "item.msd.rigid_catenary_remover": "Rigid Catenary Remover",
   "item.msd.model_change_stick": "Model Change Stick",
 
-  "block.msd.catenary_node": "Catenary Node",
+  "block.msd.new_catenary_node": "Catenary Node",
   "block.msd.rigid_catenary_node": "Rigid Catenary Node",
   "block.msd.electric_node": "Electric Node",
   "block.msd.yamanote_railway_sign": "Yamanote Style Railway Sign",

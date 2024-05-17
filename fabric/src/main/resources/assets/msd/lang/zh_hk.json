@@ -10,7 +10,7 @@
   "item.msd.rigid_catenary_remover": "剛性接觸網移除器",
   "item.msd.model_change_stick": "模型切換棒",
 
-  "block.msd.catenary_node": "接觸網節點",
+  "block.msd.new_catenary_node": "接觸網節點",
   "block.msd.rigid_catenary_node": "剛性接觸網節點",
   "block.msd.electric_node": "電纜節點",
   "block.msd.yamanote_railway_sign": "山手線風格鐵路標誌",

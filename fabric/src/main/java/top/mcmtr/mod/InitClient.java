@@ -3,7 +3,6 @@ package top.mcmtr.mod;
 import org.mtr.core.data.Station;
 import org.mtr.mapping.holder.*;
 import org.mtr.mapping.mapper.MinecraftClientHelper;
-import org.mtr.mapping.registry.EventRegistryClient;
 import org.mtr.mapping.registry.RegistryClient;
 import org.mtr.mod.client.MinecraftClientData;
 import org.mtr.mod.render.RenderPIDS;
@@ -22,12 +21,13 @@ public class InitClient {
     public static final RegistryClient REGISTRY_CLIENT = new RegistryClient(Init.REGISTRY);
 
     public static void init() {
-        REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getCutout(), Blocks.CATENARY_NODE);
+        REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getCutout(), Blocks.NEW_CATENARY_NODE);
         REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getCutout(), Blocks.RIGID_CATENARY_NODE);
-        REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getCutout(), Blocks.ELECTRIC_NODE);
+        REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getCutout(), Blocks.CATENARY_NODE);
         REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getCutout(), Blocks.CATENARY_NODE_STYLE_2);
         REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getCutout(), Blocks.SHORT_CATENARY_NODE);
         REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getCutout(), Blocks.SHORT_CATENARY_NODE_STYLE_2);
+        REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getCutout(), Blocks.ELECTRIC_NODE);
         REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getCutout(), Blocks.TRANS_CATENARY_NODE);
         REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getTranslucent(), Blocks.SURVEILLANCE_CAMERAS);
         REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getCutout(), Blocks.YUUNI_PIDS);

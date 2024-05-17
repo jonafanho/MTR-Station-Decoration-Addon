@@ -45,7 +45,7 @@ public final class BlockCatenaryNode extends BlockNodeBase {
 
     public static class BlockCatenaryNodeEntity extends BlockNodeBaseEntity {
         public BlockCatenaryNodeEntity(BlockPos blockPos, BlockState blockState) {
-            super(BlockEntityTypes.CATENARY_NODE.get(), blockPos, blockState);
+            super(BlockEntityTypes.NEW_CATENARY_NODE.get(), blockPos, blockState);
         }
     }
 }

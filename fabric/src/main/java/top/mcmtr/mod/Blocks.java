@@ -4,10 +4,11 @@ import org.mtr.mapping.holder.Block;
 import org.mtr.mapping.holder.Identifier;
 import org.mtr.mapping.registry.BlockRegistryObject;
 import top.mcmtr.mod.blocks.*;
+import top.mcmtr.mod.blocks.old.*;
 
 public class Blocks {
     static {
-        CATENARY_NODE = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "catenary_node"), () -> new Block(new BlockCatenaryNode()), CreativeModeTabs.EXTERNAL);
+        NEW_CATENARY_NODE = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "new_catenary_node"), () -> new Block(new BlockCatenaryNode()), CreativeModeTabs.EXTERNAL);
         RIGID_CATENARY_NODE = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "rigid_catenary_node"), () -> new Block(new BlockRigidCatenaryNode()), CreativeModeTabs.EXTERNAL);
 
         YAMANOTE_RAILWAY_SIGN_2_EVEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "yamanote_railway_sign_2_even"), () -> new Block(new BlockYamanoteRailwaySign(2, false)), CreativeModeTabs.STATION);
@@ -52,16 +53,18 @@ public class Blocks {
         RAILING_STAIR_GLASS = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "railing_stair_glass"), () -> new Block(new BlockRailingStair()), CreativeModeTabs.STATION);
         RAILING_STAIR_GLASS_MIRROR = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "railing_stair_glass_mirror"), () -> new Block(new BlockRailingStair()), CreativeModeTabs.STATION);
 
-        ELECTRIC_NODE = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "electric_node"), () -> new Block(new BlockCatenaryNode()));
-        TRANS_CATENARY_NODE = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "trans_catenary_node"), () -> new Block(new BlockCatenaryNode()));
-        CATENARY_NODE_STYLE_2 = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "catenary_node_style_2"), () -> new Block(new BlockCatenaryNode()));
-        SHORT_CATENARY_NODE = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "short_catenary_node"), () -> new Block(new BlockCatenaryNode()));
-        SHORT_CATENARY_NODE_STYLE_2 = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "short_catenary_node_style_2"), () -> new Block(new BlockCatenaryNode()));
         YAMANOTE_RAILWAY_SIGN_MIDDLE = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "yamanote_railway_sign_middle"), () -> new Block(new BlockYamanoteRailwaySign(0, false)));
+        CATENARY_NODE = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "catenary_node"), () -> new Block(new BlockOldCatenaryNode()));
+        CATENARY_NODE_STYLE_2 = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "catenary_node_style_2"), () -> new Block(new BlockOldCatenaryNodeStyle2()));
+        SHORT_CATENARY_NODE = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "short_catenary_node"), () -> new Block(new BlockOldShortCatenaryNode()));
+        SHORT_CATENARY_NODE_STYLE_2 = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "short_catenary_node_style_2"), () -> new Block(new BlockOldShortCatenaryNodeStyle2()));
+        ELECTRIC_NODE = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "electric_node"), () -> new Block(new BlockOldElectricNode()));
+        TRANS_CATENARY_NODE = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "trans_catenary_node"), () -> new Block(new BlockOldTransCatenaryNode()));
     }
 
-    public static final BlockRegistryObject CATENARY_NODE;
+    public static final BlockRegistryObject NEW_CATENARY_NODE;
     public static final BlockRegistryObject RIGID_CATENARY_NODE;
+    public static final BlockRegistryObject CATENARY_NODE;
     public static final BlockRegistryObject CATENARY_NODE_STYLE_2;
     public static final BlockRegistryObject SHORT_CATENARY_NODE;
     public static final BlockRegistryObject SHORT_CATENARY_NODE_STYLE_2;
