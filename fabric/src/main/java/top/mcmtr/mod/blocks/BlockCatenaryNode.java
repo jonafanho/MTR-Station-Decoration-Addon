@@ -15,10 +15,7 @@ public final class BlockCatenaryNode extends BlockNodeBase {
 
     @Override
     public BlockRenderType getRenderType2(BlockState state) {
-        if (state.get(new Property<>(IS_CONNECTED.data))) {
-            return BlockRenderType.INVISIBLE;
-        }
-        return super.getRenderType2(state);
+        return state.get(new Property<>(IS_CONNECTED.data)) ? BlockRenderType.INVISIBLE : super.getRenderType2(state);
     }
 
     @Override

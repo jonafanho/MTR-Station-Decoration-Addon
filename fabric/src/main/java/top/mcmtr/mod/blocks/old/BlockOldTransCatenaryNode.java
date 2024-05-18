@@ -1,13 +1,20 @@
 package top.mcmtr.mod.blocks.old;
 
 import org.mtr.mapping.holder.BlockPos;
+import org.mtr.mapping.holder.BlockRenderType;
 import org.mtr.mapping.holder.BlockState;
+import org.mtr.mapping.holder.Property;
 import org.mtr.mapping.mapper.BlockEntityExtension;
 import top.mcmtr.mod.BlockEntityTypes;
 
 public final class BlockOldTransCatenaryNode extends BlockOldNodeBase {
     public BlockOldTransCatenaryNode() {
         super();
+    }
+
+    @Override
+    public BlockRenderType getRenderType2(BlockState state) {
+        return state.get(new Property<>(IS_CONNECTED.data)) ? BlockRenderType.INVISIBLE : super.getRenderType2(state);
     }
 
     @Override

@@ -1,5 +1,6 @@
 package top.mcmtr.mod.blocks.old;
 
+import net.minecraft.block.FacingBlock;
 import org.mtr.mapping.holder.*;
 import org.mtr.mapping.mapper.BlockExtension;
 import org.mtr.mapping.mapper.BlockHelper;
@@ -12,9 +13,10 @@ import java.util.List;
 
 public abstract class BlockOldNodeBase extends BlockExtension implements BlockWithEntity {
     public static final BooleanProperty IS_CONNECTED = BooleanProperty.of("is_connected");
+    public static final DirectionProperty FACING = new DirectionProperty(FacingBlock.FACING);
 
     public BlockOldNodeBase() {
-        super(BlockHelper.createBlockSettings(false));
+        super(BlockHelper.createBlockSettings(false).nonOpaque());
     }
 
     @Override
@@ -33,6 +35,7 @@ public abstract class BlockOldNodeBase extends BlockExtension implements BlockWi
     @Override
     public void addBlockProperties(List<HolderBase<?>> properties) {
         properties.add(IS_CONNECTED);
+        properties.add(FACING);
     }
 
     @Override

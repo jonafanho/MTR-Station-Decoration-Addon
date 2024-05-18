@@ -50,6 +50,24 @@ public class InitClient {
         REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getCutout(), Blocks.RAILING_STAIR_MIRROR);
         REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getTranslucent(), Blocks.RAILING_STAIR_GLASS);
         REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getTranslucent(), Blocks.RAILING_STAIR_GLASS_MIRROR);
+        REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getCutout(), Blocks.CATENARY_POLE);
+        REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getCutout(), Blocks.CATENARY_POLE_TOP_MIDDLE);
+        REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getCutout(), Blocks.CATENARY_POLE_TOP_SIDE);
+        REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getCutout(), Blocks.CATENARY_RACK_1);
+        REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getCutout(), Blocks.CATENARY_RACK_2);
+        REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getCutout(), Blocks.CATENARY_RACK_BOTH_SIDE);
+        REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getCutout(), Blocks.CATENARY_RACK_POLE);
+        REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getCutout(), Blocks.CATENARY_RACK_POLE_BOTH_SIDE);
+        REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getCutout(), Blocks.CATENARY_RACK_SIDE);
+        REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getCutout(), Blocks.ELECTRIC_POLE_ANOTHER_SIDE);
+        REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getCutout(), Blocks.ELECTRIC_POLE_SIDE);
+        REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getCutout(), Blocks.ELECTRIC_POLE_TOP_BOTH_SIDE);
+        REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getCutout(), Blocks.ELECTRIC_POLE_TOP_SIDE);
+        REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getCutout(), Blocks.SHORT_CATENARY_RACK);
+        REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getCutout(), Blocks.SHORT_CATENARY_RACK_BOTH_SIDE);
+        REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getCutout(), Blocks.SHORT_CATENARY_RACK_POLE);
+        REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getCutout(), Blocks.SHORT_CATENARY_RACK_POLE_BOTH_SIDE);
+        REGISTRY_CLIENT.registerBlockRenderType(RenderLayer.getCutout(), Blocks.SHORT_CATENARY_RACK_SIDE);
 
         REGISTRY_CLIENT.registerItemModelPredicate(Items.CATENARY_CONNECTOR, new Identifier(Init.MOD_ID, "selected"), checkItemPredicateTag());
         REGISTRY_CLIENT.registerItemModelPredicate(Items.ELECTRIC_CONNECTOR, new Identifier(Init.MOD_ID, "selected"), checkItemPredicateTag());

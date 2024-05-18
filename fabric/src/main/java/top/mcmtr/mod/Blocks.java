@@ -60,6 +60,24 @@ public class Blocks {
         SHORT_CATENARY_NODE_STYLE_2 = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "short_catenary_node_style_2"), () -> new Block(new BlockOldShortCatenaryNodeStyle2()));
         ELECTRIC_NODE = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "electric_node"), () -> new Block(new BlockOldElectricNode()));
         TRANS_CATENARY_NODE = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "trans_catenary_node"), () -> new Block(new BlockOldTransCatenaryNode()));
+        CATENARY_POLE = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "catenary_pole"), () -> new Block(new BlockOldDecorationRack()));
+        CATENARY_POLE_TOP_MIDDLE = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "catenary_pole_top_middle"), () -> new Block(new BlockOldDecorationRack()));
+        CATENARY_POLE_TOP_SIDE = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "catenary_pole_top_side"), () -> new Block(new BlockOldDecorationRack()));
+        CATENARY_RACK_1 = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "catenary_rack_1"), () -> new Block(new BlockOldDecorationRack()));
+        CATENARY_RACK_2 = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "catenary_rack_2"), () -> new Block(new BlockOldDecorationRack()));
+        CATENARY_RACK_BOTH_SIDE = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "catenary_rack_both_side"), () -> new Block(new BlockOldDecorationRack()));
+        CATENARY_RACK_POLE = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "catenary_rack_pole"), () -> new Block(new BlockOldDecorationRack()));
+        CATENARY_RACK_POLE_BOTH_SIDE = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "catenary_rack_pole_both_side"), () -> new Block(new BlockOldDecorationRack()));
+        CATENARY_RACK_SIDE = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "catenary_rack_side"), () -> new Block(new BlockOldDecorationRack()));
+        ELECTRIC_POLE_ANOTHER_SIDE = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "electric_pole_another_side"), () -> new Block(new BlockOldDecorationRack()));
+        ELECTRIC_POLE_SIDE = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "electric_pole_side"), () -> new Block(new BlockOldDecorationRack()));
+        ELECTRIC_POLE_TOP_BOTH_SIDE = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "electric_pole_top_both_side"), () -> new Block(new BlockOldElectricPole()));
+        ELECTRIC_POLE_TOP_SIDE = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "electric_pole_top_side"), () -> new Block(new BlockOldElectricPole()));
+        SHORT_CATENARY_RACK = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "short_catenary_rack"), () -> new Block(new BlockOldDecorationRack()));
+        SHORT_CATENARY_RACK_BOTH_SIDE = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "short_catenary_rack_both_side"), () -> new Block(new BlockOldDecorationRack()));
+        SHORT_CATENARY_RACK_POLE = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "short_catenary_rack_pole"), () -> new Block(new BlockOldDecorationRack()));
+        SHORT_CATENARY_RACK_POLE_BOTH_SIDE = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "short_catenary_rack_pole_both_side"), () -> new Block(new BlockOldDecorationRack()));
+        SHORT_CATENARY_RACK_SIDE = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "short_catenary_rack_side"), () -> new Block(new BlockOldDecorationRack()));
     }
 
     public static final BlockRegistryObject NEW_CATENARY_NODE;
@@ -109,6 +127,24 @@ public class Blocks {
     public static final BlockRegistryObject RAILING_STAIR_MIRROR;
     public static final BlockRegistryObject RAILING_STAIR_GLASS;
     public static final BlockRegistryObject RAILING_STAIR_GLASS_MIRROR;
+    public static final BlockRegistryObject CATENARY_POLE;
+    public static final BlockRegistryObject CATENARY_POLE_TOP_MIDDLE;
+    public static final BlockRegistryObject CATENARY_POLE_TOP_SIDE;
+    public static final BlockRegistryObject CATENARY_RACK_1;
+    public static final BlockRegistryObject CATENARY_RACK_2;
+    public static final BlockRegistryObject CATENARY_RACK_BOTH_SIDE;
+    public static final BlockRegistryObject CATENARY_RACK_POLE;
+    public static final BlockRegistryObject CATENARY_RACK_POLE_BOTH_SIDE;
+    public static final BlockRegistryObject CATENARY_RACK_SIDE;
+    public static final BlockRegistryObject ELECTRIC_POLE_ANOTHER_SIDE;
+    public static final BlockRegistryObject ELECTRIC_POLE_SIDE;
+    public static final BlockRegistryObject ELECTRIC_POLE_TOP_BOTH_SIDE;
+    public static final BlockRegistryObject ELECTRIC_POLE_TOP_SIDE;
+    public static final BlockRegistryObject SHORT_CATENARY_RACK;
+    public static final BlockRegistryObject SHORT_CATENARY_RACK_BOTH_SIDE;
+    public static final BlockRegistryObject SHORT_CATENARY_RACK_POLE;
+    public static final BlockRegistryObject SHORT_CATENARY_RACK_POLE_BOTH_SIDE;
+    public static final BlockRegistryObject SHORT_CATENARY_RACK_SIDE;
 
     public static void init() {
         Init.MSD_LOGGER.info("Registering MTR Station Decoration blocks");
