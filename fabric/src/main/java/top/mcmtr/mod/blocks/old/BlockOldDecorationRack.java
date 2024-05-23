@@ -1,16 +1,14 @@
 package top.mcmtr.mod.blocks.old;
 
-import net.minecraft.block.FacingBlock;
 import org.mtr.mapping.holder.*;
 import org.mtr.mapping.mapper.BlockExtension;
 import org.mtr.mapping.mapper.BlockHelper;
+import org.mtr.mapping.mapper.DirectionHelper;
 import org.mtr.mapping.tool.HolderBase;
 
 import java.util.List;
 
-public final class BlockOldDecorationRack extends BlockExtension {
-    public static final DirectionProperty FACING = new DirectionProperty(FacingBlock.FACING);
-
+public final class BlockOldDecorationRack extends BlockExtension implements DirectionHelper {
     public BlockOldDecorationRack() {
         super(BlockHelper.createBlockSettings(true).nonOpaque());
     }
@@ -27,6 +25,6 @@ public final class BlockOldDecorationRack extends BlockExtension {
 
     @Override
     public void addBlockProperties(List<HolderBase<?>> properties) {
-        properties.add(FACING);
+        properties.add(FACING_NORMAL);
     }
 }
