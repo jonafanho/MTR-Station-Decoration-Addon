@@ -4,13 +4,11 @@ import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.mtr.core.data.Position;
-import org.mtr.core.servlet.Webserver;
 import org.mtr.core.tool.RequestHelper;
 import org.mtr.core.tool.Utilities;
 import org.mtr.libraries.it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import org.mtr.mapping.holder.*;
 import org.mtr.mapping.mapper.MinecraftServerHelper;
-import org.mtr.mapping.registry.EventRegistry;
 import org.mtr.mapping.registry.Registry;
 import top.mcmtr.core.MSDMain;
 import top.mcmtr.mod.packet.*;
@@ -25,7 +23,6 @@ import java.util.function.Consumer;
 
 public class Init implements Utilities {
     private static MSDMain main;
-    private static Webserver webserver;
     private static int serverPort;
     public static final String MOD_ID = "msd";
     public static final Logger MSD_LOGGER = LogManager.getLogger("MTR-Station-Decoration");
@@ -53,16 +50,11 @@ public class Init implements Utilities {
 
         REGISTRY.eventRegistry.registerServerStarted(minecraftServer -> {
             WORLD_ID_LIST.clear();
-            MinecraftServerHelper.iterateWorlds(minecraftServer, serverWorld -> {
-                WORLD_ID_LIST.add(getWorldId(new World(serverWorld.data)));
-            });
+            MinecraftServerHelper.iterateWorlds(minecraftServer, serverWorld -> WORLD_ID_LIST.add(getWorldId(new World(serverWorld.data))));
 
             final int defaultPort = getDefaultPortFromConfig(minecraftServer);
             serverPort = findFreePort(defaultPort);
-            final int port = findFreePort(serverPort + 1);
             main = new MSDMain(minecraftServer.getSavePath(WorldSavePath.getRootMapped()).resolve("msd"), serverPort, WORLD_ID_LIST.toArray(new String[0]));
-            webserver = new Webserver(port);
-            webserver.start();
         });
 
         REGISTRY.eventRegistry.registerPlayerDisconnect((minecraftServer, serverPlayerEntity) -> {
@@ -74,9 +66,6 @@ public class Init implements Utilities {
         REGISTRY.eventRegistry.registerServerStopping(minecraftServer -> {
             if (main != null) {
                 main.stop();
-            }
-            if (webserver != null) {
-                webserver.stop();
             }
         });
 
