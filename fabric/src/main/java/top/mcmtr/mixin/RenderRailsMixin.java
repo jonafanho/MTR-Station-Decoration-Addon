@@ -5,8 +5,9 @@ import org.mtr.libraries.com.logisticscraft.occlusionculling.util.Vec3d;
 import org.mtr.libraries.it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import org.mtr.mapping.holder.*;
 import org.mtr.mod.client.IDrawing;
+import org.mtr.mod.render.QueuedRenderLayer;
 import org.mtr.mod.render.RenderRails;
-import org.mtr.mod.render.RenderTrains;
+import org.mtr.mod.render.MainRenderer;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
@@ -67,7 +68,7 @@ public abstract class RenderRailsMixin {
                     renderCatenaryStandard(clientWorldMSD, catenary);
                     break;
                 case ELECTRIC:
-                    RenderTrains.scheduleRender(RenderTrains.QueuedRenderLayer.LINES, (graphicsHolder, offset) ->
+                    MainRenderer.scheduleRender(QueuedRenderLayer.LINES, (graphicsHolder, offset) ->
                             catenary.catenaryMath.render((x1, y1, z1, x2, y2, z2, count, i, base, sinX, sinZ, increment) -> graphicsHolder.drawLineInWorld(
                                     (float) (x1 - offset.getXMapped()),
                                     (float) (y1 - offset.getYMapped() + 0.5F),
@@ -86,7 +87,7 @@ public abstract class RenderRailsMixin {
 
         rigidCatenariesToRender.forEach(rigidCatenary -> renderRigidCatenaryStandard(clientWorldMSD, rigidCatenary));
 
-        RenderTrains.WORKER_THREAD.scheduleRails(occlusionCullingInstance -> {
+        MainRenderer.WORKER_THREAD.scheduleRails(occlusionCullingInstance -> {
             final ObjectArrayList<Runnable> tasks = new ObjectArrayList<>();
             cullingTasksMSD.forEach(occlusionCullingInstanceRunnableFunction -> tasks.add(occlusionCullingInstanceRunnableFunction.apply(occlusionCullingInstance)));
             minecraftClientMSD.execute(() -> tasks.forEach(Runnable::run));
@@ -98,7 +99,7 @@ public abstract class RenderRailsMixin {
         catenary.catenaryMath.render((x1, y1, z1, x2, y2, z2, count, i, base, sinX, sinZ, increment) -> {
             final BlockPos blockPos = Init.newBlockPos(x1, y1, z1);
             final int light = LightmapTextureManager.pack(clientWorld.getLightLevel(LightType.getBlockMapped(), blockPos), clientWorld.getLightLevel(LightType.getSkyMapped(), blockPos));
-            RenderTrains.scheduleRender(CATENARY_TEXTURE, false, RenderTrains.QueuedRenderLayer.EXTERIOR, (graphicsHolder, offset) -> {
+            MainRenderer.scheduleRender(CATENARY_TEXTURE, false, QueuedRenderLayer.EXTERIOR, (graphicsHolder, offset) -> {
                 if (count < 8) {
                     IDrawing.drawTexture(graphicsHolder, x1, y1 + 0.65F + base, z1, x2, y2 + 0.65F + base, z2, x2, y2, z2, x1, y1, z1, offset, 0.0F, 0.0F, 1.0F, 1.0F, Direction.UP, -1, light);
                     IDrawing.drawTexture(graphicsHolder, x2, y2 + 0.65F + base, z2, x1, y1 + 0.65F + base, z1, x1, y1, z1, x2, y2, z2, offset, 0.0F, 1.0F, 1.0F, 0.0F, Direction.UP, -1, light);
@@ -125,7 +126,7 @@ public abstract class RenderRailsMixin {
         rigidCatenary.rigidCatenaryMath.render((x1, z1, x2, z2, x3, z3, x4, z4, x5, z5, x6, z6, x7, z7, x8, z8, y1, y2) -> {
             final BlockPos blockPos = Init.newBlockPos(x1, y1, z1);
             final int light = LightmapTextureManager.pack(clientWorld.getLightLevel(LightType.getBlockMapped(), blockPos), clientWorld.getLightLevel(LightType.getSkyMapped(), blockPos));
-            RenderTrains.scheduleRender(RIGID_CATENARY_TEXTURE, false, RenderTrains.QueuedRenderLayer.EXTERIOR, (graphicsHolder, offset) -> {
+            MainRenderer.scheduleRender(RIGID_CATENARY_TEXTURE, false, QueuedRenderLayer.EXTERIOR, (graphicsHolder, offset) -> {
                 IDrawing.drawTexture(graphicsHolder, x1, y1, z1, x2, y1, z2, x3, y2, z3, x4, y2, z4, offset, 0.0F, 0.0F, 1.0F, 0.03125F, Direction.UP, -1, light);
                 IDrawing.drawTexture(graphicsHolder, x3, y2, z3, x2, y1, z2, x1, y1, z1, x4, y2, z4, offset, 0.0F, 0.03125F, 1.0F, 0.0F, Direction.UP, -1, light);
                 IDrawing.drawTexture(graphicsHolder, x1, y1, z1, x5, y1 + 0.125F, z5, x8, y2 + 0.125F, z8, x4, y2, z4, offset, 0.0F, 0.5F, 1.0F, 1.0F, Direction.UP, -1, light);
@@ -143,7 +144,7 @@ public abstract class RenderRailsMixin {
         catenary.catenaryMath.render((x1, y1, z1, x2, y2, z2, count, i, base, sinX, sinZ, increment) -> {
             final BlockPos blockPos = Init.newBlockPos(x1, y1, z1);
             final int light = LightmapTextureManager.pack(clientWorld.getLightLevel(LightType.getBlockMapped(), blockPos), clientWorld.getLightLevel(LightType.getSkyMapped(), blockPos));
-            RenderTrains.scheduleRender(CATENARY_TEXTURE, false, RenderTrains.QueuedRenderLayer.EXTERIOR, (graphicsHolder, offset) -> {
+            MainRenderer.scheduleRender(CATENARY_TEXTURE, false, QueuedRenderLayer.EXTERIOR, (graphicsHolder, offset) -> {
                 IDrawing.drawTexture(graphicsHolder, (x1 - sinX), y1, (z1 + sinZ), (x2 - sinX), y2, (z2 + sinZ), (x2 + sinX), y2, (z2 - sinZ), (x1 + sinX), y1, (z1 - sinZ), offset, 0.0F, 0.0F, 1.0F, 0.03125F, Direction.UP, -1, light);
                 IDrawing.drawTexture(graphicsHolder, (x2 - sinX), y2, (z2 + sinZ), (x1 - sinX), y1, (z1 + sinZ), (x1 + sinX), y1, (z1 - sinZ), (x2 + sinX), y2, (z2 - sinZ), offset, 0.0F, 0.03125F, 1.0F, 0.0F, Direction.UP, -1, light);
                 IDrawing.drawTexture(graphicsHolder, x1, y1 + 0.03125F, z1, x2, y2 + 0.03125F, z2, x2, y2, z2, x1, y1, z1, offset, 0.0F, 0.0F, 1.0F, 0.03125F, Direction.UP, -1, light);

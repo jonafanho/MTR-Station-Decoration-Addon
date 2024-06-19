@@ -9,7 +9,8 @@ import org.mtr.mapping.mapper.BlockEntityRenderer;
 import org.mtr.mapping.mapper.GraphicsHolder;
 import org.mtr.mod.block.IBlock;
 import org.mtr.mod.data.IGui;
-import org.mtr.mod.render.RenderTrains;
+import org.mtr.mod.render.MainRenderer;
+import org.mtr.mod.render.QueuedRenderLayer;
 import top.mcmtr.mod.blocks.BlockCustomTextBase;
 import top.mcmtr.mod.config.Config;
 
@@ -60,7 +61,7 @@ public class RenderCustomText<T extends BlockCustomTextBase.BlockCustomTextEntit
         }
         final BlockPos blockPos = entity.getPos2();
         final Direction facing = IBlock.getStatePropertySafe(world, blockPos, BlockCustomTextBase.FACING);
-        RenderTrains.scheduleRender(RenderTrains.QueuedRenderLayer.TEXT, ((graphicsHolder, offset) -> {
+        MainRenderer.scheduleRender(QueuedRenderLayer.TEXT, ((graphicsHolder, offset) -> {
             render(entity, graphicsHolder, blockPos, offset, facing, false);
             render(entity, graphicsHolder, blockPos.offset(facing), offset, facing.getOpposite(), true);
         }));
