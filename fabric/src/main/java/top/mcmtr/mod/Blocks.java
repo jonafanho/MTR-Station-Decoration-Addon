@@ -48,10 +48,10 @@ public class Blocks {
         DECORATION_STAIR = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "decoration_stair"), () -> new Block(new BlockDecorationStair()), CreativeModeTabs.STATION);
         DISPLAY_BOARD_HORIZONTALLY = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "display_board_horizontal"), () -> new Block(new BlockDisplayBoardHorizontally()), CreativeModeTabs.STATION);
         DISPLAY_BOARD_VERTICALLY = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "display_board_vertically"), () -> new Block(new BlockDisplayBoardVertically()), CreativeModeTabs.STATION);
-        RAILING_STAIR = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "railing_stair"), () -> new Block(new BlockRailingStair()), CreativeModeTabs.STATION);
-        RAILING_STAIR_MIRROR = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "railing_stair_mirror"), () -> new Block(new BlockRailingStair()), CreativeModeTabs.STATION);
-        RAILING_STAIR_GLASS = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "railing_stair_glass"), () -> new Block(new BlockRailingStair()), CreativeModeTabs.STATION);
-        RAILING_STAIR_GLASS_MIRROR = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "railing_stair_glass_mirror"), () -> new Block(new BlockRailingStair()), CreativeModeTabs.STATION);
+        RAILING_STAIR = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "railing_stair"), () -> new Block(new BlockRailingStair(false)), CreativeModeTabs.STATION);
+        RAILING_STAIR_MIRROR = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "railing_stair_mirror"), () -> new Block(new BlockRailingStair(true)), CreativeModeTabs.STATION);
+        RAILING_STAIR_GLASS = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "railing_stair_glass"), () -> new Block(new BlockRailingStair(false)), CreativeModeTabs.STATION);
+        RAILING_STAIR_GLASS_MIRROR = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "railing_stair_glass_mirror"), () -> new Block(new BlockRailingStair(true)), CreativeModeTabs.STATION);
 
         YAMANOTE_RAILWAY_SIGN_MIDDLE = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "yamanote_railway_sign_middle"), () -> new Block(new BlockYamanoteRailwaySign(0, false)));
         CATENARY_NODE = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "catenary_node"), () -> new Block(new BlockOldCatenaryNode()));
