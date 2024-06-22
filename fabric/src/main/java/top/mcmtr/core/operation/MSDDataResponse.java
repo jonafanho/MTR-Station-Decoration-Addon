@@ -22,18 +22,11 @@ public final class MSDDataResponse extends MSDDataResponseSchema {
     }
 
     public void write() {
-        boolean isSync = false;
-        if (data instanceof MSDClientData && (!catenaries.isEmpty())) {
+        if(data instanceof MSDClientData) {
             data.catenaries.removeIf(catenary -> !catenariesToKeep.contains(catenary.getHexId()));
             data.catenaries.addAll(catenaries);
-            isSync = true;
-        }
-        if (data instanceof MSDClientData && (!rigidCatenaries.isEmpty())) {
             data.rigidCatenaries.removeIf(rigidCatenary -> !rigidCatenariesToKeep.contains(rigidCatenary.getHexId()));
             data.rigidCatenaries.addAll(rigidCatenaries);
-            isSync = true;
-        }
-        if (isSync) {
             data.sync();
         }
     }
