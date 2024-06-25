@@ -63,5 +63,15 @@
     "name": "Gantry(17)",
     "model": "mtrsteamloco:eyecandies/gantry_17.obj",
     "flipV": true
+  },
+  "catenary_positioning_tool": {
+    "name": "Catenary Positioning Tool",
+    "model": "mtrsteamloco:eyecandies/catenary_positioning_tool.obj",
+    "flipV": true
+  },
+  "catenary_positioning_tool_both": {
+    "name": "Catenary Positioning Tool(Both)",
+    "model": "mtrsteamloco:eyecandies/catenary_positioning_tool_both.obj",
+    "flipV": true
   }
 }
