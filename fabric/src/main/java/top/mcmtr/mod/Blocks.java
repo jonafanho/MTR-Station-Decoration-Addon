@@ -54,30 +54,32 @@ public class Blocks {
         RAILING_STAIR_GLASS_MIRROR = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "railing_stair_glass_mirror"), () -> new Block(new BlockRailingStair(true)), CreativeModeTabs.STATION);
 
         YAMANOTE_RAILWAY_SIGN_MIDDLE = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "yamanote_railway_sign_middle"), () -> new Block(new BlockYamanoteRailwaySign(0, false)));
-        CATENARY_NODE = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "catenary_node"), () -> new Block(new BlockOldCatenaryNode()));
-        CATENARY_NODE_STYLE_2 = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "catenary_node_style_2"), () -> new Block(new BlockOldCatenaryNodeStyle2()));
-        SHORT_CATENARY_NODE = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "short_catenary_node"), () -> new Block(new BlockOldShortCatenaryNode()));
-        SHORT_CATENARY_NODE_STYLE_2 = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "short_catenary_node_style_2"), () -> new Block(new BlockOldShortCatenaryNodeStyle2()));
-        ELECTRIC_NODE = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "electric_node"), () -> new Block(new BlockOldElectricNode()));
+
+        CATENARY_NODE = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "catenary_node"), () -> new Block(new BlockOldCatenaryNode()), CreativeModeTabs.EXTERNAL);
+        CATENARY_NODE_STYLE_2 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "catenary_node_style_2"), () -> new Block(new BlockOldCatenaryNodeStyle2()), CreativeModeTabs.EXTERNAL);
+        SHORT_CATENARY_NODE = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "short_catenary_node"), () -> new Block(new BlockOldShortCatenaryNode()), CreativeModeTabs.EXTERNAL);
+        SHORT_CATENARY_NODE_STYLE_2 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "short_catenary_node_style_2"), () -> new Block(new BlockOldShortCatenaryNodeStyle2()), CreativeModeTabs.EXTERNAL);
+        ELECTRIC_NODE = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "electric_node"), () -> new Block(new BlockOldElectricNode()), CreativeModeTabs.EXTERNAL);
+        CATENARY_POLE = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "catenary_pole"), () -> new Block(new BlockOldDecorationRack()), CreativeModeTabs.EXTERNAL);
+        CATENARY_POLE_TOP_MIDDLE = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "catenary_pole_top_middle"), () -> new Block(new BlockOldDecorationRack()), CreativeModeTabs.EXTERNAL);
+        CATENARY_POLE_TOP_SIDE = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "catenary_pole_top_side"), () -> new Block(new BlockOldDecorationRack()), CreativeModeTabs.EXTERNAL);
+        CATENARY_RACK_1 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "catenary_rack_1"), () -> new Block(new BlockOldDecorationRack()), CreativeModeTabs.EXTERNAL);
+        CATENARY_RACK_2 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "catenary_rack_2"), () -> new Block(new BlockOldDecorationRack()), CreativeModeTabs.EXTERNAL);
+        CATENARY_RACK_BOTH_SIDE = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "catenary_rack_both_side"), () -> new Block(new BlockOldDecorationRack()), CreativeModeTabs.EXTERNAL);
+        CATENARY_RACK_POLE = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "catenary_rack_pole"), () -> new Block(new BlockOldDecorationRack()), CreativeModeTabs.EXTERNAL);
+        CATENARY_RACK_POLE_BOTH_SIDE = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "catenary_rack_pole_both_side"), () -> new Block(new BlockOldDecorationRack()), CreativeModeTabs.EXTERNAL);
+        CATENARY_RACK_SIDE = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "catenary_rack_side"), () -> new Block(new BlockOldDecorationRack()), CreativeModeTabs.EXTERNAL);
+        ELECTRIC_POLE_ANOTHER_SIDE = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "electric_pole_another_side"), () -> new Block(new BlockOldDecorationRack()), CreativeModeTabs.EXTERNAL);
+        ELECTRIC_POLE_SIDE = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "electric_pole_side"), () -> new Block(new BlockOldDecorationRack()), CreativeModeTabs.EXTERNAL);
+        ELECTRIC_POLE_TOP_BOTH_SIDE = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "electric_pole_top_both_side"), () -> new Block(new BlockOldElectricPole(true)), CreativeModeTabs.EXTERNAL);
+        ELECTRIC_POLE_TOP_SIDE = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "electric_pole_top_side"), () -> new Block(new BlockOldElectricPole(false)), CreativeModeTabs.EXTERNAL);
+        SHORT_CATENARY_RACK = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "short_catenary_rack"), () -> new Block(new BlockOldDecorationRack()), CreativeModeTabs.EXTERNAL);
+        SHORT_CATENARY_RACK_BOTH_SIDE = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "short_catenary_rack_both_side"), () -> new Block(new BlockOldDecorationRack()), CreativeModeTabs.EXTERNAL);
+        SHORT_CATENARY_RACK_POLE = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "short_catenary_rack_pole"), () -> new Block(new BlockOldDecorationRack()), CreativeModeTabs.EXTERNAL);
+        SHORT_CATENARY_RACK_POLE_BOTH_SIDE = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "short_catenary_rack_pole_both_side"), () -> new Block(new BlockOldDecorationRack()), CreativeModeTabs.EXTERNAL);
+        SHORT_CATENARY_RACK_SIDE = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "short_catenary_rack_side"), () -> new Block(new BlockOldDecorationRack()), CreativeModeTabs.EXTERNAL);
+
         TRANS_CATENARY_NODE = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "trans_catenary_node"), () -> new Block(new BlockOldTransCatenaryNode()));
-        CATENARY_POLE = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "catenary_pole"), () -> new Block(new BlockOldDecorationRack()));
-        CATENARY_POLE_TOP_MIDDLE = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "catenary_pole_top_middle"), () -> new Block(new BlockOldDecorationRack()));
-        CATENARY_POLE_TOP_SIDE = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "catenary_pole_top_side"), () -> new Block(new BlockOldDecorationRack()));
-        CATENARY_RACK_1 = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "catenary_rack_1"), () -> new Block(new BlockOldDecorationRack()));
-        CATENARY_RACK_2 = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "catenary_rack_2"), () -> new Block(new BlockOldDecorationRack()));
-        CATENARY_RACK_BOTH_SIDE = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "catenary_rack_both_side"), () -> new Block(new BlockOldDecorationRack()));
-        CATENARY_RACK_POLE = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "catenary_rack_pole"), () -> new Block(new BlockOldDecorationRack()));
-        CATENARY_RACK_POLE_BOTH_SIDE = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "catenary_rack_pole_both_side"), () -> new Block(new BlockOldDecorationRack()));
-        CATENARY_RACK_SIDE = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "catenary_rack_side"), () -> new Block(new BlockOldDecorationRack()));
-        ELECTRIC_POLE_ANOTHER_SIDE = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "electric_pole_another_side"), () -> new Block(new BlockOldDecorationRack()));
-        ELECTRIC_POLE_SIDE = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "electric_pole_side"), () -> new Block(new BlockOldDecorationRack()));
-        ELECTRIC_POLE_TOP_BOTH_SIDE = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "electric_pole_top_both_side"), () -> new Block(new BlockOldElectricPole()));
-        ELECTRIC_POLE_TOP_SIDE = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "electric_pole_top_side"), () -> new Block(new BlockOldElectricPole()));
-        SHORT_CATENARY_RACK = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "short_catenary_rack"), () -> new Block(new BlockOldDecorationRack()));
-        SHORT_CATENARY_RACK_BOTH_SIDE = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "short_catenary_rack_both_side"), () -> new Block(new BlockOldDecorationRack()));
-        SHORT_CATENARY_RACK_POLE = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "short_catenary_rack_pole"), () -> new Block(new BlockOldDecorationRack()));
-        SHORT_CATENARY_RACK_POLE_BOTH_SIDE = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "short_catenary_rack_pole_both_side"), () -> new Block(new BlockOldDecorationRack()));
-        SHORT_CATENARY_RACK_SIDE = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "short_catenary_rack_side"), () -> new Block(new BlockOldDecorationRack()));
     }
 
     public static final BlockRegistryObject NEW_CATENARY_NODE;

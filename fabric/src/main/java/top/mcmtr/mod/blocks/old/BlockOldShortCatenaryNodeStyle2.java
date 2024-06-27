@@ -15,7 +15,7 @@ public final class BlockOldShortCatenaryNodeStyle2 extends BlockOldNodeBase {
         return new BlockOldShortCatenaryNodeStyle2Entity(blockPos, blockState);
     }
 
-    public static class BlockOldShortCatenaryNodeStyle2Entity extends BlockEntityExtension {
+    public static class BlockOldShortCatenaryNodeStyle2Entity extends BlockNodeBaseEntity {
         public BlockOldShortCatenaryNodeStyle2Entity(BlockPos blockPos, BlockState blockState) {
             super(BlockEntityTypes.SHORT_CATENARY_NODE_STYLE_2.get(), blockPos, blockState);
         }

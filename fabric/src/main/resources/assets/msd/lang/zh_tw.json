@@ -12,7 +12,6 @@
 
   "block.msd.new_catenary_node": "接觸網節點",
   "block.msd.rigid_catenary_node": "剛性接觸網節點",
-  "block.msd.electric_node": "電纜節點",
   "block.msd.yamanote_railway_sign": "山手線風格鐵路標誌",
   "block.msd.yuuni_pids": "YUUNI乘客資訊顯示器",
   "block.msd.yamanote_pids": "山手線風格乘客資訊顯示器",
@@ -56,4 +55,29 @@
 
   "tooltip.msd.model_count": "模型數量: %s",
   "tooltip.msd.can_change_model": "右鍵點選具有多個模型的方塊可以切換模型",
+  "tooltip.msd.deprecated": "這個方塊已不再使用，它將不再受支援並將在將來被刪除",
+
+  "block.msd.catenary_node": "接觸網節點",
+  "block.msd.catenary_node_style_2": "接觸網節點(Style 2)",
+  "block.msd.electric_node": "電綫節點",
+  "block.msd.catenary_pole": "柱子",
+  "block.msd.catenary_rack_pole": "接觸網架(柱子)",
+  "block.msd.catenary_rack_pole_both_side": "接觸網架(柱子 & 兩側)",
+  "block.msd.catenary_rack_side": "接觸網架",
+  "block.msd.catenary_rack_both_side": "接觸網架(兩側)",
+  "block.msd.electric_pole_top_side": "電綫杆橫擔(頂部)",
+  "block.msd.electric_pole_top_both_side": "電綫杆橫擔(頂部 & 兩側)",
+  "block.msd.catenary_rack_1": "接觸網架(組件1)",
+  "block.msd.catenary_rack_2": "接觸網架(組件2)",
+  "block.msd.catenary_pole_top_side": "龍門架",
+  "block.msd.catenary_pole_top_middle": "龍門架",
+  "block.msd.electric_pole_side": "電綫杆橫擔(側面)",
+  "block.msd.electric_pole_another_side": "電綫杆橫擔(另一側)",
+  "block.msd.short_catenary_node": "短接觸網节点",
+  "block.msd.short_catenary_node_style_2": "短接觸網架节点(Style 2)",
+  "block.msd.short_catenary_rack_pole": "短接觸網架(柱子)",
+  "block.msd.short_catenary_rack_pole_both_side": "短接觸網架(柱子 & 兩側)",
+  "block.msd.short_catenary_rack": "短接觸網架(组件)",
+  "block.msd.short_catenary_rack_side": "短接觸網架",
+  "block.msd.short_catenary_rack_both_side": "短接觸網架(兩側)"
 }

@@ -15,7 +15,7 @@ public final class BlockOldElectricNode extends BlockOldNodeBase {
         return new BlockOldElectricNodeEntity(blockPos, blockState);
     }
 
-    public static class BlockOldElectricNodeEntity extends BlockEntityExtension {
+    public static class BlockOldElectricNodeEntity extends BlockNodeBaseEntity {
         public BlockOldElectricNodeEntity(BlockPos blockPos, BlockState blockState) {
             super(BlockEntityTypes.ELECTRIC_NODE.get(), blockPos, blockState);
         }
