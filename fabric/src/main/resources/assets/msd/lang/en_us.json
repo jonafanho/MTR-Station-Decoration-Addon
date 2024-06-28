@@ -79,5 +79,14 @@
   "block.msd.catenary_pole_top_side": "Gantry",
   "block.msd.catenary_pole_top_middle": "Gantry",
   "block.msd.electric_pole_side": "Electric Pole Cross Arm(Side)",
-  "block.msd.electric_pole_another_side": "Electric Pole Cross Arm(The Other Side)"
+  "block.msd.electric_pole_another_side": "Electric Pole Cross Arm(The Other Side)",
+
+  "block.msd.catenary_with_long": "Catenary(Long)",
+  "block.msd.catenary_with_long_top": "Catenary(Long & Top)",
+  "block.msd.catenary_with_short": "Catenary(Short)",
+  "block.msd.catenary_with_short_top": "Catenary(Short & Top)",
+  "block.msd.catenary_with_long_counterweight": "Catenary(Long & Counterweight)",
+  "block.msd.catenary_with_long_counterweight_mirror": "Catenary(Long & Counterweight & Mirror)",
+  "block.msd.catenary_with_short_counterweight": "Catenary(Short & Counterweight)",
+  "block.msd.catenary_with_short_counterweight_mirror": "Catenary(Short & Counterweight & Mirror)"
 }

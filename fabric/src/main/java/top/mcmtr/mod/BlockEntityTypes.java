@@ -10,6 +10,15 @@ public class BlockEntityTypes {
         NEW_CATENARY_NODE = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "new_catenary_node"), BlockCatenaryNode.BlockCatenaryNodeEntity::new, Blocks.NEW_CATENARY_NODE::get);
         RIGID_CATENARY_NODE = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "rigid_catenary_node"), BlockRigidCatenaryNode.BlockRigidCatenaryNodeEntity::new, Blocks.RIGID_CATENARY_NODE::get);
 
+        CATENARY_WITH_LONG = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "catenary_with_long"), BlockCatenaryWithLong.BlockCatenaryWithLongEntity::new, Blocks.CATENARY_WITH_LONG::get);
+        CATENARY_WITH_LONG_TOP = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "catenary_with_long_top"), BlockCatenaryWithLongTop.BlockCatenaryWithLongTopEntity::new, Blocks.CATENARY_WITH_LONG_TOP::get);
+        CATENARY_WITH_SHORT = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "catenary_with_short"), BlockCatenaryWithShort.BlockCatenaryWithShortEntity::new, Blocks.CATENARY_WITH_SHORT::get);
+        CATENARY_WITH_SHORT_TOP = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "catenary_with_short_top"), BlockCatenaryWithShortTop.BlockCatenaryWithShortTopEntity::new, Blocks.CATENARY_WITH_SHORT_TOP::get);
+        CATENARY_WITH_LONG_COUNTERWEIGHT = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "catenary_with_long_counterweight"), BlockCatenaryWithLongCounterweight.BlockCatenaryWithLongCounterweightEntity::new, Blocks.CATENARY_WITH_LONG_COUNTERWEIGHT::get);
+        CATENARY_WITH_LONG_COUNTERWEIGHT_MIRROR = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "catenary_with_long_counterweight_mirror"), BlockCatenaryWithLongCounterweightMirror.BlockCatenaryWithLongCounterweightMirrorEntity::new, Blocks.CATENARY_WITH_LONG_COUNTERWEIGHT_MIRROR::get);
+        CATENARY_WITH_SHORT_COUNTERWEIGHT = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "catenary_with_short_counterweight"), BlockCatenaryWithShortCounterweight.BlockCatenaryWithShortCounterweightEntity::new, Blocks.CATENARY_WITH_SHORT_COUNTERWEIGHT::get);
+        CATENARY_WITH_SHORT_COUNTERWEIGHT_MIRROR = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "catenary_with_short_counterweight_mirror"), BlockCatenaryWithShortCounterweightMirror.BlockCatenaryWithShortCounterweightMirrorEntity::new, Blocks.CATENARY_WITH_SHORT_COUNTERWEIGHT_MIRROR::get);
+
         YAMANOTE_RAILWAY_SIGN_ENTITY_2_EVEN = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "yamanote_railway_sign_2_even"), (pos, state) -> new BlockYamanoteRailwaySign.BlockYamanoteRailwaySignEntity(2, false, pos, state), Blocks.YAMANOTE_RAILWAY_SIGN_2_EVEN::get);
         YAMANOTE_RAILWAY_SIGN_ENTITY_2_ODD = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "yamanote_railway_sign_2_odd"), (pos, state) -> new BlockYamanoteRailwaySign.BlockYamanoteRailwaySignEntity(2, true, pos, state), Blocks.YAMANOTE_RAILWAY_SIGN_2_ODD::get);
         YAMANOTE_RAILWAY_SIGN_ENTITY_3_EVEN = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "yamanote_railway_sign_3_even"), (pos, state) -> new BlockYamanoteRailwaySign.BlockYamanoteRailwaySignEntity(3, false, pos, state), Blocks.YAMANOTE_RAILWAY_SIGN_3_EVEN::get);
@@ -42,6 +51,14 @@ public class BlockEntityTypes {
 
     public static final BlockEntityTypeRegistryObject<BlockCatenaryNode.BlockCatenaryNodeEntity> NEW_CATENARY_NODE;
     public static final BlockEntityTypeRegistryObject<BlockRigidCatenaryNode.BlockRigidCatenaryNodeEntity> RIGID_CATENARY_NODE;
+    public static final BlockEntityTypeRegistryObject<BlockCatenaryWithLong.BlockCatenaryWithLongEntity> CATENARY_WITH_LONG;
+    public static final BlockEntityTypeRegistryObject<BlockCatenaryWithLongTop.BlockCatenaryWithLongTopEntity> CATENARY_WITH_LONG_TOP;
+    public static final BlockEntityTypeRegistryObject<BlockCatenaryWithModel.BlockCatenaryWithModelEntity> CATENARY_WITH_SHORT;
+    public static final BlockEntityTypeRegistryObject<BlockCatenaryWithShortTop.BlockCatenaryWithShortTopEntity> CATENARY_WITH_SHORT_TOP;
+    public static final BlockEntityTypeRegistryObject<BlockCatenaryWithLongCounterweight.BlockCatenaryWithLongCounterweightEntity> CATENARY_WITH_LONG_COUNTERWEIGHT;
+    public static final BlockEntityTypeRegistryObject<BlockCatenaryWithLongCounterweightMirror.BlockCatenaryWithLongCounterweightMirrorEntity> CATENARY_WITH_LONG_COUNTERWEIGHT_MIRROR;
+    public static final BlockEntityTypeRegistryObject<BlockCatenaryWithShortCounterweight.BlockCatenaryWithShortCounterweightEntity> CATENARY_WITH_SHORT_COUNTERWEIGHT;
+    public static final BlockEntityTypeRegistryObject<BlockCatenaryWithShortCounterweightMirror.BlockCatenaryWithShortCounterweightMirrorEntity> CATENARY_WITH_SHORT_COUNTERWEIGHT_MIRROR;
     public static final BlockEntityTypeRegistryObject<BlockYamanoteRailwaySign.BlockYamanoteRailwaySignEntity> YAMANOTE_RAILWAY_SIGN_ENTITY_2_EVEN;
     public static final BlockEntityTypeRegistryObject<BlockYamanoteRailwaySign.BlockYamanoteRailwaySignEntity> YAMANOTE_RAILWAY_SIGN_ENTITY_2_ODD;
     public static final BlockEntityTypeRegistryObject<BlockYamanoteRailwaySign.BlockYamanoteRailwaySignEntity> YAMANOTE_RAILWAY_SIGN_ENTITY_3_EVEN;

@@ -3,12 +3,10 @@ package top.mcmtr.mod.packet;
 import org.mtr.mapping.holder.*;
 import org.mtr.mapping.mapper.ScreenExtension;
 import top.mcmtr.mod.blocks.BlockCatenaryNode;
+import top.mcmtr.mod.blocks.BlockCatenaryWithModel;
 import top.mcmtr.mod.blocks.BlockCustomTextBase;
 import top.mcmtr.mod.blocks.BlockYamanoteRailwaySign;
-import top.mcmtr.mod.screen.CatenaryScreen;
-import top.mcmtr.mod.screen.CustomTextScreen;
-import top.mcmtr.mod.screen.RigidCatenaryShapeModifierScreen;
-import top.mcmtr.mod.screen.YamanoteRailwaySignScreen;
+import top.mcmtr.mod.screen.*;
 
 import java.util.function.Consumer;
 import java.util.function.Predicate;
@@ -40,6 +38,14 @@ public final class MSDClientPacketHelper {
 
     public static void openRigidCatenaryShapeModifierScreen(String rigidCatenaryId) {
         openScreen(new RigidCatenaryShapeModifierScreen(rigidCatenaryId), screenExtension -> screenExtension instanceof RigidCatenaryShapeModifierScreen);
+    }
+
+    public static void openCatenaryWithModelScreen(BlockPos blockPos, boolean isConnected){
+        getBlockEntity(blockPos, blockEntity -> {
+            if (blockEntity.data instanceof BlockCatenaryWithModel.BlockCatenaryWithModelEntity) {
+                openScreen(new CatenaryWithModelScreen(blockPos, isConnected), screenExtension -> screenExtension instanceof CatenaryWithModelScreen);
+            }
+        });
     }
 
     private static void openScreen(ScreenExtension screenExtension, Predicate<ScreenExtension> isInstance) {

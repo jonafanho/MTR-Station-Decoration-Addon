@@ -79,5 +79,14 @@
   "block.msd.short_catenary_rack_pole_both_side": "短接触网架(柱子 & 两侧)",
   "block.msd.short_catenary_rack": "短接触网架(组件)",
   "block.msd.short_catenary_rack_side": "短接触网架",
-  "block.msd.short_catenary_rack_both_side": "短接触网架(两侧)"
+  "block.msd.short_catenary_rack_both_side": "短接触网架(两侧)",
+
+  "block.msd.catenary_with_long": "接触网(反定位)",
+  "block.msd.catenary_with_long_top": "接触网(反定位&顶部)",
+  "block.msd.catenary_with_short": "接触网(正定位)",
+  "block.msd.catenary_with_short_top": "接触网(正定位&顶部)",
+  "block.msd.catenary_with_long_counterweight": "接触网(反定位&配重)",
+  "block.msd.catenary_with_long_counterweight_mirror": "接触网(反定位&配重&镜像)",
+  "block.msd.catenary_with_short_counterweight": "接触网(正定位&配重)",
+  "block.msd.catenary_with_short_counterweight_mirror": "接触网(正定位&配重&镜像)"
 }
