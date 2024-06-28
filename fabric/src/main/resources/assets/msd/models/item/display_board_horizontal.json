@@ -1,3 +1,40 @@
 {
-  "parent": "msd:block/display_board_horizontal_1"
+  "overrides": [
+    {
+      "predicate": {
+        "msd:hold": 0
+      },
+      "model": "msd:item/display_board_horizontal/display_board_horizontal_hold_1"
+    },
+    {
+      "predicate": {
+        "msd:hold": 1
+      },
+      "model": "msd:item/display_board_horizontal/display_board_horizontal_hold_2"
+    },
+    {
+      "predicate": {
+        "msd:hold": 2
+      },
+      "model": "msd:item/display_board_horizontal/display_board_horizontal_hold_3"
+    },
+    {
+      "predicate": {
+        "msd:hold": 3
+      },
+      "model": "msd:item/display_board_horizontal/display_board_horizontal_hold_4"
+    },
+    {
+      "predicate": {
+        "msd:hold": 4
+      },
+      "model": "msd:item/display_board_horizontal/display_board_horizontal_hold_5"
+    },
+    {
+      "predicate": {
+        "msd:hold": 5
+      },
+      "model": "msd:item/display_board_horizontal/display_board_horizontal_hold_6"
+    }
+  ]
 }

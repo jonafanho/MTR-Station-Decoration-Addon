@@ -1,3 +1,16 @@
 {
-  "parent": "msd:block/stair_connection"
+  "overrides": [
+    {
+      "predicate": {
+        "msd:hold": 0
+      },
+      "model": "msd:item/decoration_stair/decoration_stair_hold_1"
+    },
+    {
+      "predicate": {
+        "msd:hold": 1
+      },
+      "model": "msd:item/decoration_stair/decoration_stair_hold_2"
+    }
+  ]
 }

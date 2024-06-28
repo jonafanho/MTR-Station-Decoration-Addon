@@ -1,3 +1,16 @@
 {
-  "parent": "msd:block/yuuni_sign_pole_top"
+  "overrides": [
+    {
+      "predicate": {
+        "msd:hold": 0
+      },
+      "model": "msd:item/yuuni_standing_sign_pole/yuuni_standing_sign_pole_hold_1"
+    },
+    {
+      "predicate": {
+        "msd:hold": 1
+      },
+      "model": "msd:item/yuuni_standing_sign_pole/yuuni_standing_sign_pole_hold_2"
+    }
+  ]
 }

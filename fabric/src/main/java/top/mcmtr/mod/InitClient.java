@@ -77,7 +77,23 @@ public class InitClient {
         REGISTRY_CLIENT.registerItemModelPredicate(Items.CATENARY_REMOVER, new Identifier(Init.MOD_ID, "selected"), checkItemPredicateTag());
         REGISTRY_CLIENT.registerItemModelPredicate(Items.RIGID_CATENARY_REMOVER, new Identifier(Init.MOD_ID, "selected"), checkItemPredicateTag());
 
+        REGISTRY_CLIENT.registerItemModelPredicate(Items.SURVEILLANCE_CAMERAS, new Identifier(Init.MOD_ID, "hold"), checkItemHoldTag());
+        REGISTRY_CLIENT.registerItemModelPredicate(Items.HALL_SEAT, new Identifier(Init.MOD_ID, "hold"), checkItemHoldTag());
         REGISTRY_CLIENT.registerItemModelPredicate(Items.DECORATION_BOOK, new Identifier(Init.MOD_ID, "hold"), checkItemHoldTag());
+        REGISTRY_CLIENT.registerItemModelPredicate(Items.DECORATION_CEILING, new Identifier(Init.MOD_ID, "hold"), checkItemHoldTag());
+        REGISTRY_CLIENT.registerItemModelPredicate(Items.DECORATION_CEILING_LIGHT, new Identifier(Init.MOD_ID, "hold"), checkItemHoldTag());
+        REGISTRY_CLIENT.registerItemModelPredicate(Items.DECORATION_FLOOR, new Identifier(Init.MOD_ID, "hold"), checkItemHoldTag());
+        REGISTRY_CLIENT.registerItemModelPredicate(Items.DECORATION_PC, new Identifier(Init.MOD_ID, "hold"), checkItemHoldTag());
+        REGISTRY_CLIENT.registerItemModelPredicate(Items.DECORATION_STAIR, new Identifier(Init.MOD_ID, "hold"), checkItemHoldTag());
+        REGISTRY_CLIENT.registerItemModelPredicate(Items.DISPLAY_BOARD_HORIZONTALLY, new Identifier(Init.MOD_ID, "hold"), checkItemHoldTag());
+        REGISTRY_CLIENT.registerItemModelPredicate(Items.DISPLAY_BOARD_VERTICALLY, new Identifier(Init.MOD_ID, "hold"), checkItemHoldTag());
+        REGISTRY_CLIENT.registerItemModelPredicate(Items.RAILING_STAIR, new Identifier(Init.MOD_ID, "hold"), checkItemHoldTag());
+        REGISTRY_CLIENT.registerItemModelPredicate(Items.RAILING_STAIR_MIRROR, new Identifier(Init.MOD_ID, "hold"), checkItemHoldTag());
+        REGISTRY_CLIENT.registerItemModelPredicate(Items.RAILING_STAIR_GLASS, new Identifier(Init.MOD_ID, "hold"), checkItemHoldTag());
+        REGISTRY_CLIENT.registerItemModelPredicate(Items.RAILING_STAIR_GLASS_MIRROR, new Identifier(Init.MOD_ID, "hold"), checkItemHoldTag());
+        REGISTRY_CLIENT.registerItemModelPredicate(Items.STANDING_SIGN, new Identifier(Init.MOD_ID, "hold"), checkItemHoldTag());
+        REGISTRY_CLIENT.registerItemModelPredicate(Items.STANDING_SIGN_1, new Identifier(Init.MOD_ID, "hold"), checkItemHoldTag());
+        REGISTRY_CLIENT.registerItemModelPredicate(Items.STANDING_SIGN_POLE, new Identifier(Init.MOD_ID, "hold"), checkItemHoldTag());
 
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.YAMANOTE_RAILWAY_SIGN_ENTITY_2_EVEN, RenderYamanoteRailwaySign::new);
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.YAMANOTE_RAILWAY_SIGN_ENTITY_2_ODD, RenderYamanoteRailwaySign::new);
@@ -145,7 +161,7 @@ public class InitClient {
         return ((itemStack, clientWorld, livingEntity) -> itemStack.getOrCreateTag().contains(ItemBlockClickingBase.TAG_POS) ? 1 : 0);
     }
 
-    private static RegistryClient.ModelPredicateProvider checkItemHoldTag(){
+    private static RegistryClient.ModelPredicateProvider checkItemHoldTag() {
         return ((itemStack, clientWorld, livingEntity) -> itemStack.getOrCreateTag().contains(ItemHold.TAG_HOLD) ? itemStack.getOrCreateTag().getInt(ItemHold.TAG_HOLD) : 0);
     }
 

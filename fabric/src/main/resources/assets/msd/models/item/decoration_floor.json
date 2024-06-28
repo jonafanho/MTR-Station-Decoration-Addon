@@ -1,3 +1,10 @@
 {
-  "parent": "msd:block/floor"
+  "overrides": [
+    {
+      "predicate": {
+        "msd:hold": 0
+      },
+      "model": "msd:item/decoration_floor/decoration_floor_hold_1"
+    }
+  ]
 }

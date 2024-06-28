@@ -1,6 +1,10 @@
 {
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "mtr:item/ceiling_light"
-  }
+  "overrides": [
+    {
+      "predicate": {
+        "msd:hold": 0
+      },
+      "model": "msd:item/decoration_ceiling_light/decoration_ceiling_light_hold_1"
+    }
+  ]
 }

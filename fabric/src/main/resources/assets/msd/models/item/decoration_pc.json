@@ -1,3 +1,10 @@
 {
-  "parent": "msd:block/laptop"
+  "overrides": [
+    {
+      "predicate": {
+        "msd:hold": 0
+      },
+      "model": "msd:item/decoration_pc/decoration_pc_hold_1"
+    }
+  ]
 }
