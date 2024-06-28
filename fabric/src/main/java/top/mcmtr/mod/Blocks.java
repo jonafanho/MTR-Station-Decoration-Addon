@@ -2,9 +2,11 @@ package top.mcmtr.mod;
 
 import org.mtr.mapping.holder.Block;
 import org.mtr.mapping.holder.Identifier;
+import org.mtr.mapping.mapper.BlockItemExtension;
 import org.mtr.mapping.registry.BlockRegistryObject;
 import top.mcmtr.mod.blocks.*;
 import top.mcmtr.mod.blocks.old.*;
+import top.mcmtr.mod.items.ItemHold;
 
 public class Blocks {
     static {
@@ -34,24 +36,24 @@ public class Blocks {
         YAMANOTE_7_PIDS = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "yamanote_7_pids"), () -> new Block(new BlockYamanotePIDS(7)), CreativeModeTabs.STATION);
         YUUNI_TICKET = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "yuuni_ticket"), () -> new Block(new BlockYuuniTicket()), CreativeModeTabs.STATION);
 
-        STANDING_SIGN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "yuuni_standing_sign"), () -> new Block(new BlockStandingSign()), CreativeModeTabs.EXTERNAL);
-        STANDING_SIGN_1 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "yuuni_standing_sign_1"), () -> new Block(new BlockStandingSign1()), CreativeModeTabs.EXTERNAL);
-        STANDING_SIGN_POLE = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "yuuni_standing_sign_pole"), () -> new Block(new BlockStandingSignPole()), CreativeModeTabs.EXTERNAL);
+        STANDING_SIGN = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "yuuni_standing_sign"), () -> new Block(new BlockStandingSign()));
+        STANDING_SIGN_1 = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "yuuni_standing_sign_1"), () -> new Block(new BlockStandingSign1()));
+        STANDING_SIGN_POLE = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "yuuni_standing_sign_pole"), () -> new Block(new BlockStandingSignPole()));
 
-        SURVEILLANCE_CAMERAS = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "surveillance_cameras"), () -> new Block(new BlockSurveillanceCameras()), CreativeModeTabs.STATION);
-        HALL_SEAT = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "hall_seat_middle"), () -> new Block(new BlockHallSeat()), CreativeModeTabs.STATION);
-        DECORATION_BOOK = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "decoration_book"), () -> new Block(new BlockDecorationBook()), CreativeModeTabs.STATION);
-        DECORATION_CEILING = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "decoration_ceiling"), () -> new Block(new BlockDecorationCeiling()), CreativeModeTabs.STATION);
-        DECORATION_CEILING_LIGHT = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "decoration_ceiling_light"), () -> new Block(new BlockDecorationCeilingLight()), CreativeModeTabs.STATION);
-        DECORATION_FLOOR = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "decoration_floor"), () -> new Block(new BlockDecorationFloor()), CreativeModeTabs.STATION);
-        DECORATION_PC = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "decoration_pc"), () -> new Block(new BlockDecorationPC()), CreativeModeTabs.STATION);
-        DECORATION_STAIR = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "decoration_stair"), () -> new Block(new BlockDecorationStair()), CreativeModeTabs.STATION);
-        DISPLAY_BOARD_HORIZONTALLY = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "display_board_horizontal"), () -> new Block(new BlockDisplayBoardHorizontally()), CreativeModeTabs.STATION);
-        DISPLAY_BOARD_VERTICALLY = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "display_board_vertically"), () -> new Block(new BlockDisplayBoardVertically()), CreativeModeTabs.STATION);
-        RAILING_STAIR = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "railing_stair"), () -> new Block(new BlockRailingStair(false)), CreativeModeTabs.STATION);
-        RAILING_STAIR_MIRROR = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "railing_stair_mirror"), () -> new Block(new BlockRailingStair(true)), CreativeModeTabs.STATION);
-        RAILING_STAIR_GLASS = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "railing_stair_glass"), () -> new Block(new BlockRailingStair(false)), CreativeModeTabs.STATION);
-        RAILING_STAIR_GLASS_MIRROR = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "railing_stair_glass_mirror"), () -> new Block(new BlockRailingStair(true)), CreativeModeTabs.STATION);
+        SURVEILLANCE_CAMERAS = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "surveillance_cameras"), () -> new Block(new BlockSurveillanceCameras()));
+        HALL_SEAT = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "hall_seat_middle"), () -> new Block(new BlockHallSeat()));
+        DECORATION_BOOK = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "decoration_book"), () -> new Block(new BlockDecorationBook()));
+        DECORATION_CEILING = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "decoration_ceiling"), () -> new Block(new BlockDecorationCeiling()));
+        DECORATION_CEILING_LIGHT = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "decoration_ceiling_light"), () -> new Block(new BlockDecorationCeilingLight()));
+        DECORATION_FLOOR = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "decoration_floor"), () -> new Block(new BlockDecorationFloor()));
+        DECORATION_PC = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "decoration_pc"), () -> new Block(new BlockDecorationPC()));
+        DECORATION_STAIR = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "decoration_stair"), () -> new Block(new BlockDecorationStair()));
+        DISPLAY_BOARD_HORIZONTALLY = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "display_board_horizontal"), () -> new Block(new BlockDisplayBoardHorizontally()));
+        DISPLAY_BOARD_VERTICALLY = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "display_board_vertically"), () -> new Block(new BlockDisplayBoardVertically()));
+        RAILING_STAIR = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "railing_stair"), () -> new Block(new BlockRailingStair(false)));
+        RAILING_STAIR_MIRROR = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "railing_stair_mirror"), () -> new Block(new BlockRailingStair(true)));
+        RAILING_STAIR_GLASS = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "railing_stair_glass"), () -> new Block(new BlockRailingStair(false)));
+        RAILING_STAIR_GLASS_MIRROR = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "railing_stair_glass_mirror"), () -> new Block(new BlockRailingStair(true)));
 
         YAMANOTE_RAILWAY_SIGN_MIDDLE = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "yamanote_railway_sign_middle"), () -> new Block(new BlockYamanoteRailwaySign(0, false)));
 

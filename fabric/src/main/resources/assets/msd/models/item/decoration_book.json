@@ -1,3 +1,16 @@
 {
-  "parent": "msd:block/book_1"
+  "overrides": [
+    {
+      "predicate": {
+        "msd:hold": 0
+      },
+      "model": "msd:item/decoration_book/decoration_book_hold_1"
+    },
+    {
+      "predicate": {
+        "msd:hold": 1
+      },
+      "model": "msd:item/decoration_book/decoration_book_hold_2"
+    }
+  ]
 }

@@ -10,6 +10,7 @@ import top.mcmtr.core.operation.MSDDataRequest;
 import top.mcmtr.mod.client.MSDMinecraftClientData;
 import top.mcmtr.mod.config.Config;
 import top.mcmtr.mod.items.ItemBlockClickingBase;
+import top.mcmtr.mod.items.ItemHold;
 import top.mcmtr.mod.packet.MSDPacketRequestData;
 import top.mcmtr.mod.render.RenderCustomText;
 import top.mcmtr.mod.render.RenderYamanoteRailwaySign;
@@ -76,6 +77,8 @@ public class InitClient {
         REGISTRY_CLIENT.registerItemModelPredicate(Items.CATENARY_REMOVER, new Identifier(Init.MOD_ID, "selected"), checkItemPredicateTag());
         REGISTRY_CLIENT.registerItemModelPredicate(Items.RIGID_CATENARY_REMOVER, new Identifier(Init.MOD_ID, "selected"), checkItemPredicateTag());
 
+        REGISTRY_CLIENT.registerItemModelPredicate(Items.DECORATION_BOOK, new Identifier(Init.MOD_ID, "hold"), checkItemHoldTag());
+
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.YAMANOTE_RAILWAY_SIGN_ENTITY_2_EVEN, RenderYamanoteRailwaySign::new);
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.YAMANOTE_RAILWAY_SIGN_ENTITY_2_ODD, RenderYamanoteRailwaySign::new);
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.YAMANOTE_RAILWAY_SIGN_ENTITY_3_EVEN, RenderYamanoteRailwaySign::new);
@@ -140,6 +143,10 @@ public class InitClient {
 
     private static RegistryClient.ModelPredicateProvider checkItemPredicateTag() {
         return ((itemStack, clientWorld, livingEntity) -> itemStack.getOrCreateTag().contains(ItemBlockClickingBase.TAG_POS) ? 1 : 0);
+    }
+
+    private static RegistryClient.ModelPredicateProvider checkItemHoldTag(){
+        return ((itemStack, clientWorld, livingEntity) -> itemStack.getOrCreateTag().contains(ItemHold.TAG_HOLD) ? itemStack.getOrCreateTag().getInt(ItemHold.TAG_HOLD) : 0);
     }
 
     public static Station findStation(BlockPos blockPos) {

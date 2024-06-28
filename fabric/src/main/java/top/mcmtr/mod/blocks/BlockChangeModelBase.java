@@ -5,6 +5,7 @@ import org.mtr.mapping.mapper.BlockExtension;
 import org.mtr.mapping.mapper.DirectionHelper;
 import org.mtr.mapping.mapper.TextHelper;
 import org.mtr.mapping.tool.HolderBase;
+import top.mcmtr.mod.items.ItemHold;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -27,7 +28,9 @@ public abstract class BlockChangeModelBase extends BlockExtension implements Dir
     @Override
     public BlockState getPlacementState2(ItemPlacementContext ctx) {
         final Direction facing = ctx.getPlayerFacing();
-        return getDefaultState2().with(new Property<>(FACING.data), facing.data);
+        final CompoundTag compoundTag = ctx.getStack().getOrCreateTag();
+        final int index = compoundTag.contains(ItemHold.TAG_HOLD) ? compoundTag.getInt(ItemHold.TAG_HOLD) : 0;
+        return getDefaultState2().with(new Property<>(FACING.data), facing.data).with(new Property<>(TYPE.data), index);
     }
 
     @Override
