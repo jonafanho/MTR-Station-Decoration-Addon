@@ -15,9 +15,9 @@ import org.mtr.mod.render.StoredMatrixTransformations;
 import top.mcmtr.mod.blocks.BlockCatenaryWithModel;
 
 public final class RenderCatenaryModel<T extends BlockCatenaryWithModel.BlockCatenaryWithModelEntity> extends BlockEntityRenderer<T> {
-    private final CatenaryModel model;
+    private final BlockCatenaryWithModel.CatenaryModel model;
 
-    public RenderCatenaryModel(Argument argument, CatenaryModel model) {
+    public RenderCatenaryModel(Argument argument, BlockCatenaryWithModel.CatenaryModel model) {
         super(argument);
         this.model = model;
     }
@@ -68,26 +68,5 @@ public final class RenderCatenaryModel<T extends BlockCatenaryWithModel.BlockCat
     @Override
     public boolean isInRenderDistance(BlockCatenaryWithModel.BlockCatenaryWithModelEntity blockEntity, Vector3d position) {
         return true;
-    }
-
-    public enum CatenaryModel {
-        CATENARY_LONG("catenary_long"),
-        CATENARY_LONG_TOP("catenary_long_top"),
-        CATENARY_LONG_COUNTERWEIGHT("catenary_long_counterweight"),
-        CATENARY_LONG_COUNTERWEIGHT_MIRROR("catenary_long_counterweight_mirror"),
-        CATENARY_SHORT("catenary_short"),
-        CATENARY_SHORT_TOP("catenary_short_top"),
-        CATENARY_SHORT_COUNTERWEIGHT("catenary_short_counterweight"),
-        CATENARY_SHORT_COUNTERWEIGHT_MIRROR("catenary_short_counterweight_mirror");
-
-        private final String modelId;
-
-        CatenaryModel(String modelId) {
-            this.modelId = modelId;
-        }
-
-        public String getModelId() {
-            return this.modelId;
-        }
     }
 }

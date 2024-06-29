@@ -2,24 +2,22 @@ package top.mcmtr.mod;
 
 import org.mtr.mapping.holder.Block;
 import org.mtr.mapping.holder.Identifier;
-import org.mtr.mapping.mapper.BlockItemExtension;
 import org.mtr.mapping.registry.BlockRegistryObject;
 import top.mcmtr.mod.blocks.*;
 import top.mcmtr.mod.blocks.old.*;
-import top.mcmtr.mod.items.ItemHold;
 
 public class Blocks {
     static {
         NEW_CATENARY_NODE = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "new_catenary_node"), () -> new Block(new BlockCatenaryNode()), CreativeModeTabs.EXTERNAL);
         RIGID_CATENARY_NODE = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "rigid_catenary_node"), () -> new Block(new BlockRigidCatenaryNode()), CreativeModeTabs.EXTERNAL);
-        CATENARY_WITH_LONG = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "catenary_with_long"), () -> new Block(new BlockCatenaryWithLong()), CreativeModeTabs.EXTERNAL);
-        CATENARY_WITH_LONG_TOP = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "catenary_with_long_top"), () -> new Block(new BlockCatenaryWithLongTop()), CreativeModeTabs.EXTERNAL);
-        CATENARY_WITH_SHORT = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "catenary_with_short"), () -> new Block(new BlockCatenaryWithShort()), CreativeModeTabs.EXTERNAL);
-        CATENARY_WITH_SHORT_TOP = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "catenary_with_short_top"), () -> new Block(new BlockCatenaryWithShortTop()), CreativeModeTabs.EXTERNAL);
-        CATENARY_WITH_LONG_COUNTERWEIGHT = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "catenary_with_long_counterweight"), () -> new Block(new BlockCatenaryWithLongCounterweight()), CreativeModeTabs.EXTERNAL);
-        CATENARY_WITH_LONG_COUNTERWEIGHT_MIRROR = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "catenary_with_long_counterweight_mirror"), () -> new Block(new BlockCatenaryWithLongCounterweightMirror()), CreativeModeTabs.EXTERNAL);
-        CATENARY_WITH_SHORT_COUNTERWEIGHT = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "catenary_with_short_counterweight"), () -> new Block(new BlockCatenaryWithShortCounterweight()), CreativeModeTabs.EXTERNAL);
-        CATENARY_WITH_SHORT_COUNTERWEIGHT_MIRROR = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "catenary_with_short_counterweight_mirror"), () -> new Block(new BlockCatenaryWithShortCounterweightMirror()), CreativeModeTabs.EXTERNAL);
+        CATENARY_WITH_LONG = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "catenary_with_long"), () -> new Block(new BlockCatenaryWithModel(BlockCatenaryWithModel.CatenaryModel.CATENARY_LONG)), CreativeModeTabs.EXTERNAL);
+        CATENARY_WITH_LONG_TOP = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "catenary_with_long_top"), () -> new Block(new BlockCatenaryWithModel(BlockCatenaryWithModel.CatenaryModel.CATENARY_LONG_TOP)), CreativeModeTabs.EXTERNAL);
+        CATENARY_WITH_SHORT = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "catenary_with_short"), () -> new Block(new BlockCatenaryWithModel(BlockCatenaryWithModel.CatenaryModel.CATENARY_SHORT)), CreativeModeTabs.EXTERNAL);
+        CATENARY_WITH_SHORT_TOP = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "catenary_with_short_top"), () -> new Block(new BlockCatenaryWithModel(BlockCatenaryWithModel.CatenaryModel.CATENARY_SHORT_TOP)), CreativeModeTabs.EXTERNAL);
+        CATENARY_WITH_LONG_COUNTERWEIGHT = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "catenary_with_long_counterweight"), () -> new Block(new BlockCatenaryWithModel(BlockCatenaryWithModel.CatenaryModel.CATENARY_LONG_COUNTERWEIGHT)), CreativeModeTabs.EXTERNAL);
+        CATENARY_WITH_LONG_COUNTERWEIGHT_MIRROR = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "catenary_with_long_counterweight_mirror"), () -> new Block(new BlockCatenaryWithModel(BlockCatenaryWithModel.CatenaryModel.CATENARY_LONG_COUNTERWEIGHT_MIRROR)), CreativeModeTabs.EXTERNAL);
+        CATENARY_WITH_SHORT_COUNTERWEIGHT = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "catenary_with_short_counterweight"), () -> new Block(new BlockCatenaryWithModel(BlockCatenaryWithModel.CatenaryModel.CATENARY_SHORT_COUNTERWEIGHT)), CreativeModeTabs.EXTERNAL);
+        CATENARY_WITH_SHORT_COUNTERWEIGHT_MIRROR = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "catenary_with_short_counterweight_mirror"), () -> new Block(new BlockCatenaryWithModel(BlockCatenaryWithModel.CatenaryModel.CATENARY_SHORT_COUNTERWEIGHT_MIRROR)), CreativeModeTabs.EXTERNAL);
 
         YAMANOTE_RAILWAY_SIGN_2_EVEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "yamanote_railway_sign_2_even"), () -> new Block(new BlockYamanoteRailwaySign(2, false)), CreativeModeTabs.STATION);
         YAMANOTE_RAILWAY_SIGN_2_ODD = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "yamanote_railway_sign_2_odd"), () -> new Block(new BlockYamanoteRailwaySign(2, true)), CreativeModeTabs.STATION);

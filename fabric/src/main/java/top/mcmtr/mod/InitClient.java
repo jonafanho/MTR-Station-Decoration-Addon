@@ -7,6 +7,7 @@ import org.mtr.mapping.registry.RegistryClient;
 import org.mtr.mod.client.MinecraftClientData;
 import org.mtr.mod.render.RenderPIDS;
 import top.mcmtr.core.operation.MSDDataRequest;
+import top.mcmtr.mod.blocks.BlockCatenaryWithModel;
 import top.mcmtr.mod.client.MSDMinecraftClientData;
 import top.mcmtr.mod.config.Config;
 import top.mcmtr.mod.items.ItemBlockClickingBase;
@@ -126,14 +127,14 @@ public class InitClient {
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.YAMANOTE_6_PIDS, argument -> new RenderPIDS<>(argument, -8F, 15F, 7F, 6F, 48, true, 1F));
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.YAMANOTE_7_PIDS, argument -> new RenderPIDS<>(argument, -12F, 15F, 7F, 6F, 56, true, 1F));
 
-        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.CATENARY_WITH_LONG, argument -> new RenderCatenaryModel<>(argument, RenderCatenaryModel.CatenaryModel.CATENARY_LONG));
-        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.CATENARY_WITH_LONG_TOP, argument -> new RenderCatenaryModel<>(argument, RenderCatenaryModel.CatenaryModel.CATENARY_LONG_TOP));
-        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.CATENARY_WITH_SHORT, argument -> new RenderCatenaryModel<>(argument, RenderCatenaryModel.CatenaryModel.CATENARY_SHORT));
-        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.CATENARY_WITH_SHORT_TOP, argument -> new RenderCatenaryModel<>(argument, RenderCatenaryModel.CatenaryModel.CATENARY_SHORT_TOP));
-        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.CATENARY_WITH_LONG_COUNTERWEIGHT, argument -> new RenderCatenaryModel<>(argument, RenderCatenaryModel.CatenaryModel.CATENARY_LONG_COUNTERWEIGHT));
-        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.CATENARY_WITH_LONG_COUNTERWEIGHT_MIRROR, argument -> new RenderCatenaryModel<>(argument, RenderCatenaryModel.CatenaryModel.CATENARY_LONG_COUNTERWEIGHT_MIRROR));
-        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.CATENARY_WITH_SHORT_COUNTERWEIGHT, argument -> new RenderCatenaryModel<>(argument, RenderCatenaryModel.CatenaryModel.CATENARY_SHORT_COUNTERWEIGHT));
-        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.CATENARY_WITH_SHORT_COUNTERWEIGHT_MIRROR, argument -> new RenderCatenaryModel<>(argument, RenderCatenaryModel.CatenaryModel.CATENARY_SHORT_COUNTERWEIGHT_MIRROR));
+        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.CATENARY_WITH_LONG, argument -> new RenderCatenaryModel<>(argument, BlockCatenaryWithModel.CatenaryModel.CATENARY_LONG));
+        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.CATENARY_WITH_LONG_TOP, argument -> new RenderCatenaryModel<>(argument, BlockCatenaryWithModel.CatenaryModel.CATENARY_LONG_TOP));
+        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.CATENARY_WITH_SHORT, argument -> new RenderCatenaryModel<>(argument, BlockCatenaryWithModel.CatenaryModel.CATENARY_SHORT));
+        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.CATENARY_WITH_SHORT_TOP, argument -> new RenderCatenaryModel<>(argument, BlockCatenaryWithModel.CatenaryModel.CATENARY_SHORT_TOP));
+        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.CATENARY_WITH_LONG_COUNTERWEIGHT, argument -> new RenderCatenaryModel<>(argument, BlockCatenaryWithModel.CatenaryModel.CATENARY_LONG_COUNTERWEIGHT));
+        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.CATENARY_WITH_LONG_COUNTERWEIGHT_MIRROR, argument -> new RenderCatenaryModel<>(argument, BlockCatenaryWithModel.CatenaryModel.CATENARY_LONG_COUNTERWEIGHT_MIRROR));
+        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.CATENARY_WITH_SHORT_COUNTERWEIGHT, argument -> new RenderCatenaryModel<>(argument, BlockCatenaryWithModel.CatenaryModel.CATENARY_SHORT_COUNTERWEIGHT));
+        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.CATENARY_WITH_SHORT_COUNTERWEIGHT_MIRROR, argument -> new RenderCatenaryModel<>(argument, BlockCatenaryWithModel.CatenaryModel.CATENARY_SHORT_COUNTERWEIGHT_MIRROR));
 
         REGISTRY_CLIENT.setupPackets(new Identifier(Init.MOD_ID, "packet"));
 

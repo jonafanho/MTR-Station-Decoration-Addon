@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "msd:item/hold_1"
+    "layer0": "msd:item/item_catenary_short_top"
   }
 }
