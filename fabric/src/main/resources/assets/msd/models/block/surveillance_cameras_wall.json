@@ -106,8 +106,23 @@
 		}
 	],
 	"display": {
+		"thirdperson_righthand": {
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"thirdperson_lefthand": {
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"firstperson_righthand": {
+			"scale": [0.5, 0.5, 0.25]
+		},
+		"firstperson_lefthand": {
+			"scale": [0.5, 0.5, 0.25]
+		},
 		"gui": {
 			"rotation": [0, -45, 0]
+		},
+		"fixed": {
+			"rotation": [0, -90, 0]
 		}
 	}
 }

@@ -117,5 +117,16 @@
 				"down": {"uv": [5.29778, 0.32, 6.45444, 0.32], "rotation": 180, "texture": "#0"}
 			}
 		}
-	]
+	],
+	"display": {
+		"gui": {
+			"rotation": [0, -90, 0],
+			"translation": [0, -1.5, 0],
+			"scale": [0.8, 0.8, 0.8]
+		},
+		"fixed": {
+			"rotation": [0, -90, 0],
+			"translation": [0, -2, 0]
+		}
+	}
 }

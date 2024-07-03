@@ -20,6 +20,12 @@
 		}
 	],
 	"display": {
+		"thirdperson_righthand": {
+			"scale": [0.4, 0.4, 0.4]
+		},
+		"thirdperson_lefthand": {
+			"scale": [0.4, 0.4, 0.4]
+		},
 		"firstperson_righthand": {
 			"scale": [0.5, 0.5, 0.25]
 		},
