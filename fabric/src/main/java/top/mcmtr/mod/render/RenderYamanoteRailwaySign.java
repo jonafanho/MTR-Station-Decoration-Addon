@@ -17,6 +17,7 @@ import org.mtr.mod.client.DynamicTextureCache;
 import org.mtr.mod.client.IDrawing;
 import org.mtr.mod.client.MinecraftClientData;
 import org.mtr.mod.data.IGui;
+import org.mtr.mod.generated.lang.TranslationProvider;
 import org.mtr.mod.render.MainRenderer;
 import org.mtr.mod.render.QueuedRenderLayer;
 import org.mtr.mod.render.StoredMatrixTransformations;
@@ -263,7 +264,7 @@ public class RenderYamanoteRailwaySign<T extends BlockYamanoteRailwaySign.BlockY
                         signText = IGui.mergeStations(selectedIds.longStream()
                                 .filter(MinecraftClientData.getInstance().stationIdMap::containsKey)
                                 .sorted()
-                                .mapToObj(stationId -> IGui.insertTranslation("gui.mtr.station_cjk", "gui.mtr.station", 1, MinecraftClientData.getInstance().stationIdMap.get(stationId).getName()))
+                                .mapToObj(stationId -> IGui.insertTranslation(TranslationProvider.GUI_MTR_STATION_CJK, TranslationProvider.GUI_MTR_STATION, 1, MinecraftClientData.getInstance().stationIdMap.get(stationId).getName()))
                                 .collect(Collectors.toList())
                         );
                     } else {

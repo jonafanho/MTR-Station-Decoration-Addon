@@ -8,13 +8,13 @@
     },
     {
       "predicate": {
-        "msd:hold": 1
+        "msd:hold": 0.1
       },
       "model": "msd:item/hall_seat_middle/hall_seat_middle_hold_2"
     },
     {
       "predicate": {
-        "msd:hold": 2
+        "msd:hold": 0.2
       },
       "model": "msd:item/hall_seat_middle/hall_seat_middle_hold_3"
     }

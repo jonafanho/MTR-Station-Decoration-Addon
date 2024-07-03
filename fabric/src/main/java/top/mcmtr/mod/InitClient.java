@@ -181,7 +181,7 @@ public class InitClient {
     }
 
     private static RegistryClient.ModelPredicateProvider checkItemHoldTag() {
-        return ((itemStack, clientWorld, livingEntity) -> itemStack.getOrCreateTag().contains(ItemHold.TAG_HOLD) ? itemStack.getOrCreateTag().getInt(ItemHold.TAG_HOLD) : 0);
+        return ((itemStack, clientWorld, livingEntity) -> itemStack.getOrCreateTag().contains(ItemHold.TAG_HOLD) ? itemStack.getOrCreateTag().getInt(ItemHold.TAG_HOLD) / 10F : 0);
     }
 
     public static Station findStation(BlockPos blockPos) {

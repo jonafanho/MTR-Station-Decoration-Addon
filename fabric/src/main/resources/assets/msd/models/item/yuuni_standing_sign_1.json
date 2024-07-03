@@ -8,7 +8,7 @@
     },
     {
       "predicate": {
-        "msd:hold": 1
+        "msd:hold": 0.1
       },
       "model": "msd:item/yuuni_standing_sign_1/yuuni_standing_sign_1_hold_2"
     }

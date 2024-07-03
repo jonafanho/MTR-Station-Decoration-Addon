@@ -8,25 +8,25 @@
     },
     {
       "predicate": {
-        "msd:hold": 1
+        "msd:hold": 0.1
       },
       "model": "msd:item/railing_stair/railing_stair_hold_2"
     },
     {
       "predicate": {
-        "msd:hold": 2
+        "msd:hold": 0.2
       },
       "model": "msd:item/railing_stair/railing_stair_hold_3"
     },
     {
       "predicate": {
-        "msd:hold": 3
+        "msd:hold": 0.3
       },
       "model": "msd:item/railing_stair/railing_stair_hold_4"
     },
     {
       "predicate": {
-        "msd:hold": 4
+        "msd:hold": 0.4
       },
       "model": "msd:item/railing_stair/railing_stair_hold_5"
     }
