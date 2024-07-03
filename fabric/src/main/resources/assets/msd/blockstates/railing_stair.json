@@ -76,19 +76,19 @@
       "model": "msd:block/railing_stair_corner"
     },
     "facing=north,type=5": {
-      "model": "msd:block/railing_stair_end",
+      "model": "msd:block/railing_stair_corner_2",
       "y": 90
     },
     "facing=east,type=5": {
-      "model": "msd:block/railing_stair_end",
+      "model": "msd:block/railing_stair_corner_2",
       "y": 180
     },
     "facing=south,type=5": {
-      "model": "msd:block/railing_stair_end",
+      "model": "msd:block/railing_stair_corner_2",
       "y": 270
     },
     "facing=west,type=5": {
-      "model": "msd:block/railing_stair_end"
+      "model": "msd:block/railing_stair_corner_2"
     }
   }
 }

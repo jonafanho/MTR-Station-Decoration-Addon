@@ -76,19 +76,19 @@
       "model": "msd:block/railing_stair_glass_corner_mirror"
     },
     "facing=north,type=5": {
-      "model": "msd:block/railing_stair_glass_end_mirror",
+      "model": "msd:block/railing_stair_glass_corner_2_mirror",
       "y": 90
     },
     "facing=east,type=5": {
-      "model": "msd:block/railing_stair_glass_end_mirror",
+      "model": "msd:block/railing_stair_glass_corner_2_mirror",
       "y": 180
     },
     "facing=south,type=5": {
-      "model": "msd:block/railing_stair_glass_end_mirror",
+      "model": "msd:block/railing_stair_glass_corner_2_mirror",
       "y": 270
     },
     "facing=west,type=5": {
-      "model": "msd:block/railing_stair_glass_end_mirror"
+      "model": "msd:block/railing_stair_glass_corner_2_mirror"
     }
   }
 }

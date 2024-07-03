@@ -29,6 +29,12 @@
         "msd:hold": 0.4
       },
       "model": "msd:item/railing_stair/railing_stair_hold_5"
+    },
+    {
+      "predicate": {
+        "msd:hold": 0.5
+      },
+      "model": "msd:item/railing_stair/railing_stair_hold_6"
     }
   ]
 }
