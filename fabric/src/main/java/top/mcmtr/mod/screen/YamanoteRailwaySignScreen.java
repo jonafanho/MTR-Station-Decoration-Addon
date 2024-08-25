@@ -13,10 +13,7 @@ import org.mtr.mod.client.IDrawing;
 import org.mtr.mod.client.MinecraftClientData;
 import org.mtr.mod.data.IGui;
 import org.mtr.mod.resource.SignResource;
-import org.mtr.mod.screen.DashboardListItem;
-import org.mtr.mod.screen.DashboardListSelectorScreen;
-import org.mtr.mod.screen.EditStationScreen;
-import org.mtr.mod.screen.PIDSConfigScreen;
+import org.mtr.mod.screen.*;
 import top.mcmtr.mod.InitClient;
 import top.mcmtr.mod.blocks.BlockYamanoteRailwaySign;
 import top.mcmtr.mod.packet.MSDPacketUpdateYamanoteRailwaySignConfig;
@@ -112,8 +109,8 @@ public class YamanoteRailwaySignScreen extends ScreenExtension implements IGui {
         }
 
         buttonClear = new ButtonWidgetExtension(0, 0, 0, SQUARE_SIZE, TextHelper.translatable("gui.mtr.reset_sign"), button -> setNewSignId(null));
-        buttonPrevPage = new TexturedButtonWidgetExtension(0, 0, 0, SQUARE_SIZE, new Identifier("textures/gui/sprites/mtr/icon_left.png"), new Identifier("textures/gui/sprites/mtr/icon_left_highlighted.png"), button -> setPage(page - 1));
-        buttonNextPage = new TexturedButtonWidgetExtension(0, 0, 0, SQUARE_SIZE, new Identifier("textures/gui/sprites/mtr/icon_right.png"), new Identifier("textures/gui/sprites/mtr/icon_right_highlighted.png"), button -> setPage(page + 1));
+        buttonPrevPage = TexturedButtonWidgetHelper.create(0, 0, 0, SQUARE_SIZE, new Identifier("textures/gui/sprites/mtr/icon_left.png"), new Identifier("textures/gui/sprites/mtr/icon_left_highlighted.png"), button -> setPage(page - 1));
+        buttonNextPage = TexturedButtonWidgetHelper.create(0, 0, 0, SQUARE_SIZE, new Identifier("textures/gui/sprites/mtr/icon_right.png"), new Identifier("textures/gui/sprites/mtr/icon_right_highlighted.png"), button -> setPage(page + 1));
 
     }
 
