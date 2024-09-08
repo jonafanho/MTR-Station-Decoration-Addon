@@ -24,11 +24,13 @@ import java.util.function.Consumer;
 public class Init implements Utilities {
     private static MSDMain main;
     private static int serverPort;
+    private static long lastSavedMillis;
     public static final String MOD_ID = "msd";
     public static final Logger MSD_LOGGER = LogManager.getLogger("MTR-Station-Decoration");
     public static final Registry REGISTRY = new Registry();
     private static final ObjectArrayList<String> WORLD_ID_LIST = new ObjectArrayList<>();
     private static final RequestHelper REQUEST_HELPER = new RequestHelper(false);
+    public static final int AUTOSAVE_INTERVAL = 30000;
 
     public static void init() {
         Blocks.init();
@@ -53,10 +55,18 @@ public class Init implements Utilities {
         REGISTRY.eventRegistry.registerServerStarted(minecraftServer -> {
             WORLD_ID_LIST.clear();
             MinecraftServerHelper.iterateWorlds(minecraftServer, serverWorld -> WORLD_ID_LIST.add(getWorldId(new World(serverWorld.data))));
-
+            lastSavedMillis = System.currentTimeMillis();
             final int defaultPort = getDefaultPortFromConfig(minecraftServer);
             serverPort = findFreePort(defaultPort);
             main = new MSDMain(minecraftServer.getSavePath(WorldSavePath.getRootMapped()).resolve("msd"), serverPort, WORLD_ID_LIST.toArray(new String[0]));
+        });
+
+        REGISTRY.eventRegistry.registerStartServerTick(() -> {
+            final long currentMillis = System.currentTimeMillis();
+            if (currentMillis - lastSavedMillis > AUTOSAVE_INTERVAL) {
+                main.save();
+                lastSavedMillis = currentMillis;
+            }
         });
 
         REGISTRY.eventRegistry.registerPlayerDisconnect((minecraftServer, serverPlayerEntity) -> {
