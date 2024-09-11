@@ -21,6 +21,7 @@ public class BlockOldRailingStair extends BlockExtension implements DirectionHel
         this.isMirror = isMirror;
         this.index = index;
         this.metal = metal;
+        this.setDefaultState2(this.getDefaultState2().with(new Property<>(TYPE.data), this.index));
     }
 
     @Override
