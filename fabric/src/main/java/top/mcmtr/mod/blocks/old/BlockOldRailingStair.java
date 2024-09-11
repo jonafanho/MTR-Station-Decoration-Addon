@@ -11,6 +11,7 @@ import org.mtr.mod.block.IBlock;
 import java.util.List;
 
 public class BlockOldRailingStair extends BlockExtension implements DirectionHelper {
+    public static final IntegerProperty TYPE = IntegerProperty.of("type", 0, 5);
     private final boolean isMirror;
     private final int index;
     private final int metal;
@@ -25,11 +26,12 @@ public class BlockOldRailingStair extends BlockExtension implements DirectionHel
     @Override
     public void addBlockProperties(List<HolderBase<?>> properties) {
         properties.add(FACING);
+        properties.add(TYPE);
     }
 
     @Override
     public BlockState getPlacementState2(ItemPlacementContext ctx) {
-        return this.getDefaultState2().with(new Property<>(FACING.data), ctx.getPlayerFacing().data);
+        return this.getDefaultState2().with(new Property<>(FACING.data), ctx.getPlayerFacing().data).with(new Property<>(TYPE.data), this.index);
     }
 
     @Override
