@@ -18,6 +18,30 @@ public class Blocks {
         CATENARY_WITH_LONG_COUNTERWEIGHT_MIRROR = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "catenary_with_long_counterweight_mirror"), () -> new Block(new BlockCatenaryWithModel(BlockCatenaryWithModel.CatenaryModel.CATENARY_LONG_COUNTERWEIGHT_MIRROR)), CreativeModeTabs.EXTERNAL);
         CATENARY_WITH_SHORT_COUNTERWEIGHT = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "catenary_with_short_counterweight"), () -> new Block(new BlockCatenaryWithModel(BlockCatenaryWithModel.CatenaryModel.CATENARY_SHORT_COUNTERWEIGHT)), CreativeModeTabs.EXTERNAL);
         CATENARY_WITH_SHORT_COUNTERWEIGHT_MIRROR = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "catenary_with_short_counterweight_mirror"), () -> new Block(new BlockCatenaryWithModel(BlockCatenaryWithModel.CatenaryModel.CATENARY_SHORT_COUNTERWEIGHT_MIRROR)), CreativeModeTabs.EXTERNAL);
+        //old
+        CATENARY_POLE = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "catenary_pole"), () -> new Block(new BlockOldDecorationRack()), CreativeModeTabs.EXTERNAL);
+        CATENARY_POLE_TOP_MIDDLE = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "catenary_pole_top_middle"), () -> new Block(new BlockOldDecorationRack()), CreativeModeTabs.EXTERNAL);
+        CATENARY_POLE_TOP_SIDE = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "catenary_pole_top_side"), () -> new Block(new BlockOldDecorationRack()), CreativeModeTabs.EXTERNAL);
+        SHORT_CATENARY_RACK_BOTH_SIDE = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "short_catenary_rack_both_side"), () -> new Block(new BlockOldDecorationRack()), CreativeModeTabs.EXTERNAL);
+        SHORT_CATENARY_RACK_SIDE = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "short_catenary_rack_side"), () -> new Block(new BlockOldDecorationRack()), CreativeModeTabs.EXTERNAL);
+        SHORT_CATENARY_RACK_POLE_BOTH_SIDE = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "short_catenary_rack_pole_both_side"), () -> new Block(new BlockOldDecorationRack()), CreativeModeTabs.EXTERNAL);
+        SHORT_CATENARY_RACK_POLE = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "short_catenary_rack_pole"), () -> new Block(new BlockOldDecorationRack()), CreativeModeTabs.EXTERNAL);
+        SHORT_CATENARY_RACK = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "short_catenary_rack"), () -> new Block(new BlockOldDecorationRack()), CreativeModeTabs.EXTERNAL);
+        SHORT_CATENARY_NODE = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "short_catenary_node"), () -> new Block(new BlockOldShortCatenaryNode()), CreativeModeTabs.EXTERNAL);
+        SHORT_CATENARY_NODE_STYLE_2 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "short_catenary_node_style_2"), () -> new Block(new BlockOldShortCatenaryNodeStyle2()), CreativeModeTabs.EXTERNAL);
+        CATENARY_RACK_BOTH_SIDE = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "catenary_rack_both_side"), () -> new Block(new BlockOldDecorationRack()), CreativeModeTabs.EXTERNAL);
+        CATENARY_RACK_SIDE = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "catenary_rack_side"), () -> new Block(new BlockOldDecorationRack()), CreativeModeTabs.EXTERNAL);
+        CATENARY_RACK_POLE_BOTH_SIDE = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "catenary_rack_pole_both_side"), () -> new Block(new BlockOldDecorationRack()), CreativeModeTabs.EXTERNAL);
+        CATENARY_RACK_POLE = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "catenary_rack_pole"), () -> new Block(new BlockOldDecorationRack()), CreativeModeTabs.EXTERNAL);
+        CATENARY_RACK_2 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "catenary_rack_2"), () -> new Block(new BlockOldDecorationRack()), CreativeModeTabs.EXTERNAL);
+        CATENARY_RACK_1 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "catenary_rack_1"), () -> new Block(new BlockOldDecorationRack()), CreativeModeTabs.EXTERNAL);
+        CATENARY_NODE = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "catenary_node"), () -> new Block(new BlockOldCatenaryNode()), CreativeModeTabs.EXTERNAL);
+        CATENARY_NODE_STYLE_2 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "catenary_node_style_2"), () -> new Block(new BlockOldCatenaryNodeStyle2()), CreativeModeTabs.EXTERNAL);
+        ELECTRIC_NODE = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "electric_node"), () -> new Block(new BlockOldElectricNode()), CreativeModeTabs.EXTERNAL);
+        ELECTRIC_POLE_SIDE = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "electric_pole_side"), () -> new Block(new BlockOldDecorationRack()), CreativeModeTabs.EXTERNAL);
+        ELECTRIC_POLE_ANOTHER_SIDE = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "electric_pole_another_side"), () -> new Block(new BlockOldDecorationRack()), CreativeModeTabs.EXTERNAL);
+        ELECTRIC_POLE_TOP_SIDE = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "electric_pole_top_side"), () -> new Block(new BlockOldElectricPole(false)), CreativeModeTabs.EXTERNAL);
+        ELECTRIC_POLE_TOP_BOTH_SIDE = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "electric_pole_top_both_side"), () -> new Block(new BlockOldElectricPole(true)), CreativeModeTabs.EXTERNAL);
 
         YAMANOTE_RAILWAY_SIGN_2_EVEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "yamanote_railway_sign_2_even"), () -> new Block(new BlockYamanoteRailwaySign(2, false)), CreativeModeTabs.STATION);
         YAMANOTE_RAILWAY_SIGN_2_ODD = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "yamanote_railway_sign_2_odd"), () -> new Block(new BlockYamanoteRailwaySign(2, true)), CreativeModeTabs.STATION);
@@ -42,10 +66,10 @@ public class Blocks {
         YAMANOTE_7_PIDS = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "yamanote_7_pids"), () -> new Block(new BlockYamanotePIDS(7)), CreativeModeTabs.STATION);
         YUUNI_TICKET = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "yuuni_ticket"), () -> new Block(new BlockYuuniTicket()), CreativeModeTabs.STATION);
 
+        YAMANOTE_RAILWAY_SIGN_MIDDLE = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "yamanote_railway_sign_middle"), () -> new Block(new BlockYamanoteRailwaySign(0, false)));
         STANDING_SIGN = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "yuuni_standing_sign"), () -> new Block(new BlockStandingSign()));
         STANDING_SIGN_1 = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "yuuni_standing_sign_1"), () -> new Block(new BlockStandingSign1()));
         STANDING_SIGN_POLE = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "yuuni_standing_sign_pole"), () -> new Block(new BlockStandingSignPole()));
-
         SURVEILLANCE_CAMERAS = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "surveillance_cameras"), () -> new Block(new BlockSurveillanceCameras()));
         HALL_SEAT = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "hall_seat_middle"), () -> new Block(new BlockHallSeat()));
         DECORATION_BOOK = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "decoration_book"), () -> new Block(new BlockDecorationBook()));
@@ -56,37 +80,35 @@ public class Blocks {
         DECORATION_STAIR = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "decoration_stair"), () -> new Block(new BlockDecorationStair()));
         DISPLAY_BOARD_HORIZONTALLY = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "display_board_horizontal"), () -> new Block(new BlockDisplayBoardHorizontally()));
         DISPLAY_BOARD_VERTICALLY = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "display_board_vertically"), () -> new Block(new BlockDisplayBoardVertically()));
-        RAILING_STAIR = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "railing_stair"), () -> new Block(new BlockRailingStair(false)));
-        RAILING_STAIR_MIRROR = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "railing_stair_mirror"), () -> new Block(new BlockRailingStair(true)));
+        RAILING_STAIR_FLAT = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "railing_stair_flat"), () -> new Block(new BlockRailingStair(false)));
+        RAILING_STAIR_FLAT_MIRROR = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "railing_stair_flat_mirror"), () -> new Block(new BlockRailingStair(true)));
         RAILING_STAIR_GLASS = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "railing_stair_glass"), () -> new Block(new BlockRailingStair(false)));
         RAILING_STAIR_GLASS_MIRROR = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "railing_stair_glass_mirror"), () -> new Block(new BlockRailingStair(true)));
+        //old
+        RAILING_STAIR_START = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID,"railing_stair_start"), () -> new Block(new BlockOldRailingStair(false, 1, 0)), CreativeModeTabs.STATION);
+        RAILING_STAIR = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID,"railing_stair"), () -> new Block(new BlockOldRailingStair(false, 2, 0)), CreativeModeTabs.STATION);
+        RAILING_STAIR_END = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID,"railing_stair_end"), () -> new Block(new BlockOldRailingStair(false, 3, 0)), CreativeModeTabs.STATION);
+        RAILING_STAIR_CORNER = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID,"railing_stair_corner"), () -> new Block(new BlockOldRailingStair(false, 4, 0)), CreativeModeTabs.STATION);
+        RAILING_STAIR_CORNER_2 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID,"railing_stair_corner_2"), () -> new Block(new BlockOldRailingStair(false, 5, 0)), CreativeModeTabs.STATION);
+        RAILING_STAIR_START_MIRROR = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID,"railing_stair_start_mirror"), () -> new Block(new BlockOldRailingStair(true, 1, 0)), CreativeModeTabs.STATION);
+        RAILING_STAIR_MIRROR = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID,"railing_stair_mirror"), () -> new Block(new BlockOldRailingStair(true, 2, 0)), CreativeModeTabs.STATION);
+        RAILING_STAIR_END_MIRROR = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID,"railing_stair_end_mirror"), () -> new Block(new BlockOldRailingStair(true, 3, 0)), CreativeModeTabs.STATION);
+        RAILING_STAIR_CORNER_MIRROR = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID,"railing_stair_corner_mirror"), () -> new Block(new BlockOldRailingStair(true, 4, 0)), CreativeModeTabs.STATION);
+        RAILING_STAIR_CORNER_MIRROR_2 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID,"railing_stair_corner_mirror_2"), () -> new Block(new BlockOldRailingStair(true, 5, 0)), CreativeModeTabs.STATION);
+        RAILING_STAIR_GLASS_1 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID,"railing_stair_glass_1"), () -> new Block(new BlockOldRailingStair(false, 1, 1)), CreativeModeTabs.STATION);
+        RAILING_STAIR_GLASS_2 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID,"railing_stair_glass_2"), () -> new Block(new BlockOldRailingStair(false, 2, 1)), CreativeModeTabs.STATION);
+        RAILING_STAIR_GLASS_3 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID,"railing_stair_glass_3"), () -> new Block(new BlockOldRailingStair(false, 3, 1)), CreativeModeTabs.STATION);
+        RAILING_STAIR_GLASS_4 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID,"railing_stair_glass_4"), () -> new Block(new BlockOldRailingStair(false, 4, 1)), CreativeModeTabs.STATION);
+        RAILING_STAIR_GLASS_5 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID,"railing_stair_glass_5"), () -> new Block(new BlockOldRailingStair(false, 5, 1)), CreativeModeTabs.STATION);
+        RAILING_STAIR_GLASS_MIRROR_1 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID,"railing_stair_glass_mirror_1"), () -> new Block(new BlockOldRailingStair(true, 1, 1)), CreativeModeTabs.STATION);
+        RAILING_STAIR_GLASS_MIRROR_2 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID,"railing_stair_glass_mirror_2"), () -> new Block(new BlockOldRailingStair(true, 1, 1)), CreativeModeTabs.STATION);
+        RAILING_STAIR_GLASS_MIRROR_3 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID,"railing_stair_glass_mirror_3"), () -> new Block(new BlockOldRailingStair(true, 1, 1)), CreativeModeTabs.STATION);
+        RAILING_STAIR_GLASS_MIRROR_4 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID,"railing_stair_glass_mirror_4"), () -> new Block(new BlockOldRailingStair(true, 4, 1)), CreativeModeTabs.STATION);
+        RAILING_STAIR_GLASS_MIRROR_5 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID,"railing_stair_glass_mirror_5"), () -> new Block(new BlockOldRailingStair(true, 5, 1)), CreativeModeTabs.STATION);
 
-        YAMANOTE_RAILWAY_SIGN_MIDDLE = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "yamanote_railway_sign_middle"), () -> new Block(new BlockYamanoteRailwaySign(0, false)));
-
-        CATENARY_NODE = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "catenary_node"), () -> new Block(new BlockOldCatenaryNode()), CreativeModeTabs.EXTERNAL);
-        CATENARY_NODE_STYLE_2 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "catenary_node_style_2"), () -> new Block(new BlockOldCatenaryNodeStyle2()), CreativeModeTabs.EXTERNAL);
-        SHORT_CATENARY_NODE = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "short_catenary_node"), () -> new Block(new BlockOldShortCatenaryNode()), CreativeModeTabs.EXTERNAL);
-        SHORT_CATENARY_NODE_STYLE_2 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "short_catenary_node_style_2"), () -> new Block(new BlockOldShortCatenaryNodeStyle2()), CreativeModeTabs.EXTERNAL);
-        ELECTRIC_NODE = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "electric_node"), () -> new Block(new BlockOldElectricNode()), CreativeModeTabs.EXTERNAL);
-        CATENARY_POLE = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "catenary_pole"), () -> new Block(new BlockOldDecorationRack()), CreativeModeTabs.EXTERNAL);
-        CATENARY_POLE_TOP_MIDDLE = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "catenary_pole_top_middle"), () -> new Block(new BlockOldDecorationRack()), CreativeModeTabs.EXTERNAL);
-        CATENARY_POLE_TOP_SIDE = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "catenary_pole_top_side"), () -> new Block(new BlockOldDecorationRack()), CreativeModeTabs.EXTERNAL);
-        CATENARY_RACK_1 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "catenary_rack_1"), () -> new Block(new BlockOldDecorationRack()), CreativeModeTabs.EXTERNAL);
-        CATENARY_RACK_2 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "catenary_rack_2"), () -> new Block(new BlockOldDecorationRack()), CreativeModeTabs.EXTERNAL);
-        CATENARY_RACK_BOTH_SIDE = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "catenary_rack_both_side"), () -> new Block(new BlockOldDecorationRack()), CreativeModeTabs.EXTERNAL);
-        CATENARY_RACK_POLE = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "catenary_rack_pole"), () -> new Block(new BlockOldDecorationRack()), CreativeModeTabs.EXTERNAL);
-        CATENARY_RACK_POLE_BOTH_SIDE = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "catenary_rack_pole_both_side"), () -> new Block(new BlockOldDecorationRack()), CreativeModeTabs.EXTERNAL);
-        CATENARY_RACK_SIDE = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "catenary_rack_side"), () -> new Block(new BlockOldDecorationRack()), CreativeModeTabs.EXTERNAL);
-        ELECTRIC_POLE_ANOTHER_SIDE = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "electric_pole_another_side"), () -> new Block(new BlockOldDecorationRack()), CreativeModeTabs.EXTERNAL);
-        ELECTRIC_POLE_SIDE = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "electric_pole_side"), () -> new Block(new BlockOldDecorationRack()), CreativeModeTabs.EXTERNAL);
-        ELECTRIC_POLE_TOP_BOTH_SIDE = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "electric_pole_top_both_side"), () -> new Block(new BlockOldElectricPole(true)), CreativeModeTabs.EXTERNAL);
-        ELECTRIC_POLE_TOP_SIDE = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "electric_pole_top_side"), () -> new Block(new BlockOldElectricPole(false)), CreativeModeTabs.EXTERNAL);
-        SHORT_CATENARY_RACK = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "short_catenary_rack"), () -> new Block(new BlockOldDecorationRack()), CreativeModeTabs.EXTERNAL);
-        SHORT_CATENARY_RACK_BOTH_SIDE = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "short_catenary_rack_both_side"), () -> new Block(new BlockOldDecorationRack()), CreativeModeTabs.EXTERNAL);
-        SHORT_CATENARY_RACK_POLE = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "short_catenary_rack_pole"), () -> new Block(new BlockOldDecorationRack()), CreativeModeTabs.EXTERNAL);
-        SHORT_CATENARY_RACK_POLE_BOTH_SIDE = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "short_catenary_rack_pole_both_side"), () -> new Block(new BlockOldDecorationRack()), CreativeModeTabs.EXTERNAL);
-        SHORT_CATENARY_RACK_SIDE = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "short_catenary_rack_side"), () -> new Block(new BlockOldDecorationRack()), CreativeModeTabs.EXTERNAL);
-
+        SURVEILLANCE_CAMERAS_WALL = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID,"surveillance_cameras_wall"), () -> new Block(new BlockSurveillanceCameras()));
+        HALL_SEAT_SIDE = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID,"hall_seat_side"), () -> new Block(new BlockHallSeat()));
+        HALL_SEAT_SIDE_MIRROR = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID,"hall_seat_side_mirror"), () -> new Block(new BlockHallSeat()));
         TRANS_CATENARY_NODE = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "trans_catenary_node"), () -> new Block(new BlockOldTransCatenaryNode()));
     }
 
@@ -141,8 +163,8 @@ public class Blocks {
     public static final BlockRegistryObject DECORATION_STAIR;
     public static final BlockRegistryObject DISPLAY_BOARD_HORIZONTALLY;
     public static final BlockRegistryObject DISPLAY_BOARD_VERTICALLY;
-    public static final BlockRegistryObject RAILING_STAIR;
-    public static final BlockRegistryObject RAILING_STAIR_MIRROR;
+    public static final BlockRegistryObject RAILING_STAIR_FLAT;
+    public static final BlockRegistryObject RAILING_STAIR_FLAT_MIRROR;
     public static final BlockRegistryObject RAILING_STAIR_GLASS;
     public static final BlockRegistryObject RAILING_STAIR_GLASS_MIRROR;
     public static final BlockRegistryObject CATENARY_POLE;
@@ -163,6 +185,31 @@ public class Blocks {
     public static final BlockRegistryObject SHORT_CATENARY_RACK_POLE;
     public static final BlockRegistryObject SHORT_CATENARY_RACK_POLE_BOTH_SIDE;
     public static final BlockRegistryObject SHORT_CATENARY_RACK_SIDE;
+    public static final BlockRegistryObject SURVEILLANCE_CAMERAS_WALL;
+    public static final BlockRegistryObject HALL_SEAT_SIDE;
+    public static final BlockRegistryObject HALL_SEAT_SIDE_MIRROR;
+    public static final BlockRegistryObject RAILING_STAIR_START;
+    public static final BlockRegistryObject RAILING_STAIR;
+    public static final BlockRegistryObject RAILING_STAIR_END;
+    public static final BlockRegistryObject RAILING_STAIR_START_MIRROR;
+    public static final BlockRegistryObject RAILING_STAIR_CORNER;
+    public static final BlockRegistryObject RAILING_STAIR_CORNER_2;
+    public static final BlockRegistryObject RAILING_STAIR_CORNER_MIRROR;
+    public static final BlockRegistryObject RAILING_STAIR_CORNER_MIRROR_2;
+    public static final BlockRegistryObject RAILING_STAIR_GLASS_4;
+    public static final BlockRegistryObject RAILING_STAIR_GLASS_5;
+    public static final BlockRegistryObject RAILING_STAIR_GLASS_MIRROR_4;
+    public static final BlockRegistryObject RAILING_STAIR_GLASS_MIRROR_5;
+    public static final BlockRegistryObject RAILING_STAIR_MIRROR;
+    public static final BlockRegistryObject RAILING_STAIR_END_MIRROR;
+
+    public static final BlockRegistryObject RAILING_STAIR_GLASS_1;
+    public static final BlockRegistryObject RAILING_STAIR_GLASS_2;
+    public static final BlockRegistryObject RAILING_STAIR_GLASS_3;
+    public static final BlockRegistryObject RAILING_STAIR_GLASS_MIRROR_1;
+    public static final BlockRegistryObject RAILING_STAIR_GLASS_MIRROR_2;
+    public static final BlockRegistryObject RAILING_STAIR_GLASS_MIRROR_3;
+
 
     public static void init() {
         Init.MSD_LOGGER.info("Registering MTR Station Decoration blocks");

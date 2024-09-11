@@ -4,7 +4,6 @@ import org.mtr.core.serializer.SerializedDataBaseWithId;
 import org.mtr.core.simulation.FileLoader;
 import org.mtr.core.tool.Utilities;
 import org.mtr.libraries.it.unimi.dsi.fastutil.ints.IntIntImmutablePair;
-import org.mtr.libraries.it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import top.mcmtr.core.MSDMain;
 import top.mcmtr.core.data.Catenary;
 import top.mcmtr.core.data.MSDData;
@@ -12,13 +11,15 @@ import top.mcmtr.core.data.RigidCatenary;
 import top.mcmtr.core.legacy.data.LegacyCatenaryLoader;
 
 import java.nio.file.Path;
+import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public class MSDSimulator extends MSDData implements Utilities {
     private boolean autoSave = false;
     private final String dimension;
     private final FileLoader<Catenary> fileLoaderCatenaries;
     private final FileLoader<RigidCatenary> fileLoaderRigidCatenaries;
-    private final ObjectArrayList<Runnable> queuedRuns = new ObjectArrayList<>();
+    private final List<Runnable> queuedRuns = new CopyOnWriteArrayList<>();
     private static final String KEY_CATENARIES = "catenaries";
     private static final String KEY_RIGID_CATENARIES = "rigid_catenaries";
 

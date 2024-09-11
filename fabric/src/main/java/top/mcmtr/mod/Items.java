@@ -17,6 +17,10 @@ public class Items {
         RIGID_CATENARY_CONNECTOR = Init.REGISTRY.registerItem(new Identifier(Init.MOD_ID, "rigid_catenary_connector"), itemSettings -> new Item(new ItemRigidCatenaryConnector(itemSettings.maxCount(1), true)), CreativeModeTabs.EXTERNAL);
         CATENARY_REMOVER = Init.REGISTRY.registerItem(new Identifier(Init.MOD_ID, "catenary_remover"), itemSettings -> new Item(new ItemCatenaryConnector(itemSettings.maxCount(1), false, CatenaryType.NONE)), CreativeModeTabs.EXTERNAL);
         RIGID_CATENARY_REMOVER = Init.REGISTRY.registerItem(new Identifier(Init.MOD_ID, "rigid_catenary_remover"), itemSettings -> new Item(new ItemRigidCatenaryConnector(itemSettings.maxCount(1), false)), CreativeModeTabs.EXTERNAL);
+        STANDING_SIGN = Init.REGISTRY.registerItem(new Identifier(Init.MOD_ID, "yuuni_standing_sign"), itemSettings -> new Item(new ItemHold(Blocks.STANDING_SIGN.get(), itemSettings.maxCount(1), 2)), CreativeModeTabs.EXTERNAL);
+        STANDING_SIGN_1 = Init.REGISTRY.registerItem(new Identifier(Init.MOD_ID, "yuuni_standing_sign_1"), itemSettings -> new Item(new ItemHold(Blocks.STANDING_SIGN_1.get(), itemSettings.maxCount(1), 2)), CreativeModeTabs.EXTERNAL);
+        STANDING_SIGN_POLE = Init.REGISTRY.registerItem(new Identifier(Init.MOD_ID, "yuuni_standing_sign_pole"), itemSettings -> new Item(new ItemHold(Blocks.STANDING_SIGN_POLE.get(), itemSettings.maxCount(1), 2)), CreativeModeTabs.EXTERNAL);
+
         MODEL_CHANGE_STICK = Init.REGISTRY.registerItem(new Identifier(Init.MOD_ID, "model_change_stick"), itemSettings -> new Item(new ItemModelChangeStick(itemSettings.maxCount(1))), CreativeModeTabs.STATION);
 
         SURVEILLANCE_CAMERAS = Init.REGISTRY.registerItem(new Identifier(Init.MOD_ID, "surveillance_cameras"), itemSettings -> new Item(new ItemHold(Blocks.SURVEILLANCE_CAMERAS.get(), itemSettings.maxCount(1), 2)), CreativeModeTabs.STATION);
@@ -29,13 +33,10 @@ public class Items {
         DECORATION_STAIR = Init.REGISTRY.registerItem(new Identifier(Init.MOD_ID, "decoration_stair"), itemSettings -> new Item(new ItemHold(Blocks.DECORATION_STAIR.get(), itemSettings.maxCount(1), 2)), CreativeModeTabs.STATION);
         DISPLAY_BOARD_HORIZONTALLY = Init.REGISTRY.registerItem(new Identifier(Init.MOD_ID, "display_board_horizontal"), itemSettings -> new Item(new ItemHold(Blocks.DISPLAY_BOARD_HORIZONTALLY.get(), itemSettings.maxCount(1), 6)), CreativeModeTabs.STATION);
         DISPLAY_BOARD_VERTICALLY = Init.REGISTRY.registerItem(new Identifier(Init.MOD_ID, "display_board_vertically"), itemSettings -> new Item(new ItemHold(Blocks.DISPLAY_BOARD_VERTICALLY.get(), itemSettings.maxCount(1), 6)), CreativeModeTabs.STATION);
-        RAILING_STAIR = Init.REGISTRY.registerItem(new Identifier(Init.MOD_ID, "railing_stair"), itemSettings -> new Item(new ItemHold(Blocks.RAILING_STAIR.get(), itemSettings.maxCount(1), 6)), CreativeModeTabs.STATION);
-        RAILING_STAIR_MIRROR = Init.REGISTRY.registerItem(new Identifier(Init.MOD_ID, "railing_stair_mirror"), itemSettings -> new Item(new ItemHold(Blocks.RAILING_STAIR_MIRROR.get(), itemSettings.maxCount(1), 6)), CreativeModeTabs.STATION);
+        RAILING_STAIR_FLAT = Init.REGISTRY.registerItem(new Identifier(Init.MOD_ID, "railing_stair_flat"), itemSettings -> new Item(new ItemHold(Blocks.RAILING_STAIR_FLAT.get(), itemSettings.maxCount(1), 6)), CreativeModeTabs.STATION);
+        RAILING_STAIR_FLAT_MIRROR = Init.REGISTRY.registerItem(new Identifier(Init.MOD_ID, "railing_stair_flat_mirror"), itemSettings -> new Item(new ItemHold(Blocks.RAILING_STAIR_FLAT_MIRROR.get(), itemSettings.maxCount(1), 6)), CreativeModeTabs.STATION);
         RAILING_STAIR_GLASS = Init.REGISTRY.registerItem(new Identifier(Init.MOD_ID, "railing_stair_glass"), itemSettings -> new Item(new ItemHold(Blocks.RAILING_STAIR_GLASS.get(), itemSettings.maxCount(1), 6)), CreativeModeTabs.STATION);
         RAILING_STAIR_GLASS_MIRROR = Init.REGISTRY.registerItem(new Identifier(Init.MOD_ID, "railing_stair_glass_mirror"), itemSettings -> new Item(new ItemHold(Blocks.RAILING_STAIR_GLASS_MIRROR.get(), itemSettings.maxCount(1), 6)), CreativeModeTabs.STATION);
-        STANDING_SIGN = Init.REGISTRY.registerItem(new Identifier(Init.MOD_ID, "yuuni_standing_sign"), itemSettings -> new Item(new ItemHold(Blocks.STANDING_SIGN.get(), itemSettings.maxCount(1), 2)), CreativeModeTabs.EXTERNAL);
-        STANDING_SIGN_1 = Init.REGISTRY.registerItem(new Identifier(Init.MOD_ID, "yuuni_standing_sign_1"), itemSettings -> new Item(new ItemHold(Blocks.STANDING_SIGN_1.get(), itemSettings.maxCount(1), 2)), CreativeModeTabs.EXTERNAL);
-        STANDING_SIGN_POLE = Init.REGISTRY.registerItem(new Identifier(Init.MOD_ID, "yuuni_standing_sign_pole"), itemSettings -> new Item(new ItemHold(Blocks.STANDING_SIGN_POLE.get(), itemSettings.maxCount(1), 2)), CreativeModeTabs.EXTERNAL);
     }
 
     public static final ItemRegistryObject CATENARY_CONNECTOR;
@@ -56,8 +57,8 @@ public class Items {
     public static final ItemRegistryObject DECORATION_STAIR;
     public static final ItemRegistryObject DISPLAY_BOARD_HORIZONTALLY;
     public static final ItemRegistryObject DISPLAY_BOARD_VERTICALLY;
-    public static final ItemRegistryObject RAILING_STAIR;
-    public static final ItemRegistryObject RAILING_STAIR_MIRROR;
+    public static final ItemRegistryObject RAILING_STAIR_FLAT;
+    public static final ItemRegistryObject RAILING_STAIR_FLAT_MIRROR;
     public static final ItemRegistryObject RAILING_STAIR_GLASS;
     public static final ItemRegistryObject RAILING_STAIR_GLASS_MIRROR;
     public static final ItemRegistryObject STANDING_SIGN;

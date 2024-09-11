@@ -32,9 +32,6 @@
   "block.msd.display_board_horizontal":  "Display Board(Horizontally)",
   "block.msd.display_board_vertically": "Display Board(Vertically)",
   "block.msd.railing_stair":  "Railing Stair",
-  "block.msd.railing_stair_mirror": "Railing Stair(Mirror)",
-  "block.msd.railing_stair_glass": "Railing Stair(Glass)",
-  "block.msd.railing_stair_glass_mirror": "Railing Stair(Glass & Mirror)",
 
   "gui.msd.catenary_offset": "Catenary coordinate offset",
   "gui.msd.shift_modify_offset": "Hold down Shift to adjust the catenary",
@@ -86,5 +83,12 @@
   "tooltip.msd.catenary_positive": "Positive positioning",
   "tooltip.msd.catenary_top": "Top",
   "tooltip.msd.catenary_counterweight": "With Counterweight",
-  "tooltip.msd.mirror": "Mirror"
+  "tooltip.msd.mirror": "Mirror",
+  "tooltip.msd.metal_iron": "Iron",
+  "tooltip.msd.metal_glass": "Glass",
+  "tooltip.msd.part_start": "Part 1",
+  "tooltip.msd.part_middle": "Part 2",
+  "tooltip.msd.part_end": "Part 3",
+  "tooltip.msd.part_corner_1": "Corner 1",
+  "tooltip.msd.part_corner_2": "Corner 2"
 }

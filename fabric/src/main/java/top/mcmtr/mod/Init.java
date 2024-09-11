@@ -33,8 +33,8 @@ public class Init implements Utilities {
     public static final int AUTOSAVE_INTERVAL = 30000;
 
     public static void init() {
-        Blocks.init();
         Items.init();
+        Blocks.init();
         BlockEntityTypes.init();
         CreativeModeTabs.init();
 
