@@ -15,12 +15,15 @@ public class Config {
     private static int yuuniPIDSMaxViewDistance = 128;
     private static int yamanoteRailwaySignMaxViewDistance = 128;
     private static int customTextSignMaxViewDistance = 128;
+    private static int electricCurvatureScale = 100;
     private static final String SEGMENT_LENGTH = "rigid_catenary_segment_length";
     private static final String PIDS_MAX_VIEW_DISTANCE = "yuuni_pids_max_view_distance";
     private static final String RAILWAY_SIGN_MAX_VIEW_DISTANCE = "railway_sign_max_view_distance";
     private static final String TEXT_SIGN_MAX_VIEW_DISTANCE = "custom_text_sign_max_view_distance";
+    private static final String ELECTRIC_CURVATURE_SCALE = "electric_curvature_scale";
     private static final Path CONFIG_PATH = MinecraftClient.getInstance().getRunDirectoryMapped().toPath().resolve("config").resolve("msd.json");
     public static final int MAX_VIEW_DISTANCE = 256;
+    public static final int MAX_ELECTRIC_CURVATURE_SCALE = 800;
 
     public static void setRigidCatenarySegmentLength(int rigidCatenarySegmentLength) {
         Config.rigidCatenarySegmentLength = rigidCatenarySegmentLength;
@@ -42,6 +45,11 @@ public class Config {
         writeToFile();
     }
 
+    public static void setElectricCurvatureScale(int electricCurvatureScale) {
+        Config.electricCurvatureScale = electricCurvatureScale;
+        writeToFile();
+    }
+
     public static int getRigidCatenarySegmentLength() {
         return rigidCatenarySegmentLength;
     }
@@ -56,6 +64,10 @@ public class Config {
 
     public static int getCustomTextSignMaxViewDistance() {
         return customTextSignMaxViewDistance;
+    }
+
+    public static int getElectricCurvatureScale() {
+        return electricCurvatureScale;
     }
 
     public static void refreshProperties() {
@@ -82,6 +94,10 @@ public class Config {
                 customTextSignMaxViewDistance = jsonConfig.get(TEXT_SIGN_MAX_VIEW_DISTANCE).getAsInt();
             } catch (Exception ignored) {
             }
+            try {
+                electricCurvatureScale = jsonConfig.get(ELECTRIC_CURVATURE_SCALE).getAsInt();
+            } catch (Exception ignored) {
+            }
         } catch (Exception e) {
             writeToFile();
             refreshProperties();
@@ -95,6 +111,7 @@ public class Config {
         jsonConfig.addProperty(PIDS_MAX_VIEW_DISTANCE, yuuniPIDSMaxViewDistance);
         jsonConfig.addProperty(RAILWAY_SIGN_MAX_VIEW_DISTANCE, yamanoteRailwaySignMaxViewDistance);
         jsonConfig.addProperty(TEXT_SIGN_MAX_VIEW_DISTANCE, customTextSignMaxViewDistance);
+        jsonConfig.addProperty(ELECTRIC_CURVATURE_SCALE, electricCurvatureScale);
         try {
             if (!Files.exists(CONFIG_PATH.getParent())) {
                 Files.createDirectories(CONFIG_PATH.getParent());

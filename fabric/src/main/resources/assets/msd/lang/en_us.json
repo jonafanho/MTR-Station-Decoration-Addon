@@ -49,6 +49,7 @@
   "options.msd.pids_view_distance": "PIDS Max View Distance",
   "options.msd.railway_sign_view_distance":  "Railway Sign Max View Distance",
   "options.msd.custom_text_view_distance": "Custom Text View Distance",
+  "options.msd.electric_curvature_scale": "Electric Line Curvature Scale",
 
   "tooltip.msd.model_count": "Number of models: %s",
   "tooltip.msd.can_change_model": "Right-click on a block with multiple models to switch its model",

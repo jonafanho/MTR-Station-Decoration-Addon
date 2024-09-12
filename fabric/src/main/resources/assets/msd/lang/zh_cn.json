@@ -49,6 +49,7 @@
   "options.msd.pids_view_distance": "乘客咨询显示屏最大可视距离",
   "options.msd.railway_sign_view_distance":  "铁路标志最大可视距离",
   "options.msd.custom_text_view_distance": "自定义文字标志最大可视距离",
+  "options.msd.electric_curvature_scale": "电线弯曲比例",
 
   "tooltip.msd.model_count": "模型数量: %s",
   "tooltip.msd.can_change_model": "右键单击具有多个模型的方块可以切换模型",

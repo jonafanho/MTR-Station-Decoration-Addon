@@ -2,6 +2,7 @@ package top.mcmtr.core.data;
 
 import org.mtr.core.data.Position;
 import org.mtr.libraries.it.unimi.dsi.fastutil.objects.ObjectArrayList;
+import top.mcmtr.mod.config.Config;
 
 public final class CatenaryMath {
     private final double xStart;
@@ -11,13 +12,14 @@ public final class CatenaryMath {
     private final double yEnd;
     private final double zEnd;
     private final double count;
+    private final double increment;
     private final double increment2;
     private final double sinX;
     private final double sinZ;
     private final CatenaryType catenaryType;
     private final ObjectArrayList<VectorLocation> corner = new ObjectArrayList<>();
+    private boolean checkRun = false;
     public static final double CATENARY_WIDTH = 0.015625;
-    private static final int ELECTRIC_CURVATURE_SCALE = 100;
     private static final int MAX_ELECTRIC_DIP = 8;
 
     public CatenaryMath(Position positionStart, Position positionEnd, OffsetPosition offsetStart, OffsetPosition offsetEnd, CatenaryType catenaryType) {
@@ -29,18 +31,25 @@ public final class CatenaryMath {
         this.zEnd = positionEnd.getZ() + offsetEnd.getZ();
         this.catenaryType = catenaryType;
         this.count = getLength();
-        double increment = count / Math.round(count / 2);
+        this.increment = count / Math.round(count / 2);
         this.increment2 = increment - 0.5;
         this.sinX = getSin(zStart, zEnd, count);
         this.sinZ = getSin(xStart, xEnd, count);
-        for (double i = 0; i < count - 0.1; i += increment) {
-            final VectorLocation cornerTemp = new VectorLocation(getPositionXZ(i, xStart, xEnd) + 0.5, getPositionY(i, yStart, yEnd), getPositionXZ(i, zStart, zEnd) + 0.5,
-                    getPositionXZ(i + increment, xStart, xEnd) + 0.5, getPositionY(i + increment, yStart, yEnd), getPositionXZ(i + increment, zStart, zEnd) + 0.5, i);
-            corner.add(cornerTemp);
+    }
+
+    public void init() {
+        if (!checkRun) {
+            for (double i = 0; i < count - 0.1; i += increment) {
+                final VectorLocation cornerTemp = new VectorLocation(getPositionXZ(i, xStart, xEnd) + 0.5, getPositionY(i, yStart, yEnd), getPositionXZ(i, zStart, zEnd) + 0.5,
+                        getPositionXZ(i + increment, xStart, xEnd) + 0.5, getPositionY(i + increment, yStart, yEnd), getPositionXZ(i + increment, zStart, zEnd) + 0.5, i);
+                corner.add(cornerTemp);
+            }
+            checkRun = !checkRun;
         }
     }
 
     public void render(RenderCatenary callback) {
+        this.init();
         double base = 0.6;
         if (count < 8) {
             for (VectorLocation cornerResult : corner) {
@@ -76,6 +85,7 @@ public final class CatenaryMath {
     }
 
     private double getPositionY(double value, double start, double end) {
+        final int ELECTRIC_CURVATURE_SCALE = Config.getElectricCurvatureScale();
         if (catenaryType == CatenaryType.ELECTRIC) {
             if (value < 0.5) {
                 return start;
