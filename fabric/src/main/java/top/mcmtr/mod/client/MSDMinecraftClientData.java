@@ -9,7 +9,6 @@ import org.mtr.mapping.mapper.MinecraftClientHelper;
 import top.mcmtr.core.data.Catenary;
 import top.mcmtr.core.data.MSDClientData;
 import top.mcmtr.core.data.RigidCatenary;
-import top.mcmtr.mod.Init;
 import top.mcmtr.mod.blocks.BlockRigidCatenaryNode;
 
 import javax.annotation.Nullable;
@@ -50,7 +49,7 @@ public final class MSDMinecraftClientData extends MSDClientData {
     public void clean() {
         final ClientPlayerEntity clientPlayerEntity = MinecraftClient.getInstance().getPlayerMapped();
         if (clientPlayerEntity != null) {
-            final Position position = Init.blockPosToPosition(clientPlayerEntity.getBlockPos());
+            final Position position = org.mtr.mod.Init.blockPosToPosition(clientPlayerEntity.getBlockPos());
             final int requestRadius = MinecraftClientHelper.getRenderDistance() * 16;
             catenaries.removeIf(catenary -> !catenary.closeTo(position, requestRadius));
             rigidCatenaries.removeIf(rigidCatenary -> !rigidCatenary.closeTo(position, requestRadius));
@@ -73,7 +72,7 @@ public final class MSDMinecraftClientData extends MSDClientData {
             final float playerAngle = EntityHelper.getYaw(new Entity(clientPlayerEntity.data)) + 90;
             final RigidCatenary[] closestRigidCatenary = {null};
             final double[] closestAngle = {720};
-            positionsToRigidCatenary.getOrDefault(Init.blockPosToPosition(blockPos), new Object2ObjectOpenHashMap<>()).forEach((endPosition, rigidCatenary) -> {
+            positionsToRigidCatenary.getOrDefault(org.mtr.mod.Init.blockPosToPosition(blockPos), new Object2ObjectOpenHashMap<>()).forEach((endPosition, rigidCatenary) -> {
                 final double angle = Math.abs(Math.toDegrees(Math.atan2(endPosition.getZ() - blockPos.getZ(), endPosition.getX() - blockPos.getX())) - playerAngle) % 360;
                 final double clampedAngle = angle > 180 ? 360 - angle : angle;
                 if (clampedAngle < closestAngle[0]) {

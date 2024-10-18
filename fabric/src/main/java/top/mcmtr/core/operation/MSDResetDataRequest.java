@@ -3,8 +3,6 @@ package top.mcmtr.core.operation;
 import org.mtr.core.data.Position;
 import org.mtr.core.serializer.ReaderBase;
 import org.mtr.core.serializer.SerializedDataBase;
-import org.mtr.core.tool.Utilities;
-import org.mtr.libraries.com.google.gson.JsonObject;
 import org.mtr.libraries.it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import org.mtr.libraries.it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import org.mtr.libraries.it.unimi.dsi.fastutil.objects.ObjectSet;
@@ -34,12 +32,12 @@ public final class MSDResetDataRequest extends MSDResetDataRequestSchema {
         return this;
     }
 
-    public MSDResetDataRequest addOffsetPosition(OffsetPosition offsetPosition){
+    public MSDResetDataRequest addOffsetPosition(OffsetPosition offsetPosition) {
         offsetPositions.add(offsetPosition);
         return this;
     }
 
-    public JsonObject reset() {
+    public MSDResetDataResponse reset() {
         MSDResetDataResponse resetDataResponse = new MSDResetDataResponse(data);
         catenaryNodePositions.forEach(catenaryNodePosition ->
                 data.positionsToCatenary.getOrDefault(catenaryNodePosition, new Object2ObjectOpenHashMap<>()).values().forEach(catenary -> {
@@ -49,7 +47,7 @@ public final class MSDResetDataRequest extends MSDResetDataRequestSchema {
                     update(newCatenary, data.catenaryIdMap.get(catenary.getHexId()), data.catenaries, resetDataResponse.getCatenaries());
                 }));
         data.sync();
-        return Utilities.getJsonObjectFromData(resetDataResponse);
+        return resetDataResponse;
     }
 
     private static <T extends SerializedDataBase> void update(T newData, @Nullable T existingData, ObjectSet<T> dataSet, ObjectArrayList<T> dataToUpdate) {

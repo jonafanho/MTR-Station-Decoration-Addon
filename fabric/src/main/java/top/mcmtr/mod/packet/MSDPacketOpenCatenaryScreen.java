@@ -4,7 +4,6 @@ import org.mtr.mapping.holder.BlockPos;
 import org.mtr.mapping.registry.PacketHandler;
 import org.mtr.mapping.tool.PacketBufferReceiver;
 import org.mtr.mapping.tool.PacketBufferSender;
-import top.mcmtr.core.data.OffsetPosition;
 
 public final class MSDPacketOpenCatenaryScreen extends PacketHandler {
     private final BlockPos blockPos;

@@ -12,7 +12,6 @@ import org.mtr.mod.data.IGui;
 import top.mcmtr.core.data.Catenary;
 import top.mcmtr.core.data.OffsetPosition;
 import top.mcmtr.core.operation.MSDResetDataRequest;
-import top.mcmtr.mod.Init;
 import top.mcmtr.mod.InitClient;
 import top.mcmtr.mod.blocks.BlockCatenaryWithModel;
 import top.mcmtr.mod.client.MSDMinecraftClientData;
@@ -134,7 +133,7 @@ public final class CatenaryWithModelScreen extends ScreenExtension implements IG
             super.onClose2();
             OffsetPosition offsetPosition = new OffsetPosition(parse(textFieldTranslateX.getText2(), -1.0, 1.0), parse(textFieldTranslateY.getText2(), -1.0, 1.0), parse(textFieldTranslateZ.getText2(), -1.0, 1.0));
             OffsetPosition rotationPosition = new OffsetPosition(0, parse(textFieldRotateY.getText2(), 0, 360.0), 0);
-            final Position position = Init.blockPosToPosition(blockPos);
+            final Position position = org.mtr.mod.Init.blockPosToPosition(blockPos);
             InitClient.REGISTRY_CLIENT.sendPacketToServer(new MSDPacketUpdateModel(this.blockPos, offsetPosition, rotationPosition));
             InitClient.REGISTRY_CLIENT.sendPacketToServer(new MSDPacketResetData(new MSDResetDataRequest(MSDMinecraftClientData.getInstance()).addCatenaryNodePosition(position).addOffsetPosition(offsetPosition)));
         }
@@ -146,7 +145,7 @@ public final class CatenaryWithModelScreen extends ScreenExtension implements IG
         this.blockEntity.setOffsetPosition(offsetPosition, rotationPosition);
         if (isConnected) {
             MSDMinecraftClientData clientData = MSDMinecraftClientData.getInstance();
-            final Position position = Init.blockPosToPosition(blockPos);
+            final Position position = org.mtr.mod.Init.blockPosToPosition(blockPos);
             clientData.positionsToCatenary.get(position).forEach((endPosition, catenary) -> {
                 clientData.catenaries.remove(catenary);
                 clientData.catenaries.add(Catenary.copy(catenary,

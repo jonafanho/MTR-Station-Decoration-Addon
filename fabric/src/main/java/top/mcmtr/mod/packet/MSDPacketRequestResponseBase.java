@@ -1,7 +1,9 @@
 package top.mcmtr.mod.packet;
 
-import org.mtr.core.integration.Response;
+import org.mtr.core.serializer.JsonReader;
+import org.mtr.core.serializer.SerializedDataBase;
 import org.mtr.core.tool.Utilities;
+import org.mtr.libraries.com.google.gson.JsonObject;
 import org.mtr.mapping.holder.MinecraftServer;
 import org.mtr.mapping.holder.ServerPlayerEntity;
 import org.mtr.mapping.holder.ServerWorld;
@@ -38,30 +40,33 @@ public abstract class MSDPacketRequestResponseBase extends PacketHandler {
 
     @Override
     public final void runClient() {
-        runClientInbound(Response.create(Utilities.parseJson(content)));
+        runClientInbound(new JsonReader(Utilities.parseJson(content)));
     }
 
     public final void runServerOutbound(ServerWorld serverWorld, @Nullable ServerPlayerEntity serverPlayerEntity) {
-        Init.sendHttpRequest(getEndpoint(), new World(serverWorld.data), content, responseType() == MSDPacketRequestResponseBase.ResponseType.NONE ? null : response -> {
+        Init.sendMessageC2S(getKey(), serverWorld.getServer(), new World(serverWorld.data), getDataInstance(new JsonReader(Utilities.parseJson(content))), responseType() == MSDPacketRequestResponseBase.ResponseType.NONE ? null : responseData -> {
+            final JsonObject responseJson = Utilities.getJsonObjectFromData(responseData);
             if (responseType() == MSDPacketRequestResponseBase.ResponseType.PLAYER) {
                 if (serverPlayerEntity != null) {
-                    Init.REGISTRY.sendPacketToClient(serverPlayerEntity, getInstance(response));
+                    Init.REGISTRY.sendPacketToClient(serverPlayerEntity, getInstance(responseJson.toString()));
                 }
             } else {
-                MinecraftServerHelper.iteratePlayers(serverWorld, serverPlayerEntityNew -> Init.REGISTRY.sendPacketToClient(serverPlayerEntityNew, getInstance(response)));
+                MinecraftServerHelper.iteratePlayers(serverWorld, serverPlayerEntityNew -> Init.REGISTRY.sendPacketToClient(serverPlayerEntityNew, getInstance(responseJson.toString())));
             }
-            runServerInbound(serverWorld, response);
-        });
+            runServerInbound(serverWorld, responseJson);
+        }, SerializedDataBase.class);
     }
 
-    protected abstract void runServerInbound(ServerWorld serverWorld, String content);
+    protected abstract void runServerInbound(ServerWorld serverWorld, JsonObject jsonObject);
 
-    protected abstract void runClientInbound(Response response);
+    protected abstract void runClientInbound(JsonReader jsonReader);
 
     protected abstract MSDPacketRequestResponseBase getInstance(String content);
 
+    protected abstract SerializedDataBase getDataInstance(JsonReader jsonReader);
+
     @Nonnull
-    protected abstract String getEndpoint();
+    protected abstract String getKey();
 
     protected abstract ResponseType responseType();
 

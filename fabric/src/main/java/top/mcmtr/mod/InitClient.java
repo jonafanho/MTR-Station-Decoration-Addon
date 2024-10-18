@@ -171,7 +171,7 @@ public class InitClient {
             incrementGameMillis();
             final ClientPlayerEntity clientPlayerEntity = MinecraftClient.getInstance().getPlayerMapped();
             if (clientPlayerEntity != null && lastUpdatePacketMillis >= 0 && getGameMillis() - lastUpdatePacketMillis > 500) {
-                final MSDDataRequest dataRequest = new MSDDataRequest(clientPlayerEntity.getUuidAsString(), Init.blockPosToPosition(MinecraftClient.getInstance().getGameRendererMapped().getCamera().getBlockPos()), MinecraftClientHelper.getRenderDistance() * 16L);
+                final MSDDataRequest dataRequest = new MSDDataRequest(clientPlayerEntity.getUuidAsString(), org.mtr.mod.Init.blockPosToPosition(MinecraftClient.getInstance().getGameRendererMapped().getCamera().getBlockPos()), MinecraftClientHelper.getRenderDistance() * 16L);
                 dataRequest.writeExistingIds(MSDMinecraftClientData.getInstance());
                 InitClient.REGISTRY_CLIENT.sendPacketToServer(new MSDPacketRequestData(dataRequest));
                 lastUpdatePacketMillis = -1;
@@ -208,6 +208,6 @@ public class InitClient {
     }
 
     public static Station findStation(BlockPos blockPos) {
-        return MinecraftClientData.getInstance().stations.stream().filter(station -> station.inArea(Init.blockPosToPosition(blockPos))).findFirst().orElse(null);
+        return MinecraftClientData.getInstance().stations.stream().filter(station -> station.inArea(org.mtr.mod.Init.blockPosToPosition(blockPos))).findFirst().orElse(null);
     }
 }

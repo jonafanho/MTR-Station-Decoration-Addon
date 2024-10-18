@@ -2,8 +2,6 @@ package top.mcmtr.core.operation;
 
 import org.mtr.core.data.Position;
 import org.mtr.core.serializer.ReaderBase;
-import org.mtr.core.tool.Utilities;
-import org.mtr.libraries.com.google.gson.JsonObject;
 import org.mtr.libraries.it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import org.mtr.libraries.it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import org.mtr.libraries.it.unimi.dsi.fastutil.objects.ObjectArraySet;
@@ -39,7 +37,7 @@ public final class MSDDeleteDataRequest extends MSDDeleteDataRequestSchema {
         return this;
     }
 
-    public JsonObject delete(MSDSimulator simulator) {
+    public MSDDeleteDataResponse delete(MSDSimulator simulator) {
         final MSDDeleteDataResponse deleteDataResponse = new MSDDeleteDataResponse();
         final ObjectArraySet<Position> nodePositionsToUpdate = new ObjectArraySet<>();
         catenaryIds.forEach(catenaryId ->
@@ -62,7 +60,7 @@ public final class MSDDeleteDataRequest extends MSDDeleteDataRequestSchema {
                 deleteDataResponse.getCatenaryNodePositions().add(nodePosition);
             }
         });
-        return Utilities.getJsonObjectFromData(deleteDataResponse);
+        return deleteDataResponse;
     }
 
     private static void delete(@Nullable Catenary catenary, ObjectArraySet<Catenary> catenaries, String catenaryId, ObjectArrayList<String> catenariesIdsToUpdate, ObjectArraySet<Position> catenaryNodePositionsToUpdate) {

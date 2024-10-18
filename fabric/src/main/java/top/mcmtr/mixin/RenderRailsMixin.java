@@ -5,9 +5,9 @@ import org.mtr.libraries.com.logisticscraft.occlusionculling.util.Vec3d;
 import org.mtr.libraries.it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import org.mtr.mapping.holder.*;
 import org.mtr.mod.client.IDrawing;
+import org.mtr.mod.render.MainRenderer;
 import org.mtr.mod.render.QueuedRenderLayer;
 import org.mtr.mod.render.RenderRails;
-import org.mtr.mod.render.MainRenderer;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
@@ -97,7 +97,7 @@ public abstract class RenderRailsMixin {
     @Unique
     private static void renderCatenaryStandard(ClientWorld clientWorld, Catenary catenary) {
         catenary.catenaryMath.render((x1, y1, z1, x2, y2, z2, count, i, base, sinX, sinZ, increment) -> {
-            final BlockPos blockPos = Init.newBlockPos(x1, y1, z1);
+            final BlockPos blockPos = org.mtr.mod.Init.newBlockPos(x1, y1, z1);
             final int light = LightmapTextureManager.pack(clientWorld.getLightLevel(LightType.getBlockMapped(), blockPos), clientWorld.getLightLevel(LightType.getSkyMapped(), blockPos));
             MainRenderer.scheduleRender(CATENARY_TEXTURE, false, QueuedRenderLayer.EXTERIOR, (graphicsHolder, offset) -> {
                 if (count < 8) {
@@ -124,7 +124,7 @@ public abstract class RenderRailsMixin {
     @Unique
     private static void renderRigidCatenaryStandard(ClientWorld clientWorld, RigidCatenary rigidCatenary) {
         rigidCatenary.rigidCatenaryMath.render((x1, z1, x2, z2, x3, z3, x4, z4, x5, z5, x6, z6, x7, z7, x8, z8, y1, y2) -> {
-            final BlockPos blockPos = Init.newBlockPos(x1, y1, z1);
+            final BlockPos blockPos = org.mtr.mod.Init.newBlockPos(x1, y1, z1);
             final int light = LightmapTextureManager.pack(clientWorld.getLightLevel(LightType.getBlockMapped(), blockPos), clientWorld.getLightLevel(LightType.getSkyMapped(), blockPos));
             MainRenderer.scheduleRender(RIGID_CATENARY_TEXTURE, false, QueuedRenderLayer.EXTERIOR, (graphicsHolder, offset) -> {
                 IDrawing.drawTexture(graphicsHolder, x1, y1, z1, x2, y1, z2, x3, y2, z3, x4, y2, z4, offset, 0.0F, 0.0F, 1.0F, 0.03125F, Direction.UP, -1, light);
@@ -142,7 +142,7 @@ public abstract class RenderRailsMixin {
     @Unique
     private static void renderRigidSoftCatenaryStandard(ClientWorld clientWorld, Catenary catenary) {
         catenary.catenaryMath.render((x1, y1, z1, x2, y2, z2, count, i, base, sinX, sinZ, increment) -> {
-            final BlockPos blockPos = Init.newBlockPos(x1, y1, z1);
+            final BlockPos blockPos = org.mtr.mod.Init.newBlockPos(x1, y1, z1);
             final int light = LightmapTextureManager.pack(clientWorld.getLightLevel(LightType.getBlockMapped(), blockPos), clientWorld.getLightLevel(LightType.getSkyMapped(), blockPos));
             MainRenderer.scheduleRender(CATENARY_TEXTURE, false, QueuedRenderLayer.EXTERIOR, (graphicsHolder, offset) -> {
                 IDrawing.drawTexture(graphicsHolder, (x1 - sinX), y1, (z1 + sinZ), (x2 - sinX), y2, (z2 + sinZ), (x2 + sinX), y2, (z2 - sinZ), (x1 + sinX), y1, (z1 - sinZ), offset, 0.0F, 0.0F, 1.0F, 0.03125F, Direction.UP, -1, light);

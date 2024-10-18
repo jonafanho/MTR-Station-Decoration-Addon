@@ -1,7 +1,9 @@
 package top.mcmtr.mod.packet;
 
-import org.mtr.core.integration.Response;
+import org.mtr.core.serializer.JsonReader;
+import org.mtr.core.serializer.SerializedDataBase;
 import org.mtr.core.tool.Utilities;
+import org.mtr.libraries.com.google.gson.JsonObject;
 import org.mtr.mapping.holder.ServerWorld;
 import org.mtr.mapping.tool.PacketBufferReceiver;
 import top.mcmtr.core.data.Catenary;
@@ -27,12 +29,12 @@ public final class MSDPacketUpdateData extends MSDPacketRequestResponseBase {
     }
 
     @Override
-    protected void runServerInbound(ServerWorld serverWorld, String content) {
+    protected void runServerInbound(ServerWorld serverWorld, JsonObject jsonObject) {
     }
 
     @Override
-    protected void runClientInbound(Response response) {
-        response.getData(jsonReader -> new MSDUpdateDataResponse(jsonReader, MSDMinecraftClientData.getInstance())).write();
+    protected void runClientInbound(JsonReader jsonReader) {
+        new MSDUpdateDataResponse(jsonReader, MSDMinecraftClientData.getInstance()).write();
     }
 
     @Override
@@ -40,10 +42,15 @@ public final class MSDPacketUpdateData extends MSDPacketRequestResponseBase {
         return new MSDPacketUpdateData(content);
     }
 
+    @Override
+    protected SerializedDataBase getDataInstance(JsonReader jsonReader) {
+        return new MSDUpdateDataRequest(jsonReader, new MSDMinecraftClientData());
+    }
+
     @Nonnull
     @Override
-    protected String getEndpoint() {
-        return "operation/" + OperationType.UPDATE_DATA;
+    protected String getKey() {
+        return OperationType.UPDATE_DATA;
     }
 
     @Override

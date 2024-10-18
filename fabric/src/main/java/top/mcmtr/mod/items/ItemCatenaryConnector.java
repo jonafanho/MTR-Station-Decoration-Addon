@@ -6,7 +6,6 @@ import org.mtr.mapping.holder.*;
 import top.mcmtr.core.data.Catenary;
 import top.mcmtr.core.data.CatenaryType;
 import top.mcmtr.core.data.OffsetPosition;
-import top.mcmtr.mod.Init;
 import top.mcmtr.mod.blocks.BlockNodeBase;
 import top.mcmtr.mod.packet.MSDPacketDeleteData;
 import top.mcmtr.mod.packet.MSDPacketUpdateData;
@@ -26,8 +25,8 @@ public final class ItemCatenaryConnector extends ItemBlockClickingBase {
             final BlockNodeBase.BlockNodeBaseEntity endBlockEntity = (BlockNodeBase.BlockNodeBaseEntity) world.getBlockEntity(posEnd).data;
             final OffsetPosition offsetPositionStart = startBlockEntity.getOffsetPosition();
             final OffsetPosition offsetPositionEnd = endBlockEntity.getOffsetPosition();
-            final Position positionStart = Init.blockPosToPosition(posStart);
-            final Position positionEnd = Init.blockPosToPosition(posEnd);
+            final Position positionStart = org.mtr.mod.Init.blockPosToPosition(posStart);
+            final Position positionEnd = org.mtr.mod.Init.blockPosToPosition(posEnd);
             if (Catenary.verifyPosition(positionStart, positionEnd, offsetPositionStart, offsetPositionEnd)) {
                 final Catenary catenary = new Catenary(positionStart, positionEnd, offsetPositionStart, offsetPositionEnd, catenaryType);
                 world.setBlockState(posStart, stateStart.with(new Property<>(BlockNodeBase.IS_CONNECTED.data), true));
@@ -39,6 +38,6 @@ public final class ItemCatenaryConnector extends ItemBlockClickingBase {
 
     @Override
     protected void onRemove(World world, BlockPos posStart, BlockPos posEnd, @Nullable ServerPlayerEntity player) {
-        MSDPacketDeleteData.sendDirectlyToServerCatenaryId(ServerWorld.cast(world), TwoPositionsBase.getHexId(Init.blockPosToPosition(posStart), Init.blockPosToPosition(posEnd)));
+        MSDPacketDeleteData.sendDirectlyToServerCatenaryId(ServerWorld.cast(world), TwoPositionsBase.getHexId(org.mtr.mod.Init.blockPosToPosition(posStart), org.mtr.mod.Init.blockPosToPosition(posEnd)));
     }
 }

@@ -11,7 +11,6 @@ import org.mtr.mod.screen.WidgetShorterSlider;
 import top.mcmtr.core.data.Catenary;
 import top.mcmtr.core.data.OffsetPosition;
 import top.mcmtr.core.operation.MSDResetDataRequest;
-import top.mcmtr.mod.Init;
 import top.mcmtr.mod.InitClient;
 import top.mcmtr.mod.blocks.BlockCatenaryNode;
 import top.mcmtr.mod.client.MSDMinecraftClientData;
@@ -95,7 +94,7 @@ public class CatenaryScreen extends ScreenExtension implements IGui {
         offsetPosition.setZ((sliderPositionZ.getIntValue() - 8) / 16D);
         InitClient.REGISTRY_CLIENT.sendPacketToServer(new MSDPacketUpdateCatenaryNode(blockPos, offsetPosition));
         if (needUpdate) {
-            final Position position = Init.blockPosToPosition(blockPos);
+            final Position position = org.mtr.mod.Init.blockPosToPosition(blockPos);
             InitClient.REGISTRY_CLIENT.sendPacketToServer(new MSDPacketResetData(new MSDResetDataRequest(MSDMinecraftClientData.getInstance()).addCatenaryNodePosition(position).addOffsetPosition(offsetPosition)));
         }
     }
@@ -108,7 +107,7 @@ public class CatenaryScreen extends ScreenExtension implements IGui {
                     (sliderPositionY.getIntValue() - 8) / 16D,
                     (sliderPositionZ.getIntValue() - 8) / 16D);
             MSDMinecraftClientData clientData = MSDMinecraftClientData.getInstance();
-            final Position position = Init.blockPosToPosition(blockPos);
+            final Position position = org.mtr.mod.Init.blockPosToPosition(blockPos);
             clientData.positionsToCatenary.get(position).forEach((endPosition, catenary) -> {
                 clientData.catenaries.remove(catenary);
                 clientData.catenaries.add(Catenary.copy(catenary,

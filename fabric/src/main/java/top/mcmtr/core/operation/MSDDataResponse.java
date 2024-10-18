@@ -22,7 +22,7 @@ public final class MSDDataResponse extends MSDDataResponseSchema {
     }
 
     public void write() {
-        if(data instanceof MSDClientData) {
+        if (data instanceof MSDClientData) {
             data.catenaries.removeIf(catenary -> !catenariesToKeep.contains(catenary.getHexId()));
             data.catenaries.addAll(catenaries);
             data.rigidCatenaries.removeIf(rigidCatenary -> !rigidCatenariesToKeep.contains(rigidCatenary.getHexId()));
