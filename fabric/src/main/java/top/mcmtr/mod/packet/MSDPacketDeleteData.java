@@ -1,14 +1,16 @@
 package top.mcmtr.mod.packet;
 
 import org.mtr.core.data.Position;
-import org.mtr.core.integration.Response;
+import org.mtr.core.serializer.JsonReader;
+import org.mtr.core.serializer.SerializedDataBase;
 import org.mtr.core.tool.Utilities;
+import org.mtr.libraries.com.google.gson.JsonObject;
 import org.mtr.mapping.holder.ServerWorld;
 import org.mtr.mapping.tool.PacketBufferReceiver;
+import org.mtr.mod.Init;
 import top.mcmtr.core.operation.MSDDeleteDataRequest;
 import top.mcmtr.core.operation.MSDDeleteDataResponse;
 import top.mcmtr.core.servlet.OperationType;
-import top.mcmtr.mod.Init;
 import top.mcmtr.mod.blocks.BlockNodeBase;
 import top.mcmtr.mod.client.MSDMinecraftClientData;
 
@@ -28,13 +30,13 @@ public final class MSDPacketDeleteData extends MSDPacketRequestResponseBase {
     }
 
     @Override
-    protected void runServerInbound(ServerWorld serverWorld, String content) {
-        Response.create(Utilities.parseJson(content)).getData(MSDDeleteDataResponse::new).iterateCatenaryNodePosition(catenaryNodePosition -> BlockNodeBase.resetCatenaryNode(serverWorld, Init.positionToBlockPos(catenaryNodePosition)));
+    protected void runServerInbound(ServerWorld serverWorld, JsonObject jsonObject) {
+        new MSDDeleteDataResponse(new JsonReader(jsonObject)).iterateCatenaryNodePosition(catenaryNodePosition -> BlockNodeBase.resetCatenaryNode(serverWorld, Init.positionToBlockPos(catenaryNodePosition)));
     }
 
     @Override
-    protected void runClientInbound(Response response) {
-        final MSDDeleteDataResponse deleteDataResponse = response.getData(MSDDeleteDataResponse::new);
+    protected void runClientInbound(JsonReader jsonReader) {
+        final MSDDeleteDataResponse deleteDataResponse = new MSDDeleteDataResponse(jsonReader);
         deleteDataResponse.write(MSDMinecraftClientData.getInstance());
     }
 
@@ -43,10 +45,15 @@ public final class MSDPacketDeleteData extends MSDPacketRequestResponseBase {
         return new MSDPacketDeleteData(content);
     }
 
+    @Override
+    protected SerializedDataBase getDataInstance(JsonReader jsonReader) {
+        return new MSDDeleteDataRequest(jsonReader);
+    }
+
     @Nonnull
     @Override
-    protected String getEndpoint() {
-        return "operation/" + OperationType.DELETE_DATA;
+    protected String getKey() {
+        return OperationType.DELETE_DATA;
     }
 
     @Override

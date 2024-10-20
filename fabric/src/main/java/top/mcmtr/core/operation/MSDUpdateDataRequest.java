@@ -2,8 +2,6 @@ package top.mcmtr.core.operation;
 
 import org.mtr.core.serializer.ReaderBase;
 import org.mtr.core.serializer.SerializedDataBase;
-import org.mtr.core.tool.Utilities;
-import org.mtr.libraries.com.google.gson.JsonObject;
 import org.mtr.libraries.it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import org.mtr.libraries.it.unimi.dsi.fastutil.objects.ObjectSet;
 import top.mcmtr.core.data.Catenary;
@@ -36,12 +34,12 @@ public final class MSDUpdateDataRequest extends MSDUpdateDataRequestSchema {
         return this;
     }
 
-    public JsonObject update() {
+    public MSDUpdateDataResponse update() {
         final MSDUpdateDataResponse updateDataResponse = new MSDUpdateDataResponse(data);
         catenaries.forEach(catenary -> update(catenary, data.catenaryIdMap.get(catenary.getHexId()), data.catenaries, updateDataResponse.getCatenaries()));
         rigidCatenaries.forEach(rigidCatenary -> update(rigidCatenary, data.rigidCatenaryIdMap.get(rigidCatenary.getHexId()), data.rigidCatenaries, updateDataResponse.getRigidCatenaries()));
         data.sync();
-        return Utilities.getJsonObjectFromData(updateDataResponse);
+        return updateDataResponse;
     }
 
     private static <T extends SerializedDataBase> void update(T newData, @Nullable T existingData, ObjectSet<T> dataSet, ObjectArrayList<T> dataToUpdate) {

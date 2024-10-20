@@ -3,7 +3,6 @@ package top.mcmtr.mod.blocks.old;
 import org.mtr.mapping.holder.*;
 import org.mtr.mapping.mapper.TextHelper;
 import org.mtr.mapping.tool.HolderBase;
-import top.mcmtr.mod.Init;
 import top.mcmtr.mod.blocks.BlockNodeBase;
 import top.mcmtr.mod.packet.MSDPacketDeleteData;
 
@@ -38,7 +37,7 @@ public abstract class BlockOldNodeBase extends BlockNodeBase {
     @Override
     public void onBreak2(World world, BlockPos pos, BlockState state, PlayerEntity player) {
         if (!world.isClient()) {
-            MSDPacketDeleteData.sendDirectlyToServerCatenaryNodePosition(ServerWorld.cast(world), Init.blockPosToPosition(pos));
+            MSDPacketDeleteData.sendDirectlyToServerCatenaryNodePosition(ServerWorld.cast(world), org.mtr.mod.Init.blockPosToPosition(pos));
         }
     }
 

@@ -85,30 +85,30 @@ public class Blocks {
         RAILING_STAIR_GLASS = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "railing_stair_glass"), () -> new Block(new BlockRailingStair(false)));
         RAILING_STAIR_GLASS_MIRROR = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "railing_stair_glass_mirror"), () -> new Block(new BlockRailingStair(true)));
         //old
-        RAILING_STAIR_START = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID,"railing_stair_start"), () -> new Block(new BlockOldRailingStair(false, 1, 0)), CreativeModeTabs.STATION);
-        RAILING_STAIR = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID,"railing_stair"), () -> new Block(new BlockOldRailingStair(false, 2, 0)), CreativeModeTabs.STATION);
-        RAILING_STAIR_END = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID,"railing_stair_end"), () -> new Block(new BlockOldRailingStair(false, 3, 0)), CreativeModeTabs.STATION);
-        RAILING_STAIR_CORNER = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID,"railing_stair_corner"), () -> new Block(new BlockOldRailingStair(false, 4, 0)), CreativeModeTabs.STATION);
-        RAILING_STAIR_CORNER_2 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID,"railing_stair_corner_2"), () -> new Block(new BlockOldRailingStair(false, 5, 0)), CreativeModeTabs.STATION);
-        RAILING_STAIR_START_MIRROR = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID,"railing_stair_start_mirror"), () -> new Block(new BlockOldRailingStair(true, 1, 0)), CreativeModeTabs.STATION);
-        RAILING_STAIR_MIRROR = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID,"railing_stair_mirror"), () -> new Block(new BlockOldRailingStair(true, 2, 0)), CreativeModeTabs.STATION);
-        RAILING_STAIR_END_MIRROR = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID,"railing_stair_end_mirror"), () -> new Block(new BlockOldRailingStair(true, 3, 0)), CreativeModeTabs.STATION);
-        RAILING_STAIR_CORNER_MIRROR = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID,"railing_stair_corner_mirror"), () -> new Block(new BlockOldRailingStair(true, 4, 0)), CreativeModeTabs.STATION);
-        RAILING_STAIR_CORNER_MIRROR_2 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID,"railing_stair_corner_mirror_2"), () -> new Block(new BlockOldRailingStair(true, 5, 0)), CreativeModeTabs.STATION);
-        RAILING_STAIR_GLASS_1 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID,"railing_stair_glass_1"), () -> new Block(new BlockOldRailingStair(false, 1, 1)), CreativeModeTabs.STATION);
-        RAILING_STAIR_GLASS_2 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID,"railing_stair_glass_2"), () -> new Block(new BlockOldRailingStair(false, 2, 1)), CreativeModeTabs.STATION);
-        RAILING_STAIR_GLASS_3 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID,"railing_stair_glass_3"), () -> new Block(new BlockOldRailingStair(false, 3, 1)), CreativeModeTabs.STATION);
-        RAILING_STAIR_GLASS_4 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID,"railing_stair_glass_4"), () -> new Block(new BlockOldRailingStair(false, 4, 1)), CreativeModeTabs.STATION);
-        RAILING_STAIR_GLASS_5 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID,"railing_stair_glass_5"), () -> new Block(new BlockOldRailingStair(false, 5, 1)), CreativeModeTabs.STATION);
-        RAILING_STAIR_GLASS_MIRROR_1 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID,"railing_stair_glass_mirror_1"), () -> new Block(new BlockOldRailingStair(true, 1, 1)), CreativeModeTabs.STATION);
-        RAILING_STAIR_GLASS_MIRROR_2 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID,"railing_stair_glass_mirror_2"), () -> new Block(new BlockOldRailingStair(true, 2, 1)), CreativeModeTabs.STATION);
-        RAILING_STAIR_GLASS_MIRROR_3 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID,"railing_stair_glass_mirror_3"), () -> new Block(new BlockOldRailingStair(true, 3, 1)), CreativeModeTabs.STATION);
-        RAILING_STAIR_GLASS_MIRROR_4 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID,"railing_stair_glass_mirror_4"), () -> new Block(new BlockOldRailingStair(true, 4, 1)), CreativeModeTabs.STATION);
-        RAILING_STAIR_GLASS_MIRROR_5 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID,"railing_stair_glass_mirror_5"), () -> new Block(new BlockOldRailingStair(true, 5, 1)), CreativeModeTabs.STATION);
+        RAILING_STAIR_START = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "railing_stair_start"), () -> new Block(new BlockOldRailingStair(false, 1, 0)), CreativeModeTabs.STATION);
+        RAILING_STAIR = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "railing_stair"), () -> new Block(new BlockOldRailingStair(false, 2, 0)), CreativeModeTabs.STATION);
+        RAILING_STAIR_END = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "railing_stair_end"), () -> new Block(new BlockOldRailingStair(false, 3, 0)), CreativeModeTabs.STATION);
+        RAILING_STAIR_CORNER = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "railing_stair_corner"), () -> new Block(new BlockOldRailingStair(false, 4, 0)), CreativeModeTabs.STATION);
+        RAILING_STAIR_CORNER_2 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "railing_stair_corner_2"), () -> new Block(new BlockOldRailingStair(false, 5, 0)), CreativeModeTabs.STATION);
+        RAILING_STAIR_START_MIRROR = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "railing_stair_start_mirror"), () -> new Block(new BlockOldRailingStair(true, 1, 0)), CreativeModeTabs.STATION);
+        RAILING_STAIR_MIRROR = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "railing_stair_mirror"), () -> new Block(new BlockOldRailingStair(true, 2, 0)), CreativeModeTabs.STATION);
+        RAILING_STAIR_END_MIRROR = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "railing_stair_end_mirror"), () -> new Block(new BlockOldRailingStair(true, 3, 0)), CreativeModeTabs.STATION);
+        RAILING_STAIR_CORNER_MIRROR = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "railing_stair_corner_mirror"), () -> new Block(new BlockOldRailingStair(true, 4, 0)), CreativeModeTabs.STATION);
+        RAILING_STAIR_CORNER_MIRROR_2 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "railing_stair_corner_mirror_2"), () -> new Block(new BlockOldRailingStair(true, 5, 0)), CreativeModeTabs.STATION);
+        RAILING_STAIR_GLASS_1 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "railing_stair_glass_1"), () -> new Block(new BlockOldRailingStair(false, 1, 1)), CreativeModeTabs.STATION);
+        RAILING_STAIR_GLASS_2 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "railing_stair_glass_2"), () -> new Block(new BlockOldRailingStair(false, 2, 1)), CreativeModeTabs.STATION);
+        RAILING_STAIR_GLASS_3 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "railing_stair_glass_3"), () -> new Block(new BlockOldRailingStair(false, 3, 1)), CreativeModeTabs.STATION);
+        RAILING_STAIR_GLASS_4 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "railing_stair_glass_4"), () -> new Block(new BlockOldRailingStair(false, 4, 1)), CreativeModeTabs.STATION);
+        RAILING_STAIR_GLASS_5 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "railing_stair_glass_5"), () -> new Block(new BlockOldRailingStair(false, 5, 1)), CreativeModeTabs.STATION);
+        RAILING_STAIR_GLASS_MIRROR_1 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "railing_stair_glass_mirror_1"), () -> new Block(new BlockOldRailingStair(true, 1, 1)), CreativeModeTabs.STATION);
+        RAILING_STAIR_GLASS_MIRROR_2 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "railing_stair_glass_mirror_2"), () -> new Block(new BlockOldRailingStair(true, 2, 1)), CreativeModeTabs.STATION);
+        RAILING_STAIR_GLASS_MIRROR_3 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "railing_stair_glass_mirror_3"), () -> new Block(new BlockOldRailingStair(true, 3, 1)), CreativeModeTabs.STATION);
+        RAILING_STAIR_GLASS_MIRROR_4 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "railing_stair_glass_mirror_4"), () -> new Block(new BlockOldRailingStair(true, 4, 1)), CreativeModeTabs.STATION);
+        RAILING_STAIR_GLASS_MIRROR_5 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "railing_stair_glass_mirror_5"), () -> new Block(new BlockOldRailingStair(true, 5, 1)), CreativeModeTabs.STATION);
 
-        SURVEILLANCE_CAMERAS_WALL = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID,"surveillance_cameras_wall"), () -> new Block(new BlockSurveillanceCameras()));
-        HALL_SEAT_SIDE = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID,"hall_seat_side"), () -> new Block(new BlockHallSeat()));
-        HALL_SEAT_SIDE_MIRROR = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID,"hall_seat_side_mirror"), () -> new Block(new BlockHallSeat()));
+        SURVEILLANCE_CAMERAS_WALL = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "surveillance_cameras_wall"), () -> new Block(new BlockSurveillanceCameras()));
+        HALL_SEAT_SIDE = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "hall_seat_side"), () -> new Block(new BlockHallSeat()));
+        HALL_SEAT_SIDE_MIRROR = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "hall_seat_side_mirror"), () -> new Block(new BlockHallSeat()));
         TRANS_CATENARY_NODE = Init.REGISTRY.registerBlock(new Identifier(Init.MOD_ID, "trans_catenary_node"), () -> new Block(new BlockOldTransCatenaryNode()));
     }
 

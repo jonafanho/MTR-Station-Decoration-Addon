@@ -1,6 +1,8 @@
 package top.mcmtr.core.simulation;
 
 import org.mtr.core.serializer.SerializedDataBaseWithId;
+import org.mtr.core.servlet.MessageQueue;
+import org.mtr.core.servlet.QueueObject;
 import org.mtr.core.simulation.FileLoader;
 import org.mtr.core.tool.Utilities;
 import org.mtr.libraries.it.unimi.dsi.fastutil.ints.IntIntImmutablePair;
@@ -9,17 +11,17 @@ import top.mcmtr.core.data.Catenary;
 import top.mcmtr.core.data.MSDData;
 import top.mcmtr.core.data.RigidCatenary;
 import top.mcmtr.core.legacy.data.LegacyCatenaryLoader;
+import top.mcmtr.core.servlet.MSDOperationProcessor;
 
 import java.nio.file.Path;
-import java.util.List;
-import java.util.concurrent.CopyOnWriteArrayList;
 
 public class MSDSimulator extends MSDData implements Utilities {
     private boolean autoSave = false;
     private final String dimension;
     private final FileLoader<Catenary> fileLoaderCatenaries;
     private final FileLoader<RigidCatenary> fileLoaderRigidCatenaries;
-    private final List<Runnable> queuedRuns = new CopyOnWriteArrayList<>();
+    private final MessageQueue<Runnable> queuedRuns = new MessageQueue<>();
+    private final MessageQueue<QueueObject> messageQueueC2S = new MessageQueue<>();
     private static final String KEY_CATENARIES = "catenaries";
     private static final String KEY_RIGID_CATENARIES = "rigid_catenaries";
 
@@ -47,12 +49,8 @@ public class MSDSimulator extends MSDData implements Utilities {
                 autoSave = false;
             }
 
-            if (!queuedRuns.isEmpty()) {
-                final Runnable runnable = queuedRuns.remove(0);
-                if (runnable != null) {
-                    runnable.run();
-                }
-            }
+            queuedRuns.process(Runnable::run);
+            messageQueueC2S.process(queueObject -> queueObject.runCallback(MSDOperationProcessor.process(queueObject.key, queueObject.data, this)));
         } catch (Exception e) {
             MSDMain.MSD_CORE_LOG.error("MSD Simulator tick error", e);
             throw e;
@@ -68,7 +66,11 @@ public class MSDSimulator extends MSDData implements Utilities {
     }
 
     public void run(Runnable runnable) {
-        queuedRuns.add(runnable);
+        queuedRuns.put(runnable);
+    }
+
+    public void sendMessageC2S(QueueObject queueObject) {
+        messageQueueC2S.put(queueObject);
     }
 
     private void save(boolean useReducedHash) {

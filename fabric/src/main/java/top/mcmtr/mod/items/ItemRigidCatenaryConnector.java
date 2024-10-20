@@ -7,7 +7,6 @@ import org.mtr.libraries.it.unimi.dsi.fastutil.objects.ObjectObjectImmutablePair
 import org.mtr.mapping.holder.*;
 import top.mcmtr.core.data.CatenaryType;
 import top.mcmtr.core.data.RigidCatenary;
-import top.mcmtr.mod.Init;
 import top.mcmtr.mod.blocks.BlockNodeBase;
 import top.mcmtr.mod.blocks.BlockRigidCatenaryNode;
 import top.mcmtr.mod.packet.MSDPacketDeleteData;
@@ -22,8 +21,8 @@ public final class ItemRigidCatenaryConnector extends ItemBlockClickingBase {
 
     @Override
     protected void onConnect(World world, ItemStack stack, BlockState stateStart, BlockState stateEnd, BlockPos posStart, BlockPos posEnd, CatenaryType catenaryType, @Nullable ServerPlayerEntity player) {
-        final Position positionStart = Init.blockPosToPosition(posStart);
-        final Position positionEnd = Init.blockPosToPosition(posEnd);
+        final Position positionStart = org.mtr.mod.Init.blockPosToPosition(posStart);
+        final Position positionEnd = org.mtr.mod.Init.blockPosToPosition(posEnd);
         if (RigidCatenary.verifyPosition(positionStart, positionEnd)) {
             final ObjectObjectImmutablePair<Angle, Angle> angles = getAngles(posStart, BlockRigidCatenaryNode.getAngle(stateStart), posEnd, BlockRigidCatenaryNode.getAngle(stateEnd));
             final RigidCatenary rigidCatenary = new RigidCatenary(positionStart, angles.left(), positionEnd, angles.right(), RigidCatenary.Shape.QUADRATIC, 0);
@@ -35,7 +34,7 @@ public final class ItemRigidCatenaryConnector extends ItemBlockClickingBase {
 
     @Override
     protected void onRemove(World world, BlockPos posStart, BlockPos posEnd, @Nullable ServerPlayerEntity player) {
-        MSDPacketDeleteData.sendDirectlyToServerRigidCatenaryId(ServerWorld.cast(world), TwoPositionsBase.getHexId(Init.blockPosToPosition(posStart), Init.blockPosToPosition(posEnd)));
+        MSDPacketDeleteData.sendDirectlyToServerRigidCatenaryId(ServerWorld.cast(world), TwoPositionsBase.getHexId(org.mtr.mod.Init.blockPosToPosition(posStart), org.mtr.mod.Init.blockPosToPosition(posEnd)));
     }
 
     @Override

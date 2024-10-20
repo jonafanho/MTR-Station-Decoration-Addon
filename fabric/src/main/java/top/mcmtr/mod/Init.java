@@ -1,35 +1,31 @@
 package top.mcmtr.mod;
 
-import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.mtr.core.data.Position;
-import org.mtr.core.tool.RequestHelper;
+import org.mtr.core.serializer.SerializedDataBase;
+import org.mtr.core.servlet.QueueObject;
 import org.mtr.core.tool.Utilities;
 import org.mtr.libraries.it.unimi.dsi.fastutil.objects.ObjectArrayList;
-import org.mtr.mapping.holder.*;
+import org.mtr.mapping.holder.Identifier;
+import org.mtr.mapping.holder.MinecraftServer;
+import org.mtr.mapping.holder.World;
+import org.mtr.mapping.holder.WorldSavePath;
 import org.mtr.mapping.mapper.MinecraftServerHelper;
 import org.mtr.mapping.registry.Registry;
+import org.mtr.mod.config.Config;
 import top.mcmtr.core.MSDMain;
 import top.mcmtr.mod.packet.*;
 
 import javax.annotation.Nullable;
-import java.net.ServerSocket;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.StandardOpenOption;
 import java.util.function.Consumer;
 
 public class Init implements Utilities {
     private static MSDMain main;
-    private static int serverPort;
     private static long lastSavedMillis;
     public static final String MOD_ID = "msd";
     public static final Logger MSD_LOGGER = LogManager.getLogger("MTR-Station-Decoration");
     public static final Registry REGISTRY = new Registry();
     private static final ObjectArrayList<String> WORLD_ID_LIST = new ObjectArrayList<>();
-    private static final RequestHelper REQUEST_HELPER = new RequestHelper(false);
     public static final int AUTOSAVE_INTERVAL = 30000;
 
     public static void init() {
@@ -56,16 +52,21 @@ public class Init implements Utilities {
             WORLD_ID_LIST.clear();
             MinecraftServerHelper.iterateWorlds(minecraftServer, serverWorld -> WORLD_ID_LIST.add(getWorldId(new World(serverWorld.data))));
             lastSavedMillis = System.currentTimeMillis();
-            final int defaultPort = getDefaultPortFromConfig(minecraftServer);
-            serverPort = findFreePort(defaultPort);
-            main = new MSDMain(minecraftServer.getSavePath(WorldSavePath.getRootMapped()).resolve("msd"), serverPort, WORLD_ID_LIST.toArray(new String[0]));
+            Config.init(minecraftServer.getRunDirectory());
+            main = new MSDMain(minecraftServer.getSavePath(WorldSavePath.getRootMapped()).resolve("msd"), Config.getServer().getUseThreadedSimulation(), WORLD_ID_LIST.toArray(new String[0]));
         });
 
         REGISTRY.eventRegistry.registerStartServerTick(() -> {
-            final long currentMillis = System.currentTimeMillis();
-            if (currentMillis - lastSavedMillis > AUTOSAVE_INTERVAL) {
-                main.save();
-                lastSavedMillis = currentMillis;
+            if (main != null) {
+                if (!Config.getServer().getUseThreadedSimulation()) {
+                    main.manualTick();
+                }
+
+                final long currentMillis = System.currentTimeMillis();
+                if (currentMillis - lastSavedMillis > AUTOSAVE_INTERVAL) {
+                    main.save();
+                    lastSavedMillis = currentMillis;
+                }
             }
         });
 
@@ -84,60 +85,10 @@ public class Init implements Utilities {
         REGISTRY.init();
     }
 
-    public static void sendHttpRequest(String endpoint, @Nullable World world, String content, @Nullable Consumer<String> consumer) {
-        REQUEST_HELPER.sendRequest(String.format(
-                "http://localhost:%s/msd/api/%s?%s",
-                serverPort,
-                endpoint,
-                world == null ? "dimensions=all" : "dimension=" + WORLD_ID_LIST.indexOf(getWorldId(world))
-        ), content, consumer);
-    }
-
-    public static BlockPos positionToBlockPos(Position position) {
-        return new BlockPos((int) position.getX(), (int) position.getY(), (int) position.getZ());
-    }
-
-    public static Position blockPosToPosition(BlockPos blockPos) {
-        return new Position(blockPos.getX(), blockPos.getY(), blockPos.getZ());
-    }
-
-    public static BlockPos newBlockPos(double x, double y, double z) {
-        return new BlockPos(MathHelper.floor(x), MathHelper.floor(y), MathHelper.floor(z));
-    }
-
-    public static boolean isChunkLoaded(World world, ChunkManager chunkManager, BlockPos blockPos) {
-        return chunkManager.getWorldChunk(blockPos.getX() / 16, blockPos.getZ() / 16) != null && world.isRegionLoaded(blockPos, blockPos);
-    }
-
-    private static int getDefaultPortFromConfig(MinecraftServer minecraftServer) {
-        final Path filePath = minecraftServer.getRunDirectory().toPath().resolve("config/msd_webserver_port.txt");
-        final int defaultPort = 8989;
-
-        try {
-            return Integer.parseInt(FileUtils.readFileToString(filePath.toFile(), StandardCharsets.UTF_8));
-        } catch (Exception e) {
-            try {
-                Files.write(filePath, String.valueOf(defaultPort).getBytes(StandardCharsets.UTF_8), StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING);
-            } catch (Exception notfound) {
-                logException(notfound, "MSD get default server port error");
-            }
+    public static <T extends SerializedDataBase> void sendMessageC2S(String key, @Nullable MinecraftServer minecraftServer, @Nullable World world, SerializedDataBase data, @Nullable Consumer<T> consumer, @Nullable Class<T> responseDataClass) {
+        if (main != null) {
+            main.sendMessageC2S(world == null ? null : WORLD_ID_LIST.indexOf(getWorldId(world)), new QueueObject(key, data, consumer == null || minecraftServer == null ? null : responseData -> minecraftServer.execute(() -> consumer.accept(responseData)), responseDataClass));
         }
-
-        return defaultPort;
-    }
-
-
-    private static int findFreePort(int startingPort) {
-        for (int i = Math.max(1025, startingPort); i <= 65535; i++) {
-            try (final ServerSocket serverSocket = new ServerSocket(i)) {
-                final int port = serverSocket.getLocalPort();
-                MSD_LOGGER.info("MSD Found available server port: {}", port);
-                return port;
-            } catch (Exception ignored) {
-                MSD_LOGGER.info("port: {} is used, ignore.", i);
-            }
-        }
-        return 0;
     }
 
     private static String getWorldId(World world) {

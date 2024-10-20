@@ -8,7 +8,6 @@ import org.mtr.mod.Items;
 import org.mtr.mod.block.IBlock;
 import top.mcmtr.core.data.RigidCatenary;
 import top.mcmtr.mod.BlockEntityTypes;
-import top.mcmtr.mod.Init;
 import top.mcmtr.mod.client.MSDMinecraftClientData;
 import top.mcmtr.mod.packet.MSDClientPacketHelper;
 import top.mcmtr.mod.packet.MSDPacketDeleteData;
@@ -55,7 +54,7 @@ public final class BlockRigidCatenaryNode extends BlockNodeBase {
     @Override
     public void onBreak2(World world, BlockPos pos, BlockState state, PlayerEntity player) {
         if (!world.isClient()) {
-            MSDPacketDeleteData.sendDirectlyToServerCatenaryNodePosition(ServerWorld.cast(world), Init.blockPosToPosition(pos));
+            MSDPacketDeleteData.sendDirectlyToServerCatenaryNodePosition(ServerWorld.cast(world), org.mtr.mod.Init.blockPosToPosition(pos));
         }
     }
 

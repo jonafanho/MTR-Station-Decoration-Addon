@@ -40,7 +40,7 @@ public final class MSDClientPacketHelper {
         openScreen(new RigidCatenaryShapeModifierScreen(rigidCatenaryId), screenExtension -> screenExtension instanceof RigidCatenaryShapeModifierScreen);
     }
 
-    public static void openCatenaryWithModelScreen(BlockPos blockPos, boolean isConnected){
+    public static void openCatenaryWithModelScreen(BlockPos blockPos, boolean isConnected) {
         getBlockEntity(blockPos, blockEntity -> {
             if (blockEntity.data instanceof BlockCatenaryWithModel.BlockCatenaryWithModelEntity) {
                 openScreen(new CatenaryWithModelScreen(blockPos, isConnected), screenExtension -> screenExtension instanceof CatenaryWithModelScreen);
