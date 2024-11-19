@@ -6,6 +6,7 @@ import org.mtr.core.servlet.QueueObject;
 import org.mtr.core.simulation.FileLoader;
 import org.mtr.core.tool.Utilities;
 import org.mtr.libraries.it.unimi.dsi.fastutil.ints.IntIntImmutablePair;
+import org.mtr.libraries.it.unimi.dsi.fastutil.objects.ObjectLongImmutablePair;
 import top.mcmtr.core.MSDMain;
 import top.mcmtr.core.data.Catenary;
 import top.mcmtr.core.data.MSDData;
@@ -74,19 +75,26 @@ public class MSDSimulator extends MSDData implements Utilities {
     }
 
     private void save(boolean useReducedHash) {
-        final long startMillis = System.currentTimeMillis();
-        save(fileLoaderCatenaries, useReducedHash);
-        save(fileLoaderRigidCatenaries, useReducedHash);
-        MSDMain.MSD_CORE_LOG.debug("MSD Save complete for {} in {} second(s)", dimension, (System.currentTimeMillis() - startMillis) / 1000F);
+        final ObjectLongImmutablePair<Boolean> changedAndDuration = Utilities.measureDuration(() -> {
+            final boolean changed1 = save(fileLoaderCatenaries, useReducedHash);
+            final boolean changed2 = save(fileLoaderRigidCatenaries, useReducedHash);
+            return changed1 || changed2;
+        });
+        if (changedAndDuration.left() || !useReducedHash) {
+            MSDMain.MSD_CORE_LOG.debug("MSD Save complete for {} in {} second(s)", dimension, changedAndDuration.rightLong() / 1000F);
+        }
     }
 
-    private <T extends SerializedDataBaseWithId> void save(FileLoader<T> fileLoader, boolean useReducedHash) {
+    private <T extends SerializedDataBaseWithId> boolean save(FileLoader<T> fileLoader, boolean useReducedHash) {
         final IntIntImmutablePair saveCounts = fileLoader.save(useReducedHash);
-        if (saveCounts.leftInt() > 0) {
+        final int changedCount = saveCounts.leftInt();
+        if (changedCount > 0) {
             MSDMain.MSD_CORE_LOG.debug("- MSD Changed {}: {}", fileLoader.key, saveCounts.leftInt());
         }
-        if (saveCounts.rightInt() > 0) {
+        final int deletedCount = saveCounts.rightInt();
+        if (deletedCount > 0) {
             MSDMain.MSD_CORE_LOG.debug("- MSD Deleted {}: {}", fileLoader.key, saveCounts.rightInt());
         }
+        return changedCount > 0 || deletedCount > 0;
     }
 }
