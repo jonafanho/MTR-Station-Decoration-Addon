@@ -288,7 +288,7 @@ public class YamanoteRailwaySignScreen extends ScreenExtension implements IGui {
             final boolean isLine = newSignId != null && (newSignId.equals("line") || newSignId.equals("line_flipped"));
             final boolean isStation = newSignId != null && (newSignId.equals("station") || newSignId.equals("station_flipped"));
             if ((isExitLetter || isPlatform || isLine || isStation)) {
-                MinecraftClient.getInstance().openScreen(new Screen(new DashboardListSelectorScreen(this, new ObjectImmutableList<>(isExitLetter ? exitsForList : isPlatform ? platformsForList : isLine ? routesForList : stationsForList), selectedIds, false, false)));
+                MinecraftClient.getInstance().openScreen(new Screen(new DashboardListSelectorScreen(null, new ObjectImmutableList<>(isExitLetter ? exitsForList : isPlatform ? platformsForList : isLine ? routesForList : stationsForList), selectedIds, false, false, this)));
             }
         }
     }
